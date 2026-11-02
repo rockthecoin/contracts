@@ -1,0 +1,9 @@
+node_modules/
+**/target/
+reports/
+.env
+.env.*
+*.pem
+*-keypair.json
+*.log
+.DS_Store

@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "compiler": "0.8.38+commit.1835d247.Emscripten.clang",
+  "hookFlags": 8260,
+  "contracts": {
+    "CreatorRewardsHook": {
+      "runtimeHash": "0x7486fd56921fce854bb2d2dfbd8934440ad7f9b56c043c84b668a606651db23b",
+      "selectors": {
+        "acceptOwnership": "0x79ba5097",
+        "acceptPoolCreator": "0xa2f1c470",
+        "afterSwap": "0xb47b2fb1",
+        "beforeInitialize": "0xdc98354e",
+        "claim": "0x21c0b342",
+        "claimable": "0xd4570c1c",
+        "configurePool": "0x2a72aff4",
+        "owner": "0x8da5cb5b",
+        "pendingOwner": "0xe30c3978",
+        "poolConfigs": "0x07ef2190",
+        "poolManager": "0xdc4c90d3",
+        "quoteSigner": "0xf413bdb3",
+        "registerPool": "0x03071e64",
+        "registeredPools": "0xea509a64",
+        "registrationDigest": "0xed4b6b1f",
+        "renounceOwnership": "0x715018a6",
+        "renouncePoolCreator": "0x619651d1",
+        "rewardsPaused": "0x339a0551",
+        "serviceTools": "0x1109b898",
+        "setQuoteSigner": "0x56ce180a",
+        "setRewardsPaused": "0x4e017530",
+        "transferOwnership": "0xf2fde38b",
+        "transferPoolCreator": "0x09ba822e",
+        "usedReferences": "0x6d840783"
+      }
+    }
+  }
+}

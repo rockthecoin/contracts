@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "runtimeHash": "0x6dcf35614432438bd114b3ae244bc8d5b1c30a9937817f2514fa4f1a1b95e1f4",
+  "selectors": {
+    "acceptOwnership": "0x79ba5097",
+    "createCollection": "0x275c9cca",
+    "owner": "0x8da5cb5b",
+    "paused": "0x5c975abb",
+    "pendingOwner": "0xe30c3978",
+    "quoteDigest": "0x8a293140",
+    "quoteSigner": "0xf413bdb3",
+    "renounceOwnership": "0x715018a6",
+    "setConfiguration": "0xfee0686b",
+    "setPaused": "0x16c38b3c",
+    "transferOwnership": "0xf2fde38b",
+    "treasury": "0x61d027b3",
+    "usedReferences": "0x6d840783"
+  },
+  "event": "0x77a9bf5896f4f7247bcd065077569df8ed1f9f09e5a27f02ec5916eb5ae94194"
+}

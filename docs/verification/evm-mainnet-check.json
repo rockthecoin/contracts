@@ -1,0 +1,512 @@
+{
+  "checked_at": "2026-11-02T11:58:14.812Z",
+  "method": "eth_getCode; immutable references masked only at compiler-declared locations",
+  "broadcasts": 0,
+  "networks": [
+    {
+      "network": "ethereum",
+      "chain_id": 1,
+      "block_number": "26326947",
+      "contracts": [
+        {
+          "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+          "package": "factory-v2",
+          "contract": "RockTheCoinFactory",
+          "runtime_keccak256": "0x28412f4be7f105ef6fca094096ecd5ecc1781ace40dd29ee46fb0aec34a45257",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "package": "launch-v3",
+          "contract": "LaunchFactory",
+          "runtime_keccak256": "0xc55b9d248fa0b5756ac152ed4b970d69bee902ff992c87183c2c7c7705c378a2",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x92b8c811b0d9c21cf338315ea82adc8784c9c93e",
+          "package": "launch-v6",
+          "contract": "LaunchFactoryV6",
+          "runtime_keccak256": "0xe772a45e809d37b677ab0ec379bf8fd711b4852a9818d7d265b8abaeb4a8682c",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "package": "collections-v1",
+          "contract": "CollectionFactory",
+          "runtime_keccak256": "0x6dcf35614432438bd114b3ae244bc8d5b1c30a9937817f2514fa4f1a1b95e1f4",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+          "package": "tools-v1",
+          "contract": "ServiceTools",
+          "runtime_keccak256": "0x1fefa51da538a5fb90d6c0d5d935aff9a78b943eae68759843e7b203744bbc8f",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0xbfa92f78b27caad872e889bfc14fe16d1435be7f",
+          "package": "rewards-v1",
+          "contract": "HookDeployer",
+          "runtime_keccak256": "0xae4e0cb46fce0b6d7c8ae020619f4828d7a3ece2a285b64fe8d657b7f3ebcff1",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "address": "0xc46ab1f7e306a098250dfa2210c911b902b46044",
+          "package": "rewards-v1",
+          "contract": "CreatorRewardsHook",
+          "runtime_keccak256": "0x0f68118923ea544486c7abc841fcd9da96fff97cc345132a9ad0f372bcc5c5aa",
+          "runtime_matches": true,
+          "immutable_values": {
+            "80": "0x000000000000000000000000000000000004444c5dc75cb358380d2e3de08a90",
+            "82": "0x0000000000000000000000006ce5d5ffca3c1e1cff9e3ac9553318af0d91e681"
+          },
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "poolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+            "serviceTools": "0x6CE5d5FfCa3c1E1CfF9E3Ac9553318AF0D91e681",
+            "rewardsPaused": false
+          }
+        }
+      ]
+    },
+    {
+      "network": "bnb",
+      "chain_id": 56,
+      "block_number": "131236938",
+      "contracts": [
+        {
+          "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+          "package": "factory-v2",
+          "contract": "RockTheCoinFactory",
+          "runtime_keccak256": "0x28412f4be7f105ef6fca094096ecd5ecc1781ace40dd29ee46fb0aec34a45257",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "package": "launch-v6",
+          "contract": "LaunchFactoryV6",
+          "runtime_keccak256": "0xe772a45e809d37b677ab0ec379bf8fd711b4852a9818d7d265b8abaeb4a8682c",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+          "package": "collections-v1",
+          "contract": "CollectionFactory",
+          "runtime_keccak256": "0x6dcf35614432438bd114b3ae244bc8d5b1c30a9937817f2514fa4f1a1b95e1f4",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "package": "tools-v1",
+          "contract": "ServiceTools",
+          "runtime_keccak256": "0x1fefa51da538a5fb90d6c0d5d935aff9a78b943eae68759843e7b203744bbc8f",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+          "package": "rewards-v1",
+          "contract": "HookDeployer",
+          "runtime_keccak256": "0xae4e0cb46fce0b6d7c8ae020619f4828d7a3ece2a285b64fe8d657b7f3ebcff1",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "address": "0xf8f03be18b5243d66b69e94e3ff84f123482a044",
+          "package": "rewards-v1",
+          "contract": "CreatorRewardsHook",
+          "runtime_keccak256": "0xad0916dd681aa874b47b915fae4bc97040a893d5b64e42df4417508befeef8ee",
+          "runtime_matches": true,
+          "immutable_values": {
+            "80": "0x00000000000000000000000028e2ea090877bf75740558f6bfb36a5ffee9e9df",
+            "82": "0x000000000000000000000000175511fa79baec7bb54325aadc9b4686c5f55f07"
+          },
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "poolManager": "0x28e2Ea090877bF75740558f6BFB36A5ffeE9e9dF",
+            "serviceTools": "0x175511fa79bAEc7Bb54325aadC9B4686C5F55F07",
+            "rewardsPaused": false
+          }
+        }
+      ]
+    },
+    {
+      "network": "base",
+      "chain_id": 8453,
+      "block_number": "53415676",
+      "contracts": [
+        {
+          "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+          "package": "factory-v2",
+          "contract": "RockTheCoinFactory",
+          "runtime_keccak256": "0x28412f4be7f105ef6fca094096ecd5ecc1781ace40dd29ee46fb0aec34a45257",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "package": "launch-v7",
+          "contract": "LaunchFactoryV7",
+          "runtime_keccak256": "0xb2ca2ac439d8a0d841ea028a00161978c433f9a740e12cc7c45949c75597ec17",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "package": "collections-v1",
+          "contract": "CollectionFactory",
+          "runtime_keccak256": "0x6dcf35614432438bd114b3ae244bc8d5b1c30a9937817f2514fa4f1a1b95e1f4",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+          "package": "tools-v1",
+          "contract": "ServiceTools",
+          "runtime_keccak256": "0x1fefa51da538a5fb90d6c0d5d935aff9a78b943eae68759843e7b203744bbc8f",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0xc7610117193d63ed7aec80fcc2195641ebf23fa9",
+          "package": "rewards-v1",
+          "contract": "HookDeployer",
+          "runtime_keccak256": "0xae4e0cb46fce0b6d7c8ae020619f4828d7a3ece2a285b64fe8d657b7f3ebcff1",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "address": "0x8fc5bfa88e3a0eeac09784b1a3f1c88c9de1a044",
+          "package": "rewards-v2",
+          "contract": "CreatorRewardsHook",
+          "runtime_keccak256": "0x86550fe5ad683dfe8cf979431d7ac128357118b0c7692ab7c0c7fbae17caaeac",
+          "runtime_matches": true,
+          "immutable_values": {
+            "80": "0x000000000000000000000000498581ff718922c3f8e6a244956af099b2652b2b",
+            "82": "0x000000000000000000000000619ba400fb76057b548b0a604c0c379cad4d3800"
+          },
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+            "serviceTools": "0x619BA400Fb76057B548B0A604c0C379cAd4d3800",
+            "rewardsPaused": false
+          }
+        }
+      ]
+    },
+    {
+      "network": "arbitrum",
+      "chain_id": 42161,
+      "block_number": "520560229",
+      "contracts": [
+        {
+          "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "package": "factory-v2",
+          "contract": "RockTheCoinFactory",
+          "runtime_keccak256": "0x28412f4be7f105ef6fca094096ecd5ecc1781ace40dd29ee46fb0aec34a45257",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "package": "launch-v7",
+          "contract": "LaunchFactoryV7",
+          "runtime_keccak256": "0xb2ca2ac439d8a0d841ea028a00161978c433f9a740e12cc7c45949c75597ec17",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+          "package": "collections-v1",
+          "contract": "CollectionFactory",
+          "runtime_keccak256": "0x6dcf35614432438bd114b3ae244bc8d5b1c30a9937817f2514fa4f1a1b95e1f4",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+          "package": "tools-v1",
+          "contract": "ServiceTools",
+          "runtime_keccak256": "0x1fefa51da538a5fb90d6c0d5d935aff9a78b943eae68759843e7b203744bbc8f",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0xc7610117193d63ed7aec80fcc2195641ebf23fa9",
+          "package": "rewards-v1",
+          "contract": "HookDeployer",
+          "runtime_keccak256": "0xae4e0cb46fce0b6d7c8ae020619f4828d7a3ece2a285b64fe8d657b7f3ebcff1",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "address": "0x73c0d2412168f5ee55385b61d33f9b9a86292044",
+          "package": "rewards-v3",
+          "contract": "CreatorRewardsHook",
+          "runtime_keccak256": "0x0bdf5129dcee06b260ccc35b3688d60eecacf9151fd3410eb164e4087ba70c87",
+          "runtime_matches": true,
+          "immutable_values": {
+            "80": "0x000000000000000000000000360e68faccca8ca495c1b759fd9eee466db9fb32",
+            "82": "0x0000000000000000000000006ce5d5ffca3c1e1cff9e3ac9553318af0d91e681"
+          },
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "poolManager": "0x360E68faCcca8cA495c1B759Fd9EEe466db9FB32",
+            "serviceTools": "0x6CE5d5FfCa3c1E1CfF9E3Ac9553318AF0D91e681",
+            "rewardsPaused": false
+          }
+        }
+      ]
+    },
+    {
+      "network": "polygon",
+      "chain_id": 137,
+      "block_number": "96610169",
+      "contracts": [
+        {
+          "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+          "package": "factory-v2",
+          "contract": "RockTheCoinFactory",
+          "runtime_keccak256": "0x28412f4be7f105ef6fca094096ecd5ecc1781ace40dd29ee46fb0aec34a45257",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "package": "launch-v7",
+          "contract": "LaunchFactoryV7",
+          "runtime_keccak256": "0xb2ca2ac439d8a0d841ea028a00161978c433f9a740e12cc7c45949c75597ec17",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "package": "collections-v1",
+          "contract": "CollectionFactory",
+          "runtime_keccak256": "0x6dcf35614432438bd114b3ae244bc8d5b1c30a9937817f2514fa4f1a1b95e1f4",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+          "package": "tools-v1",
+          "contract": "ServiceTools",
+          "runtime_keccak256": "0x1fefa51da538a5fb90d6c0d5d935aff9a78b943eae68759843e7b203744bbc8f",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0xc7610117193d63ed7aec80fcc2195641ebf23fa9",
+          "package": "rewards-v1",
+          "contract": "HookDeployer",
+          "runtime_keccak256": "0xae4e0cb46fce0b6d7c8ae020619f4828d7a3ece2a285b64fe8d657b7f3ebcff1",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "address": "0x78f33a7e9a061821fc5fbf35d203c7b0df622044",
+          "package": "rewards-v3",
+          "contract": "CreatorRewardsHook",
+          "runtime_keccak256": "0x7f7b0737517e1b9380f18d3b125330e09e9deabcaff5586e531fa58a1b4bdc5c",
+          "runtime_matches": true,
+          "immutable_values": {
+            "80": "0x00000000000000000000000067366782805870060151383f4bbff9dab53e5cd6",
+            "82": "0x000000000000000000000000619ba400fb76057b548b0a604c0c379cad4d3800"
+          },
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "poolManager": "0x67366782805870060151383F4BbFF9daB53e5cD6",
+            "serviceTools": "0x619BA400Fb76057B548B0A604c0C379cAd4d3800",
+            "rewardsPaused": false
+          }
+        }
+      ]
+    }
+  ]
+}

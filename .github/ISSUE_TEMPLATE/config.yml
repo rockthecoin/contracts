@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/rockthecoin/contracts/security/advisories/new
+    about: Keep exploitable findings and sensitive information out of public issues.
+  - name: RockTheCoin guides
+    url: https://www.rockthecoin.com/guides
+    about: Creation, permissions and tool usage.

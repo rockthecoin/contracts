@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "evm": [
+    {
+      "id": "factory-v2",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "build/standard-input.json",
+      "artifacts": [
+        {
+          "path": "build/RockNFT.json",
+          "name": "RockNFT"
+        },
+        {
+          "path": "build/RockTheCoinFactory.json",
+          "name": "RockTheCoinFactory"
+        },
+        {
+          "path": "build/RockToken.json",
+          "name": "RockToken"
+        }
+      ]
+    },
+    {
+      "id": "launch-v3",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "contracts/launch-v3/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/launch-v3/artifacts/ConfigurableToken.json",
+          "name": "ConfigurableToken"
+        },
+        {
+          "path": "contracts/launch-v3/artifacts/LaunchFactory.json",
+          "name": "LaunchFactory"
+        }
+      ]
+    },
+    {
+      "id": "launch-v4",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "contracts/launch-v4/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/launch-v4/artifacts/ConfigurableTokenV4.json",
+          "name": "ConfigurableTokenV4"
+        },
+        {
+          "path": "contracts/launch-v4/artifacts/LaunchFactoryV4.json",
+          "name": "LaunchFactoryV4"
+        },
+        {
+          "path": "contracts/launch-v4/artifacts/PositionLockV4.json",
+          "name": "PositionLockV4"
+        },
+        {
+          "path": "contracts/launch-v4/artifacts/TokenCodeV4.json",
+          "name": "TokenCodeV4"
+        },
+        {
+          "path": "contracts/launch-v4/artifacts/TokenDeployerV4.json",
+          "name": "TokenDeployerV4"
+        },
+        {
+          "path": "contracts/launch-v4/artifacts/VestingWalletV4.json",
+          "name": "VestingWalletV4"
+        }
+      ]
+    },
+    {
+      "id": "launch-v5",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "contracts/launch-v5/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/launch-v5/artifacts/ConfigurableTokenV5.json",
+          "name": "ConfigurableTokenV5"
+        },
+        {
+          "path": "contracts/launch-v5/artifacts/LaunchFactoryV5.json",
+          "name": "LaunchFactoryV5"
+        },
+        {
+          "path": "contracts/launch-v5/artifacts/PositionLockV5.json",
+          "name": "PositionLockV5"
+        },
+        {
+          "path": "contracts/launch-v5/artifacts/TokenCodeV5.json",
+          "name": "TokenCodeV5"
+        },
+        {
+          "path": "contracts/launch-v5/artifacts/TokenDeployerV5.json",
+          "name": "TokenDeployerV5"
+        },
+        {
+          "path": "contracts/launch-v5/artifacts/VestingWalletV5.json",
+          "name": "VestingWalletV5"
+        }
+      ]
+    },
+    {
+      "id": "launch-v6",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "contracts/launch-v6/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/launch-v6/artifacts/ConfigurableTokenV6.json",
+          "name": "ConfigurableTokenV6"
+        },
+        {
+          "path": "contracts/launch-v6/artifacts/LaunchFactoryV6.json",
+          "name": "LaunchFactoryV6"
+        },
+        {
+          "path": "contracts/launch-v6/artifacts/PositionLockV6.json",
+          "name": "PositionLockV6"
+        },
+        {
+          "path": "contracts/launch-v6/artifacts/TokenCodeV6.json",
+          "name": "TokenCodeV6"
+        },
+        {
+          "path": "contracts/launch-v6/artifacts/TokenDeployerV6.json",
+          "name": "TokenDeployerV6"
+        },
+        {
+          "path": "contracts/launch-v6/artifacts/VestingWalletV6.json",
+          "name": "VestingWalletV6"
+        }
+      ]
+    },
+    {
+      "id": "launch-v7",
+      "compiler": "0.8.38+commit.1835d247.Emscripten.clang",
+      "input": "contracts/launch-v7/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/launch-v7/artifacts/ConfigurableTokenV7.json",
+          "name": "ConfigurableTokenV7"
+        },
+        {
+          "path": "contracts/launch-v7/artifacts/LaunchFactoryV7.json",
+          "name": "LaunchFactoryV7"
+        },
+        {
+          "path": "contracts/launch-v7/artifacts/PositionLockV7.json",
+          "name": "PositionLockV7"
+        },
+        {
+          "path": "contracts/launch-v7/artifacts/TokenCodeV7.json",
+          "name": "TokenCodeV7"
+        },
+        {
+          "path": "contracts/launch-v7/artifacts/TokenDeployerV7.json",
+          "name": "TokenDeployerV7"
+        },
+        {
+          "path": "contracts/launch-v7/artifacts/VestingWalletV7.json",
+          "name": "VestingWalletV7"
+        }
+      ]
+    },
+    {
+      "id": "collections-v1",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "contracts/collections-v1/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/collections-v1/artifacts/CollectionFactory.json",
+          "name": "CollectionFactory"
+        },
+        {
+          "path": "contracts/collections-v1/artifacts/NFTCollection.json",
+          "name": "NFTCollection"
+        }
+      ]
+    },
+    {
+      "id": "tools-v1",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "contracts/tools-v1/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/tools-v1/artifacts/ServiceTools.json",
+          "name": "ServiceTools"
+        }
+      ]
+    },
+    {
+      "id": "rewards-v1",
+      "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+      "input": "contracts/rewards-v1/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/rewards-v1/artifacts/CreatorRewardsHook.json",
+          "name": "CreatorRewardsHook"
+        },
+        {
+          "path": "contracts/rewards-v1/artifacts/HookDeployer.json",
+          "name": "HookDeployer"
+        }
+      ]
+    },
+    {
+      "id": "rewards-v2",
+      "compiler": "0.8.38+commit.1835d247.Emscripten.clang",
+      "input": "contracts/rewards-v2/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/rewards-v2/artifacts/CreatorRewardsHook.json",
+          "name": "CreatorRewardsHook"
+        }
+      ]
+    },
+    {
+      "id": "rewards-v3",
+      "compiler": "0.8.38+commit.1835d247.Emscripten.clang",
+      "input": "contracts/rewards-v3/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/rewards-v3/artifacts/CreatorRewardsHook.json",
+          "name": "CreatorRewardsHook"
+        }
+      ]
+    }
+  ],
+  "solana": {
+    "id": "solana-controller-v1",
+    "directory": "contracts/solana-controller-v1",
+    "compiler": "Agave cargo-build-sbf 4.4.0 / platform-tools v1.58 / Rust 1.95.0",
+    "target": "sbf-solana-solana v0",
+    "elf_sha256": "f06f417780232e687d0c3c663a736e85e7431c2efbbe7089a2c4da994183a5dc"
+  }
+}

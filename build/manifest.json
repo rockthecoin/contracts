@@ -1,0 +1,22 @@
+{
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+  "evmVersion": "cancun",
+  "runtimeHash": "0x28412f4be7f105ef6fca094096ecd5ecc1781ace40dd29ee46fb0aec34a45257",
+  "selectors": {
+    "acceptOwnership": "0x79ba5097",
+    "createNFT": "0x2e75876e",
+    "createToken": "0x1beafda0",
+    "owner": "0x8da5cb5b",
+    "paused": "0x5c975abb",
+    "pendingOwner": "0xe30c3978",
+    "quoteDigest": "0xa745c490",
+    "quoteSigner": "0xf413bdb3",
+    "renounceOwnership": "0x715018a6",
+    "setConfiguration": "0xfee0686b",
+    "setPaused": "0x16c38b3c",
+    "transferOwnership": "0xf2fde38b",
+    "treasury": "0x61d027b3",
+    "usedReferences": "0x6d840783"
+  },
+  "event": "0xf057942b027f0c85b664a8be10875fa16066020c6e697e5acf1b9f09b81dccf9"
+}

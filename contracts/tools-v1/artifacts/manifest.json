@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+  "runtimeHash": "0x1fefa51da538a5fb90d6c0d5d935aff9a78b943eae68759843e7b203744bbc8f",
+  "selectors": {
+    "acceptOwnership": "0x79ba5097",
+    "allowedTargets": "0xb8fe8d5f",
+    "execute": "0xf33f40d8",
+    "owner": "0x8da5cb5b",
+    "paused": "0x5c975abb",
+    "pendingOwner": "0xe30c3978",
+    "quoteDigest": "0x8a293140",
+    "quoteSigner": "0xf413bdb3",
+    "renounceOwnership": "0x715018a6",
+    "sendNative": "0x2ee6dfd4",
+    "sendTokens": "0xeed8d279",
+    "setAllowedTarget": "0xca1dd22e",
+    "setAllowedTargets": "0x01e2ae55",
+    "setConfiguration": "0xfee0686b",
+    "setPaused": "0x16c38b3c",
+    "transferOwnership": "0xf2fde38b",
+    "treasury": "0x61d027b3",
+    "usedReferences": "0x6d840783"
+  },
+  "event": "0xcd999b0f26d0b7972ab65e9d6588611da8ca5834b70ba6bdc473c5435f967e05"
+}
