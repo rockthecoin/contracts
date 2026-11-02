@@ -10,7 +10,7 @@ f06f417780232e687d0c3c663a736e85e7431c2efbbe7089a2c4da994183a5dc
 
 ## Rebuild the existing executable
 
-The source, `Cargo.toml` and `Cargo.lock` are preserved byte for byte in `contracts/solana-controller-v1/`. The original pins are Agave `cargo-build-sbf` 4.4.0, platform-tools v1.58, its Rust 1.95.0 toolchain, and SBF architecture `v0`.
+The source, `Cargo.toml` and `Cargo.lock` are preserved byte for byte in `contracts/solana-controller-v1/`. The original pins are the Agave **4.3.2 distribution** (whose `cargo-build-sbf` binary reports **4.4.0**), platform-tools v1.58, its Rust 1.95.0 toolchain, and SBF architecture `v0`. The distribution release and the build command's own version string are different; use the archive pinned by the install script.
 
 On Linux x86-64, `scripts/install-solana-toolchain.sh ABSOLUTE_DIRECTORY` downloads those exact releases and checks their archive SHA-256 hashes before extraction. Add `ABSOLUTE_DIRECTORY/platform-tools/rust/bin` and `ABSOLUTE_DIRECTORY/solana-release/bin` to your `PATH`, then run:
 
