@@ -4,7 +4,7 @@
 
 Public smart-contract source for [RockTheCoin](https://www.rockthecoin.com): token and NFT creation, collections, distribution, liquidity tools, vesting, locks and optional Uniswap V4 creator rewards.
 
-This repository publishes contract packages and their verification tools. The RockTheCoin website and administration application are maintained separately and remain private.
+This repository publishes contract packages and their verification tools.
 
 ## Find a deployed contract
 

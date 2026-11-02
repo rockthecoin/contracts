@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "snapshot_date": "2026-11-02",
-  "source_revision": "v1.0.0",
+  "source_revision": "v1.0.1",
   "networks": [
     {
       "slug": "solana",

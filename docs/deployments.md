@@ -1,6 +1,6 @@
 # Mainnet deployment snapshot
 
-Snapshot: **2026-11-02**, source release [`v1.0.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.0.0). Each address below was compared with its exact saved runtime. The Solana executable was also rebuilt byte for byte. All 31 listed EVM contracts also have matching source verified by Sourcify. These are dated checks; service configuration and owner state can change.
+Snapshot: **2026-11-02**, source release [`v1.0.1`](https://github.com/rockthecoin/contracts/releases/tag/v1.0.1). Each address below was compared with its exact saved runtime. The Solana executable was also rebuilt byte for byte. All 31 listed EVM contracts also have matching source verified by Sourcify. These are dated checks; service configuration and owner state can change.
 
 See [machine-readable addresses](../deployments.json), [EVM comparison evidence](verification/evm-mainnet-check.json), [Solana comparison evidence](verification/solana-mainnet-check.json), [Sourcify source verification](verification/sourcify-source-status.json) and [verification instructions](verification.md).
 
