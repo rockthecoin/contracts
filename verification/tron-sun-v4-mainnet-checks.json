@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "creator_rewards": false,
+      "energy": 7291821,
+      "checks": [
+        "mint/refund/revoke",
+        "owner increase",
+        "owner fee collection",
+        "owner withdrawal"
+      ]
+    },
+    {
+      "creator_rewards": true,
+      "energy": 7888944,
+      "checks": [
+        "mint/refund/revoke",
+        "owner increase",
+        "creator swaps/claims/configuration",
+        "owner fee collection",
+        "owner withdrawal"
+      ]
+    }
+  ],
+  "compiler_sha256": "fa664fe58fb300ead5fb7ffda7bf75bc0b0db03fcb6f1686a53edaa16b6a9a91",
+  "production_writes": 0,
+  "funded_signatures": 0,
+  "broadcasts": 0
+}

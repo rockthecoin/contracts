@@ -1,0 +1,28 @@
+{
+  "package": "tron-suite-v3",
+  "version": 3,
+  "files": {
+    "README.md": "6efcd46b39ee13b3efd1ec74c61b1feab48dce0ee5d960af8770331b9098e428",
+    "TronClonePermit.sol": "e37ab0f10d925f51b084578d151a3957e94df800cac477196f81db4b3a551250",
+    "TronCollectionFactory.sol": "c2221e2f8c74d7198d34b1836687f3c929597620c5d6e07958f33324adddf039",
+    "TronFactoryV3.sol": "04ac9a4519d8327b2e47be07437ababa5cedaa62d00fdd0c122414547053ff10",
+    "TronLaunchFactory.sol": "14a28a1e7e861186a7d33516d90b7f662a1ed343b5a21f49ba2aad61f2d3feb6",
+    "TronNFTCollection.sol": "ffdc4f7850f50055d71d16dd67016c10431704e717a1eaf03f1397048ca9f752",
+    "TronToken.sol": "c3f4d5f77bbdbe876294cc9c17c624989879c2ab7103fbd3bc8d024b11ed2685",
+    "TronVestingWallet.sol": "c4fc74391df0971571edd934688471a3aa2057716451ddfa300a50d50c34f7b9",
+    "artifacts/RockNFT.json": "c80617bd79688cf79aa7ff1e8553021db1d4024ecd945cae23fbbcdd32888bdd",
+    "artifacts/RockToken.json": "c720180bf0495356a42434cc7cae6800e5ef9f6ebed4e1efb39ae662a42ea57e",
+    "artifacts/TronCollectionFactory.json": "ff2a7c5b9faced2dd888a0009bfa16df0e47535819973bf5c83a638833dd1975",
+    "artifacts/TronFactoryV3.json": "bc1f462ac899cf3903ef278ea17c62521639323929f946737c9439c67e46e691",
+    "artifacts/TronLaunchFactory.json": "55bfc66f58456f7134fda658fc6af5a5b2189d8a8ea4646a0880d8e8a7acd868",
+    "artifacts/TronNFTCollection.json": "257e3325b3b9a78fd76d81318e7368cfcd77b53e70adb1d5c1f8f09dc983e7df",
+    "artifacts/TronPositionLock.json": "149e144b68c66fe2f7ab7ce17d537e8f451cc1ff3a20abcc2e07b260a1e5df72",
+    "artifacts/TronToken.json": "a059d28db5cc6618a2b18b986bf646116f2ce842bce2520666f3ace4580a456e",
+    "artifacts/TronTokenDeployer.json": "8f8ba42c59c93cbe577de5c39461857110ac6b91ab1ad07b24d02e7529876471",
+    "artifacts/TronVestingWallet.json": "be3795ac289c33f9053f42026418a4ebc7c61c1612581e042e45fb7c2974b896",
+    "artifacts/abis.json": "3d8d1a3015547c4297b0aecd295cf13e2324981b7984d66e22871012a28f662d",
+    "artifacts/cost-benchmarks.json": "7c47dcc7da7010acdbbab5f0972ccbf715fbe367dea062e404f31ce5baa012ff",
+    "artifacts/manifest.json": "477b0f3ec52a656e3f3f8f08b23a4d73db137e92f69c5c9bc54db876a9c43a39",
+    "artifacts/standard-input.json": "8084aa36d507c1196c46533c15d153b15d1e75417e1c477e0a47ed3b438dad7c"
+  }
+}

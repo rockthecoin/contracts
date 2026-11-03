@@ -1,0 +1,216 @@
+{
+  "energyPriceSun": 100,
+  "bandwidthPriceSun": 1000,
+  "rows": [
+    {
+      "mode": 0,
+      "action": "create",
+      "energy": "569313",
+      "energyTRX": 56.9313
+    },
+    {
+      "mode": 0,
+      "action": "transfer-new",
+      "energy": "28094",
+      "energyTRX": 2.8094
+    },
+    {
+      "mode": 0,
+      "action": "transfer-existing",
+      "energy": "13094",
+      "energyTRX": 1.3094
+    },
+    {
+      "mode": 0,
+      "action": "approve",
+      "energy": "22682",
+      "energyTRX": 2.2682
+    },
+    {
+      "mode": 1,
+      "action": "create",
+      "energy": "199350",
+      "energyTRX": 19.935
+    },
+    {
+      "mode": 1,
+      "action": "transfer-new",
+      "energy": "28250",
+      "energyTRX": 2.825
+    },
+    {
+      "mode": 1,
+      "action": "transfer-existing",
+      "energy": "13250",
+      "energyTRX": 1.325
+    },
+    {
+      "mode": 1,
+      "action": "approve",
+      "energy": "22794",
+      "energyTRX": 2.2794
+    },
+    {
+      "mode": 2,
+      "action": "create",
+      "energy": "920707",
+      "energyTRX": 92.0707
+    },
+    {
+      "mode": 2,
+      "action": "nft-transfer",
+      "energy": "38739",
+      "energyTRX": 3.8739
+    },
+    {
+      "mode": 3,
+      "action": "create",
+      "energy": "222167",
+      "energyTRX": 22.2167
+    },
+    {
+      "mode": 3,
+      "action": "nft-transfer",
+      "energy": "38876",
+      "energyTRX": 3.8876
+    },
+    {
+      "mode": 4,
+      "action": "create",
+      "energy": "4636794",
+      "energyTRX": 463.6794
+    },
+    {
+      "mode": 4,
+      "action": "transfer-new",
+      "energy": "33873",
+      "energyTRX": 3.3873
+    },
+    {
+      "mode": 4,
+      "action": "transfer-existing",
+      "energy": "18873",
+      "energyTRX": 1.8873
+    },
+    {
+      "mode": 4,
+      "action": "approve",
+      "energy": "22846",
+      "energyTRX": 2.2846
+    },
+    {
+      "mode": 5,
+      "action": "create",
+      "energy": "571844",
+      "energyTRX": 57.1844
+    },
+    {
+      "mode": 5,
+      "action": "transfer-new",
+      "energy": "34184",
+      "energyTRX": 3.4184
+    },
+    {
+      "mode": 5,
+      "action": "transfer-existing",
+      "energy": "19184",
+      "energyTRX": 1.9184
+    },
+    {
+      "mode": 5,
+      "action": "approve",
+      "energy": "22988",
+      "energyTRX": 2.2988
+    },
+    {
+      "mode": 6,
+      "action": "create",
+      "energy": "4747550",
+      "energyTRX": 474.755
+    },
+    {
+      "mode": 6,
+      "action": "transfer-new",
+      "energy": "94435",
+      "energyTRX": 9.4435
+    },
+    {
+      "mode": 6,
+      "action": "transfer-existing",
+      "energy": "49435",
+      "energyTRX": 4.9435
+    },
+    {
+      "mode": 6,
+      "action": "approve",
+      "energy": "22846",
+      "energyTRX": 2.2846
+    },
+    {
+      "mode": 7,
+      "action": "create",
+      "energy": "682123",
+      "energyTRX": 68.2123
+    },
+    {
+      "mode": 7,
+      "action": "transfer-new",
+      "energy": "95016",
+      "energyTRX": 9.5016
+    },
+    {
+      "mode": 7,
+      "action": "transfer-existing",
+      "energy": "50016",
+      "energyTRX": 5.0016
+    },
+    {
+      "mode": 7,
+      "action": "approve",
+      "energy": "22988",
+      "energyTRX": 2.2988
+    },
+    {
+      "mode": 8,
+      "action": "create",
+      "energy": "1566828",
+      "energyTRX": 156.6828
+    },
+    {
+      "mode": 8,
+      "action": "mint-five",
+      "energy": "383979",
+      "energyTRX": 38.3979
+    },
+    {
+      "mode": 9,
+      "action": "create",
+      "energy": "266356",
+      "energyTRX": 26.6356
+    },
+    {
+      "mode": 9,
+      "action": "mint-five",
+      "energy": "384882",
+      "energyTRX": 38.4882
+    }
+  ],
+  "funded_signatures": 0,
+  "broadcasts": 0,
+  "network": "TRON mainnet",
+  "measured_at_utc": "2026-11-02T16:44:23.780872+00:00",
+  "compiler_sha256": "fa664fe58fb300ead5fb7ffda7bf75bc0b0db03fcb6f1686a53edaa16b6a9a91",
+  "release_runtime_hashes": {
+    "TronCollectionFactory": "0xf57aa7ee5a8f9907ed877b21edf84e4bed9d8b002f4c434a09b1d41cb22e2304",
+    "RockNFT": "0xd359cf90e0c168fefe379e90b3af1f1034374559a7037a780f7cee934d67bb64",
+    "RockToken": "0x40830b794001d5f7a3433ff1cf9a58d69c0809a6cab454b65c79721a49389257",
+    "TronFactoryV3": "0x9a295f565780dbb9b8db158f695e7505ed0c23dcdaddc26b2c4b0c6d68df2446",
+    "TronLaunchFactory": "0x0633f1310a3eb304bb10a5a6510f30a7a0ff2c3da5864fc6f8ae489f98911a2b",
+    "TronTokenDeployer": "0xc894f7cc44542d3562f55e9730e1610bee120acc6ca90ecf1460cacd5a6bec6f",
+    "TronNFTCollection": "0x931ed11600920e53c36b8920143b3877b8fd1f93bcc668b826edac5760a46176",
+    "TronToken": "0x73446219f194f85e752bf3b3bab0559884ed018e2f930a31e8baef3004023145",
+    "TronPositionLock": "0x39d95540f5d6eed6e70a97c5781d9d26fd3625af9a7c87cf230e1792d651ddad",
+    "TronVestingWallet": "0xf9865e8a934aace81f40d79e98db3fa56d4650817dfb84c99017a4cf299ad5e6"
+  },
+  "scope": "Representative customer actions measured using gasleft() in unsigned public-node TVM constructor simulations. Energy only: service fees, Bandwidth, factory setup and resource-rental costs are excluded. Existing balances and options change consumption; network prices and dynamic Energy factors may change."
+}

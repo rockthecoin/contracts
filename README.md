@@ -2,7 +2,7 @@
 
 [![Contracts](https://github.com/rockthecoin/contracts/actions/workflows/contracts.yml/badge.svg)](https://github.com/rockthecoin/contracts/actions/workflows/contracts.yml)
 
-Public smart-contract source for [RockTheCoin](https://www.rockthecoin.com): token and NFT creation, collections, distribution, liquidity tools, vesting, locks and optional Uniswap V4 creator rewards.
+Public smart-contract source for [RockTheCoin](https://www.rockthecoin.com): token and NFT creation, collections, distribution, liquidity tools, vesting, locks and optional Uniswap V4 or SunSwap V4 creator rewards.
 
 This repository publishes contract packages and their verification tools.
 
@@ -14,9 +14,10 @@ This repository publishes contract packages and their verification tools.
 - [Version notes and compatibility](docs/releases.md)
 - [Build and on-chain verification](docs/verification.md)
 - [Solana controller build and verification](docs/solana-verification.md)
+- [Native TRON releases, builds and verification](docs/tron-verification.md)
 - [Report a vulnerability privately](https://github.com/rockthecoin/contracts/security/advisories/new)
 
-The initial snapshot covers Solana, Ethereum, BNB Chain, Base, Arbitrum One and Polygon. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
+The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon and TRON. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7. TRON uses native V3 creation factories with V1 distribution and rewards contracts. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
 
 ## Packages
 
@@ -30,8 +31,9 @@ The initial snapshot covers Solana, Ethereum, BNB Chain, Base, Arbitrum One and 
 | `contracts/tools-v1/` | Atomic distribution and approved-protocol liquidity execution |
 | `contracts/rewards-v1/` through `rewards-v3/` | Uniswap V4 creator rewards; V1 also includes the CREATE2 address helper |
 | `contracts/solana-controller-v1/` | Immutable Solana mint caps, transfer-fee ceilings and vesting |
+| `contracts/tron-suite-v1/`, `tron-suite-v2/`, `tron-suite-v3/` | Native TRON tokens, NFTs, collections, locks, distribution, SunSwap liquidity and rewards |
 
-Each EVM package retains its saved compiler input, ABI and bytecode. Dependency source contents are embedded in `standard-input.json`; they do not depend on the current contents of an upstream repository. `packages.json` pins compiler versions and artifact locations. `SHA256SUMS` fingerprints the published packages.
+Each EVM and native TRON package retains its saved compiler input, ABI and bytecode. Dependency source contents are embedded in `standard-input.json`; they do not depend on the current contents of an upstream repository. `packages.json` pins compiler versions and artifact locations. `SHA256SUMS` fingerprints the published packages.
 
 ## Check locally
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-11-02",
-  "source_revision": "v1.0.1",
+  "snapshot_date": "2026-11-03",
+  "source_revision": "v1.1.0",
   "networks": [
     {
       "slug": "solana",
@@ -591,6 +591,80 @@
             "creation_match": "exact_match",
             "url": "https://repo.sourcify.dev/137/0x78f33a7e9a061821fc5fbf35d203c7b0df622044"
           }
+        }
+      ]
+    },
+    {
+      "slug": "tron",
+      "name": "TRON",
+      "family": "tron",
+      "chain_id": 728126428,
+      "native_symbol": "TRX",
+      "contracts": [
+        {
+          "label": "Basic tokens & single NFTs \u00b7 V3",
+          "deployment_id": "base",
+          "address": "TDjSvJVXgQqmjt8fXm17hTtnEpDDaDzDCw",
+          "package": "tron-suite-v3",
+          "contract": "TronFactoryV3",
+          "enabled": true,
+          "transaction_hash": "ec6117c3cf44766a54d8ad86b356511375d37e3acd226f0b2687a9b0b39817b6",
+          "explorer_url": "https://tronscan.org/#/contract/TDjSvJVXgQqmjt8fXm17hTtnEpDDaDzDCw",
+          "transaction_url": "https://tronscan.org/#/transaction/ec6117c3cf44766a54d8ad86b356511375d37e3acd226f0b2687a9b0b39817b6",
+          "source_download_url": "https://www.rockthecoin.com/contracts/tron-suite-v3/source.json",
+          "artifact": "contracts/tron-suite-v3/artifacts/TronFactoryV3.json"
+        },
+        {
+          "label": "Advanced tokens, vesting & locks \u00b7 V3",
+          "deployment_id": "builder",
+          "address": "TPJT2zxsm3jpkC8UNUBiHJdDmD3Y5Vz21W",
+          "package": "tron-suite-v3",
+          "contract": "TronLaunchFactory",
+          "enabled": true,
+          "transaction_hash": "77801bc1a88960427f8562eb9f4d1bebb1a953832845e573e2a3016a26552fbb",
+          "explorer_url": "https://tronscan.org/#/contract/TPJT2zxsm3jpkC8UNUBiHJdDmD3Y5Vz21W",
+          "transaction_url": "https://tronscan.org/#/transaction/77801bc1a88960427f8562eb9f4d1bebb1a953832845e573e2a3016a26552fbb",
+          "source_download_url": "https://www.rockthecoin.com/contracts/tron-suite-v3/source.json",
+          "artifact": "contracts/tron-suite-v3/artifacts/TronLaunchFactory.json"
+        },
+        {
+          "label": "Distribution & SunSwap liquidity \u00b7 V1",
+          "deployment_id": "tools",
+          "address": "TYBdGivBsYM7iNdzoLKyMc762jvw6LuTmv",
+          "package": "tron-suite-v1",
+          "contract": "TronServiceTools",
+          "enabled": true,
+          "transaction_hash": "5cb3b27a1ad5277c4f08112b6273eabab7e720adddb5cde5bf90f7abd3882037",
+          "explorer_url": "https://tronscan.org/#/contract/TYBdGivBsYM7iNdzoLKyMc762jvw6LuTmv",
+          "transaction_url": "https://tronscan.org/#/transaction/5cb3b27a1ad5277c4f08112b6273eabab7e720adddb5cde5bf90f7abd3882037",
+          "source_download_url": "https://www.rockthecoin.com/contracts/tron-suite-v1/source.json",
+          "artifact": "contracts/tron-suite-v1/artifacts/TronServiceTools.json"
+        },
+        {
+          "label": "NFT collections \u00b7 V3",
+          "deployment_id": "collections",
+          "address": "TNTfeWedvcYt2yYdTNbFjet8b96NyHV8py",
+          "package": "tron-suite-v3",
+          "contract": "TronCollectionFactory",
+          "enabled": true,
+          "transaction_hash": "aa5e18378eaa7574b3668ef9eb702602c1a57e9545e1b57c7f6e021feec5c4e9",
+          "explorer_url": "https://tronscan.org/#/contract/TNTfeWedvcYt2yYdTNbFjet8b96NyHV8py",
+          "transaction_url": "https://tronscan.org/#/transaction/aa5e18378eaa7574b3668ef9eb702602c1a57e9545e1b57c7f6e021feec5c4e9",
+          "source_download_url": "https://www.rockthecoin.com/contracts/tron-suite-v3/source.json",
+          "artifact": "contracts/tron-suite-v3/artifacts/TronCollectionFactory.json"
+        },
+        {
+          "label": "SunSwap V4 creator rewards \u00b7 V1",
+          "deployment_id": "rewards",
+          "address": "TJbdv529YMqhfdxjynGhdonmVidNNJYGHx",
+          "package": "tron-suite-v1",
+          "contract": "TronRewardsHook",
+          "enabled": true,
+          "transaction_hash": "e1191a6a7866db5779bfbdc01d73719377dac4522c37b990b4e2541ebb6dc612",
+          "explorer_url": "https://tronscan.org/#/contract/TJbdv529YMqhfdxjynGhdonmVidNNJYGHx",
+          "transaction_url": "https://tronscan.org/#/transaction/e1191a6a7866db5779bfbdc01d73719377dac4522c37b990b4e2541ebb6dc612",
+          "source_download_url": "https://www.rockthecoin.com/contracts/tron-suite-v1/source.json",
+          "artifact": "contracts/tron-suite-v1/artifacts/TronRewardsHook.json"
         }
       ]
     }

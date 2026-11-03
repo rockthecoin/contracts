@@ -229,5 +229,131 @@
     "compiler": "Agave cargo-build-sbf 4.4.0 / platform-tools v1.58 / Rust 1.95.0",
     "target": "sbf-solana-solana v0",
     "elf_sha256": "f06f417780232e687d0c3c663a736e85e7431c2efbbe7089a2c4da994183a5dc"
-  }
+  },
+  "tron": [
+    {
+      "id": "tron-suite-v1",
+      "compiler": "0.8.31+commit.c2812a3d",
+      "compiler_sha256": "fa664fe58fb300ead5fb7ffda7bf75bc0b0db03fcb6f1686a53edaa16b6a9a91",
+      "input": "contracts/tron-suite-v1/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/tron-suite-v1/artifacts/RockNFT.json",
+          "name": "RockNFT"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/RockToken.json",
+          "name": "RockToken"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronCodeStorage.json",
+          "name": "TronCodeStorage"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronCollectionFactory.json",
+          "name": "TronCollectionFactory"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronFactoryV2.json",
+          "name": "TronFactoryV2"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronLaunchFactory.json",
+          "name": "TronLaunchFactory"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronNFTCollection.json",
+          "name": "TronNFTCollection"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronPositionLock.json",
+          "name": "TronPositionLock"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronRewardsHook.json",
+          "name": "TronRewardsHook"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronServiceTools.json",
+          "name": "TronServiceTools"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronToken.json",
+          "name": "TronToken"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronTokenDeployer.json",
+          "name": "TronTokenDeployer"
+        },
+        {
+          "path": "contracts/tron-suite-v1/artifacts/TronVestingWallet.json",
+          "name": "TronVestingWallet"
+        }
+      ]
+    },
+    {
+      "id": "tron-suite-v2",
+      "compiler": "0.8.31+commit.c2812a3d",
+      "compiler_sha256": "fa664fe58fb300ead5fb7ffda7bf75bc0b0db03fcb6f1686a53edaa16b6a9a91",
+      "input": "contracts/tron-suite-v2/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/tron-suite-v2/artifacts/TronLaunchFactory.json",
+          "name": "TronLaunchFactory"
+        },
+        {
+          "path": "contracts/tron-suite-v2/artifacts/TronVestingWallet.json",
+          "name": "TronVestingWallet"
+        }
+      ]
+    },
+    {
+      "id": "tron-suite-v3",
+      "compiler": "0.8.31+commit.c2812a3d",
+      "compiler_sha256": "fa664fe58fb300ead5fb7ffda7bf75bc0b0db03fcb6f1686a53edaa16b6a9a91",
+      "input": "contracts/tron-suite-v3/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/tron-suite-v3/artifacts/RockNFT.json",
+          "name": "RockNFT"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/RockToken.json",
+          "name": "RockToken"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronCollectionFactory.json",
+          "name": "TronCollectionFactory"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronFactoryV3.json",
+          "name": "TronFactoryV3"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronLaunchFactory.json",
+          "name": "TronLaunchFactory"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronNFTCollection.json",
+          "name": "TronNFTCollection"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronPositionLock.json",
+          "name": "TronPositionLock"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronToken.json",
+          "name": "TronToken"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronTokenDeployer.json",
+          "name": "TronTokenDeployer"
+        },
+        {
+          "path": "contracts/tron-suite-v3/artifacts/TronVestingWallet.json",
+          "name": "TronVestingWallet"
+        }
+      ]
+    }
+  ]
 }

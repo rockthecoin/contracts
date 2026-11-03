@@ -15,3 +15,7 @@ Package versions are independent. A repository release groups a source snapshot;
 - **Solana controller V1:** immutable mint caps, fee ceilings and vesting. The published ELF has been rebuilt and compared with the existing mainnet program.
 
 Earlier versions remain separate packages. Known changes in a later version must not be interpreted as present in an earlier deployment. Local tests and source publication do not replace independent review. See [SECURITY.md](../SECURITY.md) for private reporting.
+
+## v1.1.0 — Native TRON
+
+Adds the native TRON V1/V2/V3 source packages, saved compiler inputs and artifacts, the five mainnet deployment records, compiler reproduction checks and dated unsigned TVM/SunSwap simulation evidence. Existing EVM and Solana contract bytes are unchanged. TRON V3 uses fixed clones for creation and locks; distribution and creator rewards retain V1 contracts.

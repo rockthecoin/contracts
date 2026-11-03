@@ -77,3 +77,17 @@ Chain ID: `137` · Network fees: **POL**.
 | Distribution & liquidity · ServiceTools V1 | [`tools-v1`](../contracts/tools-v1) | [`0x619ba400fb76057b548b0a604c0c379cad4d3800`](https://polygonscan.com/address/0x619ba400fb76057b548b0a604c0c379cad4d3800) |
 | Creator rewards address helper | [`rewards-v1`](../contracts/rewards-v1) | [`0xc7610117193d63ed7aec80fcc2195641ebf23fa9`](https://polygonscan.com/address/0xc7610117193d63ed7aec80fcc2195641ebf23fa9) |
 | Uniswap V4 creator rewards hook | [`rewards-v3`](../contracts/rewards-v3) | [`0x78f33a7e9a061821fc5fbf35d203c7b0df622044`](https://polygonscan.com/address/0x78f33a7e9a061821fc5fbf35d203c7b0df622044) |
+
+## TRON mainnet
+
+TRX pays network resources and the quoted service fee. Native TVM packages use their own compiler and quote domains. All five deployments were checked with solidified receipts and exact constructor and runtime verification.
+
+| Service | Contract | Version | Explorer |
+| --- | --- | --- | --- |
+| Basic tokens & single NFTs · V3 | `TDjSvJVXgQqmjt8fXm17hTtnEpDDaDzDCw` | tron-suite-v3 | [TronScan](https://tronscan.org/#/contract/TDjSvJVXgQqmjt8fXm17hTtnEpDDaDzDCw) |
+| Advanced tokens, vesting & locks · V3 | `TPJT2zxsm3jpkC8UNUBiHJdDmD3Y5Vz21W` | tron-suite-v3 | [TronScan](https://tronscan.org/#/contract/TPJT2zxsm3jpkC8UNUBiHJdDmD3Y5Vz21W) |
+| Distribution & SunSwap liquidity · V1 | `TYBdGivBsYM7iNdzoLKyMc762jvw6LuTmv` | tron-suite-v1 | [TronScan](https://tronscan.org/#/contract/TYBdGivBsYM7iNdzoLKyMc762jvw6LuTmv) |
+| NFT collections · V3 | `TNTfeWedvcYt2yYdTNbFjet8b96NyHV8py` | tron-suite-v3 | [TronScan](https://tronscan.org/#/contract/TNTfeWedvcYt2yYdTNbFjet8b96NyHV8py) |
+| SunSwap V4 creator rewards · V1 | `TJbdv529YMqhfdxjynGhdonmVidNNJYGHx` | tron-suite-v1 | [TronScan](https://tronscan.org/#/contract/TJbdv529YMqhfdxjynGhdonmVidNNJYGHx) |
+
+See [native TRON verification](tron-verification.md) and [dated mainnet evidence](../verification/tron-mainnet-2026-11-03.json).

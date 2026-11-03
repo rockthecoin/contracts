@@ -1,0 +1,47 @@
+{
+    "checks": [
+        {
+            "service": "fixed",
+            "energy": 185632,
+            "passed": true
+        },
+        {
+            "service": "managed",
+            "energy": 500963,
+            "passed": true
+        },
+        {
+            "service": "taxable",
+            "energy": 588028,
+            "passed": true
+        },
+        {
+            "service": "custom",
+            "energy": 791430,
+            "passed": true
+        },
+        {
+            "service": "single-nft",
+            "energy": 268765,
+            "passed": true
+        },
+        {
+            "service": "collection",
+            "energy": 312945,
+            "passed": true
+        },
+        {
+            "service": "multisender",
+            "energy": 47688,
+            "passed": true
+        }
+    ],
+    "token_inspection": {
+        "standard": "TRC-20",
+        "symbol": "USDT",
+        "decimals": 6
+    },
+    "production_writes": 0,
+    "funded_signatures": 0,
+    "broadcasts": 0
+}

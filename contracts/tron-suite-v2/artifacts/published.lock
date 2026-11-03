@@ -1,0 +1,14 @@
+{
+  "package": "tron-suite-v2",
+  "published_at": "2026-10-29T12:02:33.555341+00:00",
+  "compiler_sha256": "fa664fe58fb300ead5fb7ffda7bf75bc0b0db03fcb6f1686a53edaa16b6a9a91",
+  "files": {
+    "TronLaunchFactory.sol": "d3cdcfa4608928e92346b81de2805b2ce1aefcfa741961e237a1c4bfa1a0905b",
+    "TronVestingWallet.sol": "b44b39bd10f8c46379748c759b627005fc812c9c36e3ae11a35ba1ee20ed5eca",
+    "artifacts/TronLaunchFactory.json": "78f92fed4aca4d36a757d24f30a1b6b3c76ef60a5ce8e69754e20b1f8884a325",
+    "artifacts/TronVestingWallet.json": "d2e13c962c393d72c460544a6921fcd061cd03216f16db7c279000a3cd187d57",
+    "artifacts/abis.json": "701b5fe4eac1b703eda09d12a4936fd848ada2b4c719ebe663285604a9be5bcd",
+    "artifacts/manifest.json": "6fb9c93068881bcd210754838612a0029bdfa0ab149309dba6c3eb0005f9db30",
+    "artifacts/standard-input.json": "2dfaa400971b759b6ae349b26d253fbff589c88d1e562b3933ef942d7fef12d7"
+  }
+}

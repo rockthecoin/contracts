@@ -1,0 +1,6 @@
+{
+  "version": "0.8.31+commit.c2812a3d",
+  "target": "native TRON TVM",
+  "url": "https://raw.githubusercontent.com/tronprotocol/solc-bin/c7c724bc6916395f2a4c4c7f28e1353781bd7f40/linux-amd64/solc-linux-amd64-v0.8.31+commit.c2812a3d",
+  "sha256": "fa664fe58fb300ead5fb7ffda7bf75bc0b0db03fcb6f1686a53edaa16b6a9a91"
+}

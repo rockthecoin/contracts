@@ -1,0 +1,135 @@
+{
+  "checked_at": "2026-11-03T11:25:37+00:00",
+  "chain_id": 728126428,
+  "genesis": "00000000000000001ebf88508a03865c71d452e25f4d51194196a1d22b6653dc",
+  "solidified_height": "87677157",
+  "owner": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+  "treasury": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+  "quote_signer": "TVHEjharqjK4cR5s1EDFHENDM5f3dToEDS",
+  "contracts": {
+    "base": {
+      "address": "TDjSvJVXgQqmjt8fXm17hTtnEpDDaDzDCw",
+      "hash": "ec6117c3cf44766a54d8ad86b356511375d37e3acd226f0b2687a9b0b39817b6",
+      "block": "87676155",
+      "version": 3,
+      "state": {
+        "contract_version": 3,
+        "owner": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "treasury": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "quoteSigner": "TVHEjharqjK4cR5s1EDFHENDM5f3dToEDS",
+        "paused": "0",
+        "tokenImplementation": "TD2XEbAhjY63x5m4DMfdU2pi31abphJwSL",
+        "nftImplementation": "TRbQtdadbxc2DM49P8EsGQkHYDmE9EFLb8",
+        "fixedCodeVerified": true
+      },
+      "solidified": true,
+      "constructor_verified": true
+    },
+    "builder": {
+      "address": "TPJT2zxsm3jpkC8UNUBiHJdDmD3Y5Vz21W",
+      "hash": "77801bc1a88960427f8562eb9f4d1bebb1a953832845e573e2a3016a26552fbb",
+      "block": "87676832",
+      "version": 3,
+      "state": {
+        "contract_version": 3,
+        "owner": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "treasury": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "quoteSigner": "TVHEjharqjK4cR5s1EDFHENDM5f3dToEDS",
+        "paused": "0",
+        "tokenDeployer": "TLZLV8Z5kp9skkfXm9aLJSDvmLS4jFX8uj",
+        "tokenImplementation": "TUXdy6Z3CyCbSVp8DMzKH9PTxkLuPvJp7f",
+        "vestingImplementation": "TYkx4DBpem174ZHUXeUQRJnJenyTE7HjAk",
+        "positionImplementation": "TLQPuKrgk2e23gqPfB5UKbzThk9VGvgwfw",
+        "fixedCodeVerified": true,
+        "factory_version": 3
+      },
+      "solidified": true,
+      "constructor_verified": true
+    },
+    "tools": {
+      "address": "TYBdGivBsYM7iNdzoLKyMc762jvw6LuTmv",
+      "hash": "5cb3b27a1ad5277c4f08112b6273eabab7e720adddb5cde5bf90f7abd3882037",
+      "block": "87676916",
+      "version": 1,
+      "state": {
+        "contract_version": 1,
+        "owner": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "treasury": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "quoteSigner": "TVHEjharqjK4cR5s1EDFHENDM5f3dToEDS",
+        "paused": "0"
+      },
+      "solidified": true,
+      "constructor_verified": true
+    },
+    "collections": {
+      "address": "TNTfeWedvcYt2yYdTNbFjet8b96NyHV8py",
+      "hash": "aa5e18378eaa7574b3668ef9eb702602c1a57e9545e1b57c7f6e021feec5c4e9",
+      "block": "87676964",
+      "version": 3,
+      "state": {
+        "contract_version": 3,
+        "owner": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "treasury": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "quoteSigner": "TVHEjharqjK4cR5s1EDFHENDM5f3dToEDS",
+        "paused": "0",
+        "collectionImplementation": "TVEDczWgYRrxFks57xuntjG2geTvmRZPQV",
+        "fixedCodeVerified": true
+      },
+      "solidified": true,
+      "constructor_verified": true
+    },
+    "rewards": {
+      "address": "TJbdv529YMqhfdxjynGhdonmVidNNJYGHx",
+      "hash": "e1191a6a7866db5779bfbdc01d73719377dac4522c37b990b4e2541ebb6dc612",
+      "block": "87677030",
+      "version": 1,
+      "state": {
+        "contract_version": 1,
+        "owner": "TGtANkW7AHyQ3xYyJPURHqtadGvv8dvdUK",
+        "quoteSigner": "TVHEjharqjK4cR5s1EDFHENDM5f3dToEDS",
+        "poolManager": "TVjuTE3V5bMVdpfNhid8kD2v35T2k1u1Br",
+        "serviceTools": "TYBdGivBsYM7iNdzoLKyMc762jvw6LuTmv",
+        "rewardsPaused": "0",
+        "getHooksRegistrationBitmap": "2177"
+      },
+      "solidified": true,
+      "constructor_verified": true
+    }
+  },
+  "protocol": {
+    "v2Factory": "TKWJdrQkqHisa1X8HUdHEfREvTzw4pMAaY",
+    "v2Router": "TNJVzGqKBWkJxJB5XYSqGAwUTV15U24pPq",
+    "v3Factory": "TThJt8zaJzJMhCEScH7zWKnp5buVZqys9x",
+    "v3Manager": "TLSWrv7eC1AZCXkRjpqMZUmvgd99cj7pPF",
+    "v4Manager": "TC8xQzPHfn5KceZV6s6GmZkBCFWWUoPXs1",
+    "v4PoolManager": "TVjuTE3V5bMVdpfNhid8kD2v35T2k1u1Br",
+    "permit2": "TTJxU3P8rHycAyFY4kVtGNfmnMH4ezcuM9"
+  },
+  "protocol_targets": [
+    {
+      "name": "SunSwap V2 router",
+      "address": "TNJVzGqKBWkJxJB5XYSqGAwUTV15U24pPq",
+      "allowed": true
+    },
+    {
+      "name": "SunSwap V3 positions",
+      "address": "TLSWrv7eC1AZCXkRjpqMZUmvgd99cj7pPF",
+      "allowed": true
+    },
+    {
+      "name": "SunSwap V4 positions",
+      "address": "TC8xQzPHfn5KceZV6s6GmZkBCFWWUoPXs1",
+      "allowed": true
+    },
+    {
+      "name": "Permit2 exact allowances",
+      "address": "TTJxU3P8rHycAyFY4kVtGNfmnMH4ezcuM9",
+      "allowed": true
+    },
+    {
+      "name": "RockTheCoin SunSwap creator rewards",
+      "address": "TJbdv529YMqhfdxjynGhdonmVidNNJYGHx",
+      "allowed": true
+    }
+  ]
+}

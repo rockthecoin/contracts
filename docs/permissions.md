@@ -37,3 +37,18 @@ Solana tokens use SPL Token or Token-2022; NFT collections use Metaplex Core. Th
 ## Check the current state
 
 Ownership, recipients, signers, pause state and enabled target lists can change through the controls above. [Deployment evidence](verification/) is dated, not a continuously refreshed health guarantee. Re-run the read-only verification commands and inspect the explorer before relying on an address.
+
+## Native TRON
+
+The native TRON factory and ServiceTools owners can change the service receiving
+wallet and quote signer, approve protocol targets and pause new service calls.
+These powers do not change existing tokens' creators or their selected asset
+permissions. V3 implementation addresses are fixed and initialization is locked.
+The reward-hook owner can pause new registration and accrual; existing claims
+remain available. Creator pool settings stay subject to their permanent caps.
+
+Prices are configured in EUR and converted to a short-lived native TRX quote.
+Creation, the selected configuration and the service payment share one
+transaction. Failed calls roll back the service payment; network Energy and
+Bandwidth costs can still apply. Approvals, liquidity deposits, distribution
+and subsequent collection minting have their own reviewed actions.
