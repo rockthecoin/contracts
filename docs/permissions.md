@@ -52,3 +52,29 @@ Creation, the selected configuration and the service payment share one
 transaction. Failed calls roll back the service payment; network Energy and
 Bandwidth costs can still apply. Approvals, liquidity deposits, distribution
 and subsequent collection minting have their own reviewed actions.
+
+## Native Cardano
+
+Cardano native assets use a per-creation minting policy. Fixed supply and meme
+presets close additional issuance; managed/custom assets can retain capped
+minting, delegated minters, issuance pause and editable metadata. Issuance pause
+does not stop native transfers. Ordinary native assets do not have ERC-20
+allowances, issuer transfer taxes, account blocklists or transfer freezes.
+
+Controller ownership uses nomination and acceptance. Permanent mint closure,
+metadata freezing and ownership renunciation cannot be reversed by the platform.
+Collection item metadata may be frozen individually; freezing the collection
+also prevents subsequent item updates through its controller.
+
+Vesting and asset locks hold native assets for a fixed beneficiary and schedule.
+Surplus recovery requires the vesting beneficiary and cannot consume the vesting
+principal or its ADA reserve. Operator reference scripts are reusable code copies,
+not customer balances. Their publisher can reclaim the reference deposit by
+spending the output, but cannot change the published code or customer permissions.
+
+Service prices are converted from EUR to ADA for the reviewed transaction.
+Creation and its tagged service payment share one transaction. Script-failure
+collateral and Cardano network costs remain separate. Minswap deposit/withdrawal
+orders are placed first and executed later by a batcher; placing an order is not
+the same event as its execution. Order cancellation returns its locked value;
+an already-paid service fee for placement is not automatically refunded.

@@ -1,0 +1,13 @@
+{
+  "package": "cardano-v1",
+  "status": "published",
+  "frozen_at": "2026-10-29",
+  "sha256": {
+    "aiken.lock": "e7259cb6908d42dff5d37625a1bf011e82ffb8c68a58773470975dba71199e53",
+    "aiken.toml": "8748d0b363afc08f8515a0b6d213694ce4e9c44bd64b7a66db092fb38956dce0",
+    "artifacts/scripts.json": "5a09d43921f39060dfe2902fe6007766688669118719686383001347cf9045c7",
+    "plutus.json": "cc88e32304ee1172e90c25bc7cd41e063cee31ddb30d9f89f2ca6de7f7e90218",
+    "validators/creation.ak": "5f7dfec3df12ac8b29bc5e0c544e086b8c6bdfa0b8a0c8290b24cab4dd721783",
+    "validators/creation.test.ak": "cbc6171d996e89d0ac896f69c43e287e3e57d86d6e0b2ecb9676518b65f17f00"
+  }
+}

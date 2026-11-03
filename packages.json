@@ -355,5 +355,31 @@
         }
       ]
     }
+  ],
+  "cardano": [
+    {
+      "id": "cardano-v1",
+      "directory": "contracts/cardano-v1",
+      "compiler": "aiken v1.1.24+bacbeb3",
+      "compiler_sha256": "4257cc8be37cbde5bf7b5dd111e43a1277f45352fb2433ad7a7e647209aa7677",
+      "plutus": 3,
+      "status": "current"
+    },
+    {
+      "id": "cardano-suite-v1",
+      "directory": "contracts/cardano-suite-v1",
+      "compiler": "aiken v1.1.24+bacbeb3",
+      "compiler_sha256": "4257cc8be37cbde5bf7b5dd111e43a1277f45352fb2433ad7a7e647209aa7677",
+      "plutus": 3,
+      "status": "historical"
+    },
+    {
+      "id": "cardano-suite-v2",
+      "directory": "contracts/cardano-suite-v2",
+      "compiler": "aiken v1.1.24+bacbeb3",
+      "compiler_sha256": "4257cc8be37cbde5bf7b5dd111e43a1277f45352fb2433ad7a7e647209aa7677",
+      "plutus": 3,
+      "status": "current"
+    }
   ]
 }

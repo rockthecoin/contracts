@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "snapshot_date": "2026-11-03",
-  "source_revision": "v1.1.0",
+  "source_revision": "v1.2.0",
   "networks": [
     {
       "slug": "solana",
@@ -665,6 +665,81 @@
           "transaction_url": "https://tronscan.org/#/transaction/e1191a6a7866db5779bfbdc01d73719377dac4522c37b990b4e2541ebb6dc612",
           "source_download_url": "https://www.rockthecoin.com/contracts/tron-suite-v1/source.json",
           "artifact": "contracts/tron-suite-v1/artifacts/TronRewardsHook.json"
+        }
+      ]
+    },
+    {
+      "slug": "cardano",
+      "name": "Cardano",
+      "family": "cardano",
+      "chain_id": null,
+      "network_magic": 764824073,
+      "native_symbol": "ADA",
+      "plutus": 3,
+      "creation_packages": [
+        "cardano-v1",
+        "cardano-suite-v2"
+      ],
+      "contracts": [
+        {
+          "label": "Token issuance & NFT collections \u00b7 V2",
+          "address": "73f827d0ca9e6d89dfe3113ce5d877b9f6c58c379cb7e4ebf01d1aab15873da5#0",
+          "reference_output": "73f827d0ca9e6d89dfe3113ce5d877b9f6c58c379cb7e4ebf01d1aab15873da5#0",
+          "package": "cardano-suite-v2",
+          "contract": "issuance.controller.spend",
+          "script_id": "controller",
+          "script_hash": "bb6ec2441439497a5b254ff926d90c5f8f49db92c7bbf6662135240d",
+          "script_bytes": 6784,
+          "owner_address": "addr1qxn0238qtjjexyaj90gktnmfc3fmtgg8qrnd4h3s2ptcjxzn598dqgjs85jqux6swz0h05z2rz4zu7n85u9v942q7emsdf005c",
+          "enabled": true,
+          "explorer_url": "https://cardanoscan.io/transaction/73f827d0ca9e6d89dfe3113ce5d877b9f6c58c379cb7e4ebf01d1aab15873da5?index=0",
+          "source_download_url": "https://www.rockthecoin.com/contracts/cardano-suite-v2/source.json",
+          "artifact": "contracts/cardano-suite-v2/artifacts/scripts.json"
+        },
+        {
+          "label": "CIP-68 item metadata \u00b7 V2",
+          "address": "9a41a862a0ee07dd0e4f41b83672d5c7ab31ae5cdf0a4e82cdecbb65b9f626c5#0",
+          "reference_output": "9a41a862a0ee07dd0e4f41b83672d5c7ab31ae5cdf0a4e82cdecbb65b9f626c5#0",
+          "package": "cardano-suite-v2",
+          "contract": "metadata.metadata.spend",
+          "script_id": "metadata",
+          "script_hash": "dcc3999788df2abf1e8124ac8bcb5463f99af0a53cc72ceadb4b0fbe",
+          "script_bytes": 3729,
+          "owner_address": "addr1qxn0238qtjjexyaj90gktnmfc3fmtgg8qrnd4h3s2ptcjxzn598dqgjs85jqux6swz0h05z2rz4zu7n85u9v942q7emsdf005c",
+          "enabled": true,
+          "explorer_url": "https://cardanoscan.io/transaction/9a41a862a0ee07dd0e4f41b83672d5c7ab31ae5cdf0a4e82cdecbb65b9f626c5?index=0",
+          "source_download_url": "https://www.rockthecoin.com/contracts/cardano-suite-v2/source.json",
+          "artifact": "contracts/cardano-suite-v2/artifacts/scripts.json"
+        },
+        {
+          "label": "Vesting & LP-token locks \u00b7 V2",
+          "address": "0c6f9a043eb117dc797ebb23b39e30ff37620be12eeff9657a9a554229efca8e#0",
+          "reference_output": "0c6f9a043eb117dc797ebb23b39e30ff37620be12eeff9657a9a554229efca8e#0",
+          "package": "cardano-suite-v2",
+          "contract": "vesting.vesting.spend",
+          "script_id": "vesting",
+          "script_hash": "a14d989ee96d8a8623f2c553841ff38708619e2f0eb10e3b7d5f7b37",
+          "script_bytes": 3730,
+          "owner_address": "addr1qxn0238qtjjexyaj90gktnmfc3fmtgg8qrnd4h3s2ptcjxzn598dqgjs85jqux6swz0h05z2rz4zu7n85u9v942q7emsdf005c",
+          "enabled": true,
+          "explorer_url": "https://cardanoscan.io/transaction/0c6f9a043eb117dc797ebb23b39e30ff37620be12eeff9657a9a554229efca8e?index=0",
+          "source_download_url": "https://www.rockthecoin.com/contracts/cardano-suite-v2/source.json",
+          "artifact": "contracts/cardano-suite-v2/artifacts/scripts.json"
+        },
+        {
+          "label": "NFT, LP & asset locks \u00b7 V2",
+          "address": "6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e#0",
+          "reference_output": "6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e#0",
+          "package": "cardano-suite-v2",
+          "contract": "asset_lock.asset_lock.spend",
+          "script_id": "asset_lock",
+          "script_hash": "da13579f1eb2ccafdbda1f4ca7910c0e799e387854aad97ca8337f31",
+          "script_bytes": 1276,
+          "owner_address": "addr1qxn0238qtjjexyaj90gktnmfc3fmtgg8qrnd4h3s2ptcjxzn598dqgjs85jqux6swz0h05z2rz4zu7n85u9v942q7emsdf005c",
+          "enabled": true,
+          "explorer_url": "https://cardanoscan.io/transaction/6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e?index=0",
+          "source_download_url": "https://www.rockthecoin.com/contracts/cardano-suite-v2/source.json",
+          "artifact": "contracts/cardano-suite-v2/artifacts/scripts.json"
         }
       ]
     }

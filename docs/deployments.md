@@ -1,6 +1,6 @@
 # Mainnet deployment snapshot
 
-Snapshot: **2026-11-02**, source release [`v1.0.1`](https://github.com/rockthecoin/contracts/releases/tag/v1.0.1). Each address below was compared with its exact saved runtime. The Solana executable was also rebuilt byte for byte. All 31 listed EVM contracts also have matching source verified by Sourcify. These are dated checks; service configuration and owner state can change.
+Snapshot: **2026-11-03**, source release [`v1.2.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.2.0). Cardano V2 reference outputs were checked against their exact script bytes and hashes. Earlier EVM, Solana and TRON verification dates remain in their evidence files; those contract packages are unchanged. These are dated checks, and current service configuration or reference availability can change.
 
 See [machine-readable addresses](../deployments.json), [EVM comparison evidence](verification/evm-mainnet-check.json), [Solana comparison evidence](verification/solana-mainnet-check.json), [Sourcify source verification](verification/sourcify-source-status.json) and [verification instructions](verification.md).
 
@@ -91,3 +91,20 @@ TRX pays network resources and the quoted service fee. Native TVM packages use t
 | SunSwap V4 creator rewards · V1 | `TJbdv529YMqhfdxjynGhdonmVidNNJYGHx` | tron-suite-v1 | [TronScan](https://tronscan.org/#/contract/TJbdv529YMqhfdxjynGhdonmVidNNJYGHx) |
 
 See [native TRON verification](tron-verification.md) and [dated mainnet evidence](../verification/tron-mainnet-2026-11-03.json).
+
+## Cardano
+
+Mainnet network magic: `764824073` · Network fees: **ADA** · Plutus **V3**.
+
+Each customer creation gets a parameterized issuance policy. The following are
+shared CIP-33 reference outputs, not shared token-factory addresses. They were
+confirmed and unspent when verified.
+
+| Reference script | Versioned source | Mainnet output |
+| --- | --- | --- |
+| Token issuance & NFT collections · V2 | [`cardano-suite-v2`](../contracts/cardano-suite-v2) | [`73f827d0ca9e6d89dfe3113ce5d877b9f6c58c379cb7e4ebf01d1aab15873da5#0`](https://cardanoscan.io/transaction/73f827d0ca9e6d89dfe3113ce5d877b9f6c58c379cb7e4ebf01d1aab15873da5?index=0) |
+| CIP-68 item metadata · V2 | [`cardano-suite-v2`](../contracts/cardano-suite-v2) | [`9a41a862a0ee07dd0e4f41b83672d5c7ab31ae5cdf0a4e82cdecbb65b9f626c5#0`](https://cardanoscan.io/transaction/9a41a862a0ee07dd0e4f41b83672d5c7ab31ae5cdf0a4e82cdecbb65b9f626c5?index=0) |
+| Vesting & LP-token locks · V2 | [`cardano-suite-v2`](../contracts/cardano-suite-v2) | [`0c6f9a043eb117dc797ebb23b39e30ff37620be12eeff9657a9a554229efca8e#0`](https://cardanoscan.io/transaction/0c6f9a043eb117dc797ebb23b39e30ff37620be12eeff9657a9a554229efca8e?index=0) |
+| NFT, LP & asset locks · V2 | [`cardano-suite-v2`](../contracts/cardano-suite-v2) | [`6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e#0`](https://cardanoscan.io/transaction/6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e?index=0) |
+
+See [Cardano builds and verification](cardano-verification.md), [original single-NFT source](../contracts/cardano-v1) and [dated mainnet evidence](../verification/cardano-mainnet-2026-11-03.json). Minswap V2 liquidity uses the existing Minswap protocol scripts.

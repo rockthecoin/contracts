@@ -1,0 +1,8 @@
+{
+  "version": "aiken v1.1.24+bacbeb3",
+  "plutus": 3,
+  "stdlib": "v4.0.0",
+  "url": "https://github.com/aiken-lang/aiken/releases/download/v1.1.24/aiken-x86_64-unknown-linux-musl.tar.gz",
+  "archive_sha256": "c378acccdaf9533f3375ea623c948d3dcb21f7e8c5ecbb741162c53653470b13",
+  "binary_sha256": "4257cc8be37cbde5bf7b5dd111e43a1277f45352fb2433ad7a7e647209aa7677"
+}

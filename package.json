@@ -1,6 +1,6 @@
 {
   "name": "@rockthecoin/contracts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -14,7 +14,10 @@
     "verify:chain": "node scripts/verify-chain.mjs",
     "verify:source": "node scripts/verify-sourcify.mjs",
     "verify:tron-builds": "node scripts/verify-tron-builds.mjs",
-    "verify:tron-chain": "node scripts/verify-tron-chain.mjs"
+    "verify:tron-chain": "node scripts/verify-tron-chain.mjs",
+    "verify:cardano": "python3 scripts/verify-cardano.py",
+    "verify:cardano-builds": "python3 scripts/rebuild-cardano.py",
+    "verify:cardano-chain": "python3 scripts/verify-cardano-chain.py"
   },
   "overrides": {
     "tmp": "0.2.7"

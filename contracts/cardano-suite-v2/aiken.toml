@@ -1,0 +1,13 @@
+name = "rockthecoin/cardano-suite-v2"
+version = "2.0.0"
+compiler = "v1.1.24"
+plutus = "v3"
+license = "Apache-2.0"
+description = "Managed issuance, collections, CIP-68 metadata, vesting and asset locks"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v4.0.0"
+source = "github"
+
+[config]

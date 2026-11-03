@@ -1,0 +1,275 @@
+{
+  "network": "Cardano mainnet",
+  "network_magic": 764824073,
+  "checked_at": "2026-11-03T16:25:20.881954+00:00",
+  "result": "passed",
+  "owner_address": "addr1qxn0238qtjjexyaj90gktnmfc3fmtgg8qrnd4h3s2ptcjxzn598dqgjs85jqux6swz0h05z2rz4zu7n85u9v942q7emsdf005c",
+  "package": "cardano-suite-v2",
+  "compiler": "aiken v1.1.24+bacbeb3",
+  "compiler_sha256": "4257cc8be37cbde5bf7b5dd111e43a1277f45352fb2433ad7a7e647209aa7677",
+  "references": [
+    {
+      "script_id": "controller",
+      "reference": "73f827d0ca9e6d89dfe3113ce5d877b9f6c58c379cb7e4ebf01d1aab15873da5#0",
+      "script_hash": "bb6ec2441439497a5b254ff926d90c5f8f49db92c7bbf6662135240d",
+      "block_height": 14153223,
+      "confirmations": 112,
+      "unspent": true,
+      "exact_script_match": true
+    },
+    {
+      "script_id": "metadata",
+      "reference": "9a41a862a0ee07dd0e4f41b83672d5c7ab31ae5cdf0a4e82cdecbb65b9f626c5#0",
+      "script_hash": "dcc3999788df2abf1e8124ac8bcb5463f99af0a53cc72ceadb4b0fbe",
+      "block_height": 14153273,
+      "confirmations": 62,
+      "unspent": true,
+      "exact_script_match": true
+    },
+    {
+      "script_id": "vesting",
+      "reference": "0c6f9a043eb117dc797ebb23b39e30ff37620be12eeff9657a9a554229efca8e#0",
+      "script_hash": "a14d989ee96d8a8623f2c553841ff38708619e2f0eb10e3b7d5f7b37",
+      "block_height": 14153294,
+      "confirmations": 41,
+      "unspent": true,
+      "exact_script_match": true
+    },
+    {
+      "script_id": "asset_lock",
+      "reference": "6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e#0",
+      "script_hash": "da13579f1eb2ccafdbda1f4ca7910c0e799e387854aad97ca8337f31",
+      "block_height": 14153302,
+      "confirmations": 33,
+      "unspent": true,
+      "exact_script_match": true
+    }
+  ],
+  "unsigned_customer_evaluation": {
+    "result": "passed",
+    "uses_published_mainnet_references": true,
+    "synthetic_supplemental_inputs": true,
+    "scenarios": [
+      {
+        "name": "token-create",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 4529,
+        "networkFee": "415923"
+      },
+      {
+        "name": "token-mint",
+        "evaluated": true,
+        "validators": 2,
+        "bytes": 4581,
+        "networkFee": "563106"
+      },
+      {
+        "name": "token-burn",
+        "evaluated": true,
+        "validators": 2,
+        "bytes": 4498,
+        "networkFee": "553445"
+      },
+      {
+        "name": "token-pause",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 751,
+        "networkFee": "372934"
+      },
+      {
+        "name": "token-permissions",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 811,
+        "networkFee": "379904"
+      },
+      {
+        "name": "token-transfer_ownership",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 813,
+        "networkFee": "376271"
+      },
+      {
+        "name": "token-transfer_ownership-cancel",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 751,
+        "networkFee": "372152"
+      },
+      {
+        "name": "token-revoke_mint",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 747,
+        "networkFee": "372332"
+      },
+      {
+        "name": "token-update_metadata",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 755,
+        "networkFee": "367564"
+      },
+      {
+        "name": "token-make_immutable",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 815,
+        "networkFee": "376934"
+      },
+      {
+        "name": "token-renounce_ownership",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 717,
+        "networkFee": "373036"
+      },
+      {
+        "name": "token-accept-ownership",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 777,
+        "networkFee": "377836"
+      },
+      {
+        "name": "collection-create",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 4383,
+        "networkFee": "400078"
+      },
+      {
+        "name": "collection-mint",
+        "evaluated": true,
+        "validators": 2,
+        "bytes": 4896,
+        "networkFee": "605677"
+      },
+      {
+        "name": "collection-item-metadata",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 669,
+        "networkFee": "312490"
+      },
+      {
+        "name": "collection-ipfs-attributes",
+        "evaluated": true,
+        "validators": 2,
+        "bytes": 5565,
+        "networkFee": "647818"
+      },
+      {
+        "name": "collection-burn",
+        "evaluated": true,
+        "validators": 2,
+        "bytes": 4469,
+        "networkFee": "553675"
+      },
+      {
+        "name": "multisender",
+        "evaluated": false,
+        "validators": 0,
+        "bytes": 250,
+        "networkFee": "173045"
+      },
+      {
+        "name": "vesting-create",
+        "evaluated": false,
+        "validators": 0,
+        "bytes": 419,
+        "networkFee": "180481"
+      },
+      {
+        "name": "vesting-partial",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 688,
+        "networkFee": "290554"
+      },
+      {
+        "name": "vesting-full",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 485,
+        "networkFee": "274848"
+      },
+      {
+        "name": "vesting-surplus",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 707,
+        "networkFee": "283845"
+      },
+      {
+        "name": "ada-vesting-create",
+        "evaluated": false,
+        "validators": 0,
+        "bytes": 307,
+        "networkFee": "175553"
+      },
+      {
+        "name": "ada-vesting-partial",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 582,
+        "networkFee": "284731"
+      },
+      {
+        "name": "original-single-nft-burn",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 1909,
+        "networkFee": "250171"
+      },
+      {
+        "name": "asset-lock-create",
+        "evaluated": false,
+        "validators": 0,
+        "bytes": 356,
+        "networkFee": "177709"
+      },
+      {
+        "name": "asset-lock-release",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 466,
+        "networkFee": "216522"
+      },
+      {
+        "name": "minswap-pool-create",
+        "evaluated": true,
+        "validators": 2,
+        "bytes": 1364,
+        "networkFee": "452701"
+      },
+      {
+        "name": "minswap-deposit",
+        "evaluated": false,
+        "validators": 0,
+        "bytes": 534,
+        "networkFee": "185541"
+      },
+      {
+        "name": "minswap-withdraw",
+        "evaluated": false,
+        "validators": 0,
+        "bytes": 588,
+        "networkFee": "187917"
+      },
+      {
+        "name": "minswap-cancel",
+        "evaluated": true,
+        "validators": 1,
+        "bytes": 472,
+        "networkFee": "236687"
+      }
+    ],
+    "funded_signatures": 0,
+    "broadcasts": 0
+  },
+  "limits": "Project-maintained code and chain checks, not an independent audit. No funded customer transaction was signed or broadcast."
+}

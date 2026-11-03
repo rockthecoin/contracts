@@ -1,0 +1,23 @@
+{
+  "package": "cardano-suite-v2",
+  "status": "published",
+  "frozen_at": "2026-10-29",
+  "sha256": {
+    "aiken.lock": "e7259cb6908d42dff5d37625a1bf011e82ffb8c68a58773470975dba71199e53",
+    "aiken.toml": "8808f0bbe37fbe5aedea6b581a6a156963d561933fd5493773fab864ec7f4312",
+    "artifacts/scripts.json": "3051a96a66ca93346a0a4e759dcd3927b0c1852e870f396d7f0850b62cb8106d",
+    "artifacts/source.json": "d54c1873b2c0c7324660df8954d48e905e9a75aff9ec536b872cd1ca4fe96979",
+    "lib/rtc/common.ak": "eada5b2648842a0500bf62bc7e990ca2131a5aa39e526bb7f79914fb20d7a491",
+    "lib/rtc/fixtures.ak": "b90c9d6004ce97db77adb01a780243072ce2108011e1187d10d972e627776cb6",
+    "lib/rtc/issuance.ak": "d911714ae5a6d3100e9cf80df722abf4662a80396b0d3f9d2805595d1d966abe",
+    "plutus.json": "3180fa965aea25d1bc7d4727a73931629a680fd88ca296d4f23a5b536800b525",
+    "validators/asset_lock.ak": "43335cc9a9ccc122ba23f285d6cd0f9fc4c9af7b6dc3679b3da0834d969ff510",
+    "validators/issuance.ak": "b16854576e1f7882c878ee633042013dd41883bd74aadff29c544f37d14a52eb",
+    "validators/issuance.test.ak": "620357e4bb7b3e983f509f1c2d98c4e4d9b6c0cbf68f0ad4bd9af5492e9ef4ac",
+    "validators/locks.test.ak": "f0a9764e07277b9072896114724ab52146bf6ca3088a6d8260a2fd7d7392d53f",
+    "validators/metadata.ak": "5e5fa98fbdf58ffd50755f34e829dcd8ec5e041b1ca860d725dc0b0290ba498c",
+    "validators/metadata.test.ak": "1ee5985277c39fc3399dc2d7c89bb0818b9fe7baaf560f9102d874716c4a8c44",
+    "validators/security.test.ak": "36daeba16a97154a47a46d5bd31da55acee92656a34b6d6bd31e7d4779fbcb20",
+    "validators/vesting.ak": "f94023e9513bc57a5f224c661c0506442255a8fb5a51d39a33b5ccf4f662f0f8"
+  }
+}

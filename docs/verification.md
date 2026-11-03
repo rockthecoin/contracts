@@ -33,3 +33,9 @@ Run `npm run verify:source` to look up current Sourcify status without changing 
 ## Interpreting a result
 
 A matching build proves the published input produces the saved artifact. A matching runtime proves the checked address uses the expected code, allowing only its documented immutable constructor values. Neither result is an independent security audit. Saved owner and service settings can change after the recorded block.
+
+## Cardano
+
+Use the [Cardano verification guide](cardano-verification.md) to check the frozen
+Aiken source, reproduce the Plutus V3 validators and read current mainnet reference
+outputs. The optional mainnet command has no signing or submission operation.

@@ -19,3 +19,13 @@ Earlier versions remain separate packages. Known changes in a later version must
 ## v1.1.0 — Native TRON
 
 Adds the native TRON V1/V2/V3 source packages, saved compiler inputs and artifacts, the five mainnet deployment records, compiler reproduction checks and dated unsigned TVM/SunSwap simulation evidence. Existing EVM and Solana contract bytes are unchanged. TRON V3 uses fixed clones for creation and locks; distribution and creator rewards retain V1 contracts.
+
+## v1.2.0 — Native Cardano
+
+Adds the original Cardano V1 creation policy, historical suite V1 and current
+suite V2, Aiken sources/tests, blueprints, compiled scripts, compiler pins and
+four confirmed V2 mainnet reference outputs. Includes offline hash checks,
+reproducible Aiken builds, read-only mainnet reference verification and dated
+unsigned customer evaluation evidence. Existing EVM, Solana and TRON package
+bytes are unchanged. Each customer's issuance policy remains separately
+parameterized; reference publication does not upgrade existing assets.

@@ -1,0 +1,13 @@
+name = "rockthecoin/cardano-v1"
+version = "1.0.0"
+compiler = "v1.1.24"
+plutus = "v3"
+license = "Apache-2.0"
+description = "One-shot creation with atomic ADA payment and immutable CIP-68 metadata"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v4.0.0"
+source = "github"
+
+[config]
