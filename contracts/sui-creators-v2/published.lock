@@ -1,0 +1,8 @@
+{
+  "release": "sui-creators-v2",
+  "offered_at": "2026-11-05",
+  "source_digest": "edd8c717e8e05973a6d9857d2262ae32e50a691d580666d0613ee96e8577d31d",
+  "artifact_sha256": "02dca7684ad79496a12729bae696029750ff932f01c5b4e82834f8e14bbe3637",
+  "source_sha256": "fea380d28dc65a9a3a8b92258814d86aa129d4f9552b42134ef26ca2040e8b71",
+  "policy": "Frozen customer NFT template. Uses the immutable shared Sui library V1; no additional operator publication. Future behavior changes require a new version."
+}

@@ -13,3 +13,9 @@ The Cardano packages declare **Apache-2.0**, as recorded in their original
 `aiken.toml` files and package `LICENSE` files. This repository's root MIT license
 does not replace those package licenses. Aiken stdlib v4.0.0 is fetched through
 the original Aiken lockfiles and retains its upstream license and notices.
+
+Sui packages use the MystenLabs Sui framework at revision
+`e04cf9aa915cb6c069092733bebc3648755998e2` (Apache-2.0), fetched by the original
+Move manifests/lockfile. The framework is not vendored here. The checksum-pinned
+Sui CLI, `@mysten/sui` and `@mysten/move-bytecode-template` retain their Apache-2.0
+licenses and upstream notices. RockTheCoin's own Move source is MIT licensed.

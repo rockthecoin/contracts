@@ -39,3 +39,8 @@ A matching build proves the published input produces the saved artifact. A match
 Use the [Cardano verification guide](cardano-verification.md) to check the frozen
 Aiken source, reproduce the Plutus V3 validators and read current mainnet reference
 outputs. The optional mainnet command has no signing or submission operation.
+
+## Sui
+
+See [Sui verification](sui-verification.md) for frozen-source checks, reproducible
+Move builds, native tests and read-only mainnet package/publication verification.

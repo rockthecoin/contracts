@@ -381,5 +381,23 @@
       "plutus": 3,
       "status": "current"
     }
+  ],
+  "sui": [
+    {
+      "id": "sui-suite-v1",
+      "directory": "contracts/sui-suite-v1",
+      "compiler": "sui 1.81.1-e04cf9aa915c",
+      "framework_revision": "e04cf9aa915cb6c069092733bebc3648755998e2",
+      "artifact": "contracts/sui-suite-v1/artifacts/suite.json",
+      "source": "contracts/sui-suite-v1/artifacts/source.json"
+    },
+    {
+      "id": "sui-creators-v2",
+      "directory": "contracts/sui-creators-v2",
+      "compiler": "sui 1.81.1-e04cf9aa915c",
+      "framework_revision": "e04cf9aa915cb6c069092733bebc3648755998e2",
+      "artifact": "contracts/sui-creators-v2/artifacts/template.json",
+      "source": "contracts/sui-creators-v2/artifacts/source.json"
+    }
   ]
 }

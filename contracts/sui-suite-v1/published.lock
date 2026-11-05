@@ -1,0 +1,8 @@
+{
+  "release": "sui-suite-v1",
+  "offered_at": "2026-11-05",
+  "source_digest": "56c4e404edcaa385709d4b73187b27aa77f808d4f6b8d199997af1289f620a7c",
+  "artifact_sha256": "6805ceb2922875c4d77db9c674bb64e452cc675634db6fa36920ac227caf9f60",
+  "source_sha256": "8e44ededf6800b631d640cba12f5f464d46284999a3e016d35cbeac5cb883730",
+  "policy": "Immutable release offered for operator-approved publication. Future behavior changes require a new version."
+}

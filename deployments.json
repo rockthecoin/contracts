@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-11-03",
-  "source_revision": "v1.2.0",
+  "snapshot_date": "2026-11-05",
+  "source_revision": "v1.3.0",
   "networks": [
     {
       "slug": "solana",
@@ -742,6 +742,31 @@
           "artifact": "contracts/cardano-suite-v2/artifacts/scripts.json"
         }
       ]
+    },
+    {
+      "slug": "sui",
+      "name": "Sui",
+      "family": "sui",
+      "chain_id": "4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S",
+      "native_symbol": "SUI",
+      "contracts": [
+        {
+          "label": "Immutable coin, collection and asset tools library V1",
+          "address": "0x8b2ce1bda1538e69a66cfd340f294266e82763d12413d89cb3d9abaf552c1d29",
+          "package": "sui-suite-v1",
+          "contract": "RockTheCoinSuiSuiteV1",
+          "enabled": true,
+          "explorer_url": "https://suiscan.xyz/mainnet/object/0x8b2ce1bda1538e69a66cfd340f294266e82763d12413d89cb3d9abaf552c1d29",
+          "source_download_url": "https://www.rockthecoin.com/contracts/sui-suite-v1/source.json",
+          "artifact": "contracts/sui-suite-v1/artifacts/suite.json",
+          "publishing_wallet": "0x57d4fc45e0a8327cebd1e685f6b075a919c3b1cb9faec3dae0b8115b75f41940",
+          "publication_transaction": "2mXS4AM63fvEmGZCvBE5okQBBvGJR8P9svFmYVBEPcU8",
+          "publication_checkpoint": "341894811",
+          "immutable": true,
+          "current_nft_template": "sui-creators-v2"
+        }
+      ],
+      "chain_identifier_hex": "35834a8a"
     }
   ]
 }

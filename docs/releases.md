@@ -29,3 +29,15 @@ reproducible Aiken builds, read-only mainnet reference verification and dated
 unsigned customer evaluation evidence. Existing EVM, Solana and TRON package
 bytes are unchanged. Each customer's issuance policy remains separately
 parameterized; reference publication does not upgrade existing assets.
+
+## v1.3.0 — Native Sui
+
+Adds the immutable seven-module Sui library V1, current coin template, historical
+NFT template and current NFT/collection template V2. Includes original Move
+sources and tests, source/artifact locks, checksum-pinned compiler installation,
+byte-for-byte reproduction and 35 native Move tests. The mainnet record verifies
+the publication sender, checkpoint, all seven stored modules and removal of the
+UpgradeCap in the publication transaction. Twelve unsigned mainnet customer
+simulations cover all token presets, single NFTs, collections, distribution and
+vesting. No funded transaction was signed or broadcast for these checks. Earlier
+EVM, Solana, TRON and Cardano contract bytes are unchanged.

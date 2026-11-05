@@ -9,3 +9,5 @@ reports/
 .DS_Store
 
 .toolchains/
+
+contracts/sui*/**/build/

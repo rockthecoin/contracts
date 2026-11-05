@@ -1,6 +1,6 @@
 # Mainnet deployment snapshot
 
-Snapshot: **2026-11-03**, source release [`v1.2.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.2.0). Cardano V2 reference outputs were checked against their exact script bytes and hashes. Earlier EVM, Solana and TRON verification dates remain in their evidence files; those contract packages are unchanged. These are dated checks, and current service configuration or reference availability can change.
+Snapshot: **2026-11-05**, source release [`v1.3.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.3.0). Sui library V1 was checked against all seven stored module bytes and its immutable publication. Cardano V2 reference outputs were checked against their exact script bytes and hashes. Earlier EVM, Solana and TRON verification dates remain in their evidence files; those contract packages are unchanged. These are dated checks, and current service configuration or reference availability can change.
 
 See [machine-readable addresses](../deployments.json), [EVM comparison evidence](verification/evm-mainnet-check.json), [Solana comparison evidence](verification/solana-mainnet-check.json), [Sourcify source verification](verification/sourcify-source-status.json) and [verification instructions](verification.md).
 
@@ -108,3 +108,14 @@ confirmed and unspent when verified.
 | NFT, LP & asset locks · V2 | [`cardano-suite-v2`](../contracts/cardano-suite-v2) | [`6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e#0`](https://cardanoscan.io/transaction/6feabb5a96b4d89c04337c55c9f33f406b5fb440d07eb0024d5c45f29d009f1e?index=0) |
 
 See [Cardano builds and verification](cardano-verification.md), [original single-NFT source](../contracts/cardano-v1) and [dated mainnet evidence](../verification/cardano-mainnet-2026-11-03.json). Minswap V2 liquidity uses the existing Minswap protocol scripts.
+
+## Sui
+
+Sui mainnet · Native fees: **SUI**.
+
+- Library V1: [`0x8b2ce1bda1538e69a66cfd340f294266e82763d12413d89cb3d9abaf552c1d29`](https://suiscan.xyz/mainnet/object/0x8b2ce1bda1538e69a66cfd340f294266e82763d12413d89cb3d9abaf552c1d29).
+- Publication: [`2mXS4AM63fvEmGZCvBE5okQBBvGJR8P9svFmYVBEPcU8`](https://suiscan.xyz/mainnet/tx/2mXS4AM63fvEmGZCvBE5okQBBvGJR8P9svFmYVBEPcU8), checkpoint `341894811`.
+- Publishing wallet: `0x57d4fc45e0a8327cebd1e685f6b075a919c3b1cb9faec3dae0b8115b75f41940`. This wallet has no library upgrade authority.
+- Sources: [library and coin template V1](../contracts/sui-suite-v1), [NFT/collection template V2](../contracts/sui-creators-v2).
+- The library and each creator package remove their UpgradeCap in the same publication transaction. No second shared NFT package is required.
+- [Reproduction and read-only mainnet checks](sui-verification.md), [dated evidence](../verification/sui-mainnet-2026-11-05.json).

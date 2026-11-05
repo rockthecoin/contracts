@@ -78,3 +78,16 @@ collateral and Cardano network costs remain separate. Minswap deposit/withdrawal
 orders are placed first and executed later by a batcher; placing an order is not
 the same event as its execution. Order cancellation returns its locked value;
 an already-paid service fee for placement is not automatically refunded.
+
+## Native Sui
+
+The shared Move library and customer asset packages permanently consume their
+UpgradeCap at publication. The library has no platform owner, global pause,
+service-recipient setting or quote signer. Creator controllers retain only the
+selected capabilities; delegated roles and ownership changes follow each asset's
+configuration. Native coin and Kiosk behavior differs from ERC-20/ERC-721.
+
+Service prices are converted from EUR to SUI. The selected action and native
+service transfer share one reviewed programmable transaction; failure rolls back
+both, with network gas separate. Cetus liquidity interacts with the external
+Cetus protocol, not a RockTheCoin-owned exchange. See the [Sui permission limits](sui-verification.md#permissions-and-limits).

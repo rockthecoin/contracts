@@ -1,0 +1,7 @@
+{
+  "version": "sui 1.81.1-e04cf9aa915c",
+  "framework_revision": "e04cf9aa915cb6c069092733bebc3648755998e2",
+  "url": "https://github.com/MystenLabs/sui/releases/download/mainnet-v1.81.1/sui-mainnet-v1.81.1-ubuntu-x86_64.tgz",
+  "archive_sha256": "d921910fdedf5ae2bc3f08a7236c57819a457ce53a8cc60c85f3653c7831b5d4",
+  "binary_sha256": "b2be89119f6881e3d38d5b28527d334fc57f0d58957b86b38cc074d732582420"
+}

@@ -85,3 +85,22 @@ jobs:
       - run: python3 scripts/verify-cardano.py
       - run: python3 scripts/install-aiken.py
       - run: python3 scripts/rebuild-cardano.py
+
+  sui-build:
+    name: Sui Move tests and reproducible bytecode
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts --no-fund
+      - run: npm run verify:integrity
+      - run: npm run verify:sui
+      - run: python3 scripts/install-sui.py
+      - run: npm run verify:sui-builds
+      - run: npm run test:sui

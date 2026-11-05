@@ -1,0 +1,12 @@
+[package]
+name = "RockTheCoinSuiSuiteV1"
+edition = "2024.beta"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "e04cf9aa915cb6c069092733bebc3648755998e2" }
+
+[addresses]
+rtc_suite = "0x0"
+
+[environments]
+mainnet = "35834a8a"

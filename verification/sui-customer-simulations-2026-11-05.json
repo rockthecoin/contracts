@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-11-05T11:25:40.583Z",
+  "library": "0x8b2ce1bda1538e69a66cfd340f294266e82763d12413d89cb3d9abaf552c1d29",
+  "unsigned_only": true,
+  "broadcasts": 0,
+  "results": [
+    {
+      "scenario": "fixed",
+      "operation": "token_create",
+      "passed": true,
+      "estimated_network_fee_mist": "31434899"
+    },
+    {
+      "scenario": "meme",
+      "operation": "token_create",
+      "passed": true,
+      "estimated_network_fee_mist": "31434899"
+    },
+    {
+      "scenario": "community",
+      "operation": "token_create",
+      "passed": true,
+      "estimated_network_fee_mist": "31434899"
+    },
+    {
+      "scenario": "managed",
+      "operation": "token_create",
+      "passed": true,
+      "estimated_network_fee_mist": "31510899"
+    },
+    {
+      "scenario": "regulated",
+      "operation": "token_create",
+      "passed": true,
+      "estimated_network_fee_mist": "34026499"
+    },
+    {
+      "scenario": "custom",
+      "operation": "token_create",
+      "passed": true,
+      "estimated_network_fee_mist": "38776499"
+    },
+    {
+      "scenario": "single-nft-frozen",
+      "operation": "nft_create",
+      "passed": true,
+      "estimated_network_fee_mist": "41254099"
+    },
+    {
+      "scenario": "single-nft-editable-royalty",
+      "operation": "nft_create",
+      "passed": true,
+      "estimated_network_fee_mist": "41892499"
+    },
+    {
+      "scenario": "collection-empty",
+      "operation": "collection_create",
+      "passed": true,
+      "estimated_network_fee_mist": "39080499"
+    },
+    {
+      "scenario": "collection-initial-nft",
+      "operation": "collection_create",
+      "passed": true,
+      "estimated_network_fee_mist": "42150899"
+    },
+    {
+      "scenario": "multisender",
+      "operation": "multisender",
+      "passed": true,
+      "estimated_network_fee_mist": "3064099"
+    },
+    {
+      "scenario": "vesting",
+      "operation": "vesting_create",
+      "passed": true,
+      "estimated_network_fee_mist": "3314899"
+    }
+  ]
+}

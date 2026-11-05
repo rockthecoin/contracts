@@ -1,0 +1,13 @@
+[package]
+name = "RockTheCoinSuiNftCreatorV2"
+edition = "2024.beta"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "e04cf9aa915cb6c069092733bebc3648755998e2" }
+RockTheCoinSuiSuiteV1 = { local = "../../sui-suite-v1/package" }
+
+[addresses]
+rtc_asset = "0x0"
+
+[environments]
+mainnet = "35834a8a"

@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-05T11:35:26.631Z",
+  "result": "passed",
+  "chain": "sui:mainnet",
+  "package": "0x8b2ce1bda1538e69a66cfd340f294266e82763d12413d89cb3d9abaf552c1d29",
+  "publishing_wallet": "0x57d4fc45e0a8327cebd1e685f6b075a919c3b1cb9faec3dae0b8115b75f41940",
+  "publication_transaction": "2mXS4AM63fvEmGZCvBE5okQBBvGJR8P9svFmYVBEPcU8",
+  "publication_checkpoint": "341894811",
+  "current_checkpoint": "341899982",
+  "immutable": true,
+  "upgrade_cap_consumed_in_publication": true,
+  "exact_module_matches": {
+    "authority": "b9d5ba88ef722245978fb218240020d478a10b1193c53f225269b3c164c05637",
+    "coin_control": "77dab28b0a603d411ea5ad14ff65d271b7355f75bd7d9bb9a71f019864570700",
+    "collection": "f01ebbbc2f915889a3eb0b7a9f411716b717d1557e3dd7a19b28d1971a540043",
+    "distribution": "388bf1fbec98301594633cc0ef42ffb80777fcd1babd99201edfdd332d69da63",
+    "object_lock": "b659e75eae5cead728596fac1bcd25b86b15c928d9d28a40f47e4d536a3a267c",
+    "royalty": "f93ef4c2423e27bc5bb00aee79483c12a8cd56d377a82ad73368345ed446095f",
+    "vesting": "972af0f6f2e8cb76e9444b8c6bf6e4e997c7161981f31e2fa45d004360221047"
+  },
+  "source_digest": "56c4e404edcaa385709d4b73187b27aa77f808d4f6b8d199997af1289f620a7c",
+  "read_only": true,
+  "broadcasts": 0
+}
