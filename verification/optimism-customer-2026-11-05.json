@@ -1,0 +1,90 @@
+{
+  "chain_id": 10,
+  "rates": {
+    "provider": "kraken",
+    "observed_at": "2026-11-05 23:00:02+00",
+    "eur_per_eth": "1986.145000000000000000"
+  },
+  "simulations": [
+    {
+      "action": "fixed token",
+      "factory": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "factory_version": 8,
+      "fee_eur_cents": "1000",
+      "fee_eth": "0.005034879125139404",
+      "estimated_gas": "4471129",
+      "unsigned_execution": "passed",
+      "atomic_creation_and_fee": true
+    },
+    {
+      "action": "meme token",
+      "factory": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "factory_version": 8,
+      "fee_eur_cents": "1000",
+      "fee_eth": "0.005034879125139404",
+      "estimated_gas": "4471129",
+      "unsigned_execution": "passed",
+      "atomic_creation_and_fee": true
+    },
+    {
+      "action": "managed token",
+      "factory": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "factory_version": 8,
+      "fee_eur_cents": "2000",
+      "fee_eth": "0.010069758250278807",
+      "estimated_gas": "4423739",
+      "unsigned_execution": "passed",
+      "atomic_creation_and_fee": true
+    },
+    {
+      "action": "taxable token",
+      "factory": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "factory_version": 8,
+      "fee_eur_cents": "3000",
+      "fee_eth": "0.01510463737541821",
+      "estimated_gas": "4559786",
+      "unsigned_execution": "passed",
+      "atomic_creation_and_fee": true
+    },
+    {
+      "action": "custom token",
+      "factory": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "factory_version": 8,
+      "fee_eur_cents": "4000",
+      "fee_eth": "0.020139516500557613",
+      "estimated_gas": "4524430",
+      "unsigned_execution": "passed",
+      "atomic_creation_and_fee": true
+    },
+    {
+      "action": "single NFT",
+      "factory": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+      "factory_version": 2,
+      "fee_eur_cents": "500",
+      "fee_eth": "0.002517439562569702",
+      "estimated_gas": "1083520",
+      "unsigned_execution": "passed",
+      "atomic_creation_and_fee": true
+    },
+    {
+      "action": "NFT collection",
+      "factory": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+      "factory_version": null,
+      "fee_eur_cents": "2000",
+      "fee_eth": "0.010069758250278807",
+      "estimated_gas": "1715399",
+      "unsigned_execution": "passed",
+      "atomic_creation_and_fee": true
+    },
+    {
+      "action": "native ETH multisender",
+      "fee_eur_cents": "200",
+      "fee_eth": "0.001006975825027881",
+      "unsigned_execution": "passed",
+      "atomic_distribution_and_fee": true
+    }
+  ],
+  "funded_signatures": 0,
+  "broadcasts": 0,
+  "persistent_qa_records": 0
+}

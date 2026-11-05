@@ -44,7 +44,7 @@ async function fixture(version,{chainId=43114,recipientIsToken=false,donation=0n
  assert.equal((await call(token,tokenArtifact.abi,'transfer',[escrow,1000n+donation])).execResult.exceptionError,undefined);
  return {tokenRead:name=>read(token,tokenArtifact.abi,name),send:(name,opts={})=>call(escrow,artifact.abi,name,[],opts),read:name=>read(escrow,artifact.abi,name),balance:a=>read(token,tokenArtifact.abi,'balanceOf',[a]),configure:rate=>call(token,tokenArtifact.abi,'configure',[escrow,collector,rate]),setMode:mode=>call(token,tokenArtifact.abi,'setMode',[mode]),token,escrow};
 }
-for(const [network,chainId] of [['Avalanche',43114]]){
+for(const [network,chainId] of [['Avalanche',43114],['Optimism',10]]){
 test(network+' V7 reproduction: a permissionless partial release with a sender surcharge consumes unvested principal',async()=>{
  const f=await fixture(7,{chainId});await f.configure(1000n);
  assert.equal((await f.send('release',{account:caller})).execResult.exceptionError,undefined);
@@ -91,11 +91,14 @@ test(network+' V8 accepts a returned donation without treating it as an excessiv
 });
 
 }
-test('Avalanche V8 blocks both payout callbacks even when the hostile token is the beneficiary',async()=>{
- const f=await fixture(8,{chainId:43114,donation:100n,recipientIsToken:true});await f.configure(0n);await f.setMode(4);
+for(const [network,chainId] of [['Avalanche',43114],['Optimism',10]]){
+test(network+' V8 blocks both payout callbacks even when the hostile token is the beneficiary',async()=>{
+ const f=await fixture(8,{chainId,donation:100n,recipientIsToken:true});await f.configure(0n);await f.setMode(4);
  assert.equal((await f.send('release',{account:caller})).execResult.exceptionError,undefined);
  const guard=toFunctionSelector('ReentrancyGuardReentrantCall()');
  assert.equal(await f.tokenRead('releaseReentry'),guard);assert.equal(await f.tokenRead('surplusReentry'),guard);
  assert.equal((await f.read('beneficiary')).toLowerCase(),f.token.toLowerCase());assert.equal(await f.read('released'),250n);
  assert.equal(await f.balance(f.token),250n);assert.equal(await f.balance(f.escrow),850n);
 });
+
+}

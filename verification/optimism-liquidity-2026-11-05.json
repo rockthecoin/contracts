@@ -1,0 +1,53 @@
+{
+  "plans": [
+    {
+      "protocol": "uniswap_v2",
+      "native_symbol": "ETH",
+      "service_contract": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "native_value": "1000000000000000000",
+      "protocol_calls": 1,
+      "planner": "passed",
+      "broadcasts": 0
+    },
+    {
+      "protocol": "uniswap_v3",
+      "native_symbol": "ETH",
+      "service_contract": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "native_value": "44835441025089139",
+      "protocol_calls": 1,
+      "planner": "passed",
+      "broadcasts": 0
+    },
+    {
+      "protocol": "uniswap_v4",
+      "native_symbol": "ETH",
+      "service_contract": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "native_value": "44805513142542093",
+      "protocol_calls": 3,
+      "planner": "passed",
+      "broadcasts": 0
+    }
+  ],
+  "reward_hook": "0xe533e5b88603aa50b52e5bed1ab300d27dc26044",
+  "state": {
+    "chain_id": 10,
+    "v2": {
+      "pool": "0x4C43646304492A925E335f2b6d840C1489f17815",
+      "reserve0": "283347311",
+      "reserve1": "126964399229577818"
+    },
+    "v3": {
+      "pool": "0xc1738D90E2E26C35784A0d3E3d8A9f795074bcA4",
+      "initialized": true,
+      "tick_spacing": 60,
+      "sqrt_price_x96": "1677607298104851997987960198386527"
+    },
+    "v4": {
+      "pool": "0xedba0a2a9dc73acf4b130e07605cb4c212bbd98a31c9cd442cfb8cf5b4e093e7",
+      "initialized": true,
+      "tick_spacing": 10,
+      "sqrt_price_x96": "1678679038621313802852564463068630"
+    }
+  },
+  "broadcasts": 0
+}

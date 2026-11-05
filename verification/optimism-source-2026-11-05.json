@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-11-05T23:00:11.709Z",
+  "provider": "Sourcify V2",
+  "blockchain_broadcasts": 0,
+  "contracts": [
+    {
+      "network": "optimism",
+      "chain_id": 10,
+      "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+      "package": "factory-v2",
+      "contract": "RockTheCoinFactory",
+      "source_url": "https://repo.sourcify.dev/10/0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+      "match": "exact_match",
+      "runtimeMatch": "exact_match",
+      "creationMatch": "exact_match",
+      "verifiedAt": "2026-11-05T19:59:35Z"
+    },
+    {
+      "network": "optimism",
+      "chain_id": 10,
+      "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "package": "launch-v8",
+      "contract": "LaunchFactoryV8",
+      "source_url": "https://repo.sourcify.dev/10/0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "match": "exact_match",
+      "runtimeMatch": "exact_match",
+      "creationMatch": "exact_match",
+      "verifiedAt": "2026-11-05T20:31:16Z"
+    },
+    {
+      "network": "optimism",
+      "chain_id": 10,
+      "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+      "package": "collections-v1",
+      "contract": "CollectionFactory",
+      "source_url": "https://repo.sourcify.dev/10/0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+      "match": "exact_match",
+      "runtimeMatch": "exact_match",
+      "creationMatch": "exact_match",
+      "verifiedAt": "2026-11-05T21:07:37Z"
+    },
+    {
+      "network": "optimism",
+      "chain_id": 10,
+      "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "package": "tools-v1",
+      "contract": "ServiceTools",
+      "source_url": "https://repo.sourcify.dev/10/0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "match": "exact_match",
+      "runtimeMatch": "exact_match",
+      "creationMatch": "exact_match",
+      "verifiedAt": "2026-11-05T21:27:38Z"
+    },
+    {
+      "network": "optimism",
+      "chain_id": 10,
+      "address": "0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+      "package": "rewards-v1",
+      "contract": "HookDeployer",
+      "source_url": "https://repo.sourcify.dev/10/0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+      "match": "exact_match",
+      "runtimeMatch": "exact_match",
+      "creationMatch": "exact_match",
+      "verifiedAt": "2026-11-05T21:46:18Z"
+    },
+    {
+      "network": "optimism",
+      "chain_id": 10,
+      "address": "0xe533e5b88603aa50b52e5bed1ab300d27dc26044",
+      "package": "rewards-v3",
+      "contract": "CreatorRewardsHook",
+      "source_url": "https://repo.sourcify.dev/10/0xe533e5b88603aa50b52e5bed1ab300d27dc26044",
+      "match": "exact_match",
+      "runtimeMatch": "exact_match",
+      "creationMatch": "exact_match",
+      "verifiedAt": "2026-11-05T22:59:46Z"
+    }
+  ]
+}

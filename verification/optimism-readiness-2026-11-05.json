@@ -1,0 +1,115 @@
+{
+  "checked_at": "2026-11-05T22:58:42+00:00",
+  "chain_id": "10",
+  "treasury": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+  "quote_signer": "0xd3d3535f717cffd1e61688ab6bb7efacadda8d14",
+  "deployments": {
+    "base": {
+      "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+      "verified": true,
+      "finalized": true,
+      "state": {
+        "quoteSigner": "0xd3d3535f717cffd1e61688ab6bb7efacadda8d14",
+        "treasury": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "owner": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "paused": "0"
+      }
+    },
+    "builder": {
+      "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+      "verified": true,
+      "finalized": true,
+      "state": {
+        "quoteSigner": "0xd3d3535f717cffd1e61688ab6bb7efacadda8d14",
+        "treasury": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "owner": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "paused": "0",
+        "tokenDeployer": "0x51e5b004d54091792f40c5d2fb8bb2e4faedb2f6",
+        "factory_version": 8
+      }
+    },
+    "collections": {
+      "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+      "verified": true,
+      "finalized": true,
+      "state": {
+        "owner": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "treasury": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "quoteSigner": "0xd3d3535f717cffd1e61688ab6bb7efacadda8d14",
+        "paused": "0"
+      }
+    },
+    "tools": {
+      "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "verified": true,
+      "finalized": true,
+      "state": {
+        "owner": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "treasury": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "quoteSigner": "0xd3d3535f717cffd1e61688ab6bb7efacadda8d14",
+        "paused": "0"
+      }
+    },
+    "reward-helper": {
+      "address": "0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+      "verified": true,
+      "finalized": true,
+      "state": {
+        "contract_version": 1,
+        "owner": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79"
+      }
+    },
+    "rewards": {
+      "address": "0xe533e5b88603aa50b52e5bed1ab300d27dc26044",
+      "verified": true,
+      "finalized": true,
+      "state": {
+        "contract_version": 3,
+        "owner": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+        "poolManager": "0x9a13f98cb987694c9f086b1f5eb990eea8264ec3",
+        "serviceTools": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+        "quoteSigner": "0xd3d3535f717cffd1e61688ab6bb7efacadda8d14",
+        "rewardsPaused": "0"
+      }
+    }
+  },
+  "targets": [
+    {
+      "name": "Uniswap V2 router",
+      "address": "0x4a7b5da61326a6379179b40d00f57e5bbdc962c2",
+      "allowed": true,
+      "finalized_allowed": true
+    },
+    {
+      "name": "Uniswap V3 positions",
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "allowed": true,
+      "finalized_allowed": true
+    },
+    {
+      "name": "Uniswap V4 positions",
+      "address": "0x3c3ea4b57a46241e54610e5f022e5c45859a1017",
+      "allowed": true,
+      "finalized_allowed": true
+    },
+    {
+      "name": "Permit2 exact allowances",
+      "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+      "allowed": true,
+      "finalized_allowed": true
+    },
+    {
+      "name": "RockTheCoin creator rewards",
+      "address": "0xe533e5b88603aa50b52e5bed1ab300d27dc26044",
+      "allowed": true,
+      "finalized_allowed": true
+    }
+  ],
+  "all_contracts_ready": true,
+  "all_targets_approved": true,
+  "broadcasts": 0,
+  "finalized_block": "159159654",
+  "network": "OP Mainnet",
+  "owner": "0x9493e58153c5c6647e67b18fef1c37ebd1c6ea79",
+  "method": "Read-only RPC, exact frozen runtime and linked dependency validation, finalized runtime and protocol allowlist checks."
+}

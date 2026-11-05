@@ -14,7 +14,7 @@ Choose a public RPC for the network you want to inspect:
 npm run verify:chain -- --chain ethereum --rpc YOUR_HTTPS_RPC_URL
 ```
 
-Use `bnb`, `base`, `polygon`, `arbitrum` or `avalanche` for the other live EVM networks. The script checks chain identity and compares each runtime at a recorded block number. Only compiler-declared immutable-reference slots are masked, and repeated occurrences of an immutable must agree. Owner, recipient, signer and pause getters are recorded where supported. The script never signs or submits a transaction.
+Use `bnb`, `base`, `polygon`, `arbitrum`, `avalanche` or `optimism` for the other live EVM networks. The script checks chain identity and compares each runtime at a recorded block number. Only compiler-declared immutable-reference slots are masked, and repeated occurrences of an immutable must agree. Owner, recipient, signer and pause getters are recorded where supported. The script never signs or submits a transaction.
 
 The checked snapshot is in [evm-mainnet-check.json](verification/evm-mainnet-check.json). Addresses can share a value on different chains; always check both the network and address.
 
@@ -48,3 +48,9 @@ outputs. The optional mainnet command has no signing or submission operation.
 
 See [Sui verification](sui-verification.md) for frozen-source checks, reproducible
 Move builds, native tests and read-only mainnet package/publication verification.
+
+## Optimism
+
+See [OP Mainnet verification](optimism-verification.md) for six exact
+creation/runtime source matches, finalized protocol approvals and unsigned
+customer checks. ETH pays both OP network costs and quoted service fees.

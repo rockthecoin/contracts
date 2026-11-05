@@ -1,6 +1,6 @@
 # Mainnet deployment snapshot
 
-Snapshot: **2026-11-05**, source release [`v1.4.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.4.0). Avalanche’s six deployments, frozen Builder V8 and finalized protocol approvals were checked. Sui library V1 was checked against all seven stored module bytes and its immutable publication. Cardano V2 reference outputs were checked against their exact script bytes and hashes. Earlier EVM, Solana and TRON verification dates remain in their evidence files; those contract packages are unchanged. These are dated checks, and current service configuration or reference availability can change.
+Snapshot: **2026-11-05**, source release [`v1.5.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.5.0). Avalanche’s and Optimism’s six deployments, Builder V8 and finalized protocol approvals were checked. Sui library V1 was checked against all seven stored module bytes and its immutable publication. Cardano V2 reference outputs were checked against their exact script bytes and hashes. Earlier EVM, Solana and TRON verification dates remain in their evidence files; those contract packages are unchanged. These are dated checks, and current service configuration or reference availability can change.
 
 See [machine-readable addresses](../deployments.json), [EVM comparison evidence](verification/evm-mainnet-check.json), [Solana comparison evidence](verification/solana-mainnet-check.json), [Sourcify source verification](verification/sourcify-source-status.json) and [verification instructions](verification.md).
 
@@ -92,6 +92,21 @@ Chain ID: `43114` · Network fees: **AVAX**.
 | Uniswap V4 creator rewards hook · V3 | [`rewards-v3`](../contracts/rewards-v3) | [`0xd162a8d597fd2d4ae6ee0c94cb9449dac48c2044`](https://snowtrace.io/address/0xd162a8d597fd2d4ae6ee0c94cb9449dac48c2044) |
 
 See [Avalanche runtime, protocol and customer verification](avalanche-verification.md).
+
+## Optimism
+
+OP Mainnet · Chain ID: `10` · Network fees: **ETH**.
+
+| Contract | Versioned source | Mainnet address |
+| --- | --- | --- |
+| Basic token & single NFT factory · V2 | [`factory-v2`](../contracts/RockTheCoinFactory.sol) | [`0x2586c07cbc863270bc5678ebcd581f85ed12f5bc`](https://optimistic.etherscan.io/address/0x2586c07cbc863270bc5678ebcd581f85ed12f5bc) |
+| Advanced token factory · V8 | [`launch-v8`](../contracts/launch-v8) | [`0x21ab8137f8d413e2816d4e7be0acdae7acdefb62`](https://optimistic.etherscan.io/address/0x21ab8137f8d413e2816d4e7be0acdae7acdefb62) |
+| NFT collection factory · V1 | [`collections-v1`](../contracts/collections-v1) | [`0x175511fa79baec7bb54325aadc9b4686c5f55f07`](https://optimistic.etherscan.io/address/0x175511fa79baec7bb54325aadc9b4686c5f55f07) |
+| Distribution & liquidity · ServiceTools V1 | [`tools-v1`](../contracts/tools-v1) | [`0x619ba400fb76057b548b0a604c0c379cad4d3800`](https://optimistic.etherscan.io/address/0x619ba400fb76057b548b0a604c0c379cad4d3800) |
+| Creator rewards address helper | [`rewards-v1`](../contracts/rewards-v1) | [`0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681`](https://optimistic.etherscan.io/address/0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681) |
+| Uniswap V4 creator rewards hook · V3 | [`rewards-v3`](../contracts/rewards-v3) | [`0xe533e5b88603aa50b52e5bed1ab300d27dc26044`](https://optimistic.etherscan.io/address/0xe533e5b88603aa50b52e5bed1ab300d27dc26044) |
+
+See [OP Mainnet verification and customer checks](optimism-verification.md).
 
 ## TRON mainnet
 

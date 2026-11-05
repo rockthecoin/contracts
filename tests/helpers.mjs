@@ -19,16 +19,16 @@ export function event(result,contract,name){
   assert.fail(`Missing ${name} event`);
 }
 export async function fixture(chainId=1){
-  const common=new Common({chain:{...Mainnet,chainId},hardfork:Hardfork.Cancun}),vm=await createVM({common});
+  const common=new Common({chain:{...Mainnet,chainId},hardfork:chainId===10?Hardfork.Osaka:Hardfork.Cancun}),vm=await createVM({common});
   const address=createAddressFromString;
   for(const who of [OWNER,CREATOR,TREASURY,ALICE,BOB])await vm.stateManager.putAccount(address(who),new Account(0n,10n**24n));
-  const block=time=>createBlock({header:{timestamp:time,gasLimit:50000000n}},{common});
+  const block=time=>createBlock({header:{timestamp:time,gasLimit:chainId===10?40000000n:50000000n}},{common});
   async function deploy(contract,args=[]){
-    const result=await vm.evm.runCall({caller:address(OWNER),origin:address(OWNER),data:hexToBytes(encodeDeployData({...contract,args})),gasLimit:30000000n,block:block(1000n)});
+    const result=await vm.evm.runCall({caller:address(OWNER),origin:address(OWNER),data:hexToBytes(encodeDeployData({...contract,args})),gasLimit:chainId===10?16777216n:30000000n,block:block(1000n)});
     expectSuccess(result);return result.createdAddress.toString();
   }
   async function call(to,contract,method,args=[],{caller=CREATOR,value=0n,time=1000n}={}){
-    return vm.evm.runCall({caller:address(caller),origin:address(caller),to:address(to),data:hexToBytes(encodeFunctionData({abi:contract.abi,functionName:method,args})),value,gasLimit:30000000n,block:block(time)});
+    return vm.evm.runCall({caller:address(caller),origin:address(caller),to:address(to),data:hexToBytes(encodeFunctionData({abi:contract.abi,functionName:method,args})),value,gasLimit:chainId===10?16777216n:30000000n,block:block(time)});
   }
   async function read(to,contract,method,args=[]){const r=expectSuccess(await call(to,contract,method,args));return decodeFunctionResult({abi:contract.abi,functionName:method,data:bytesToHex(r.execResult.returnValue)});}
   let serial=0;

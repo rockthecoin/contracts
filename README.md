@@ -15,12 +15,13 @@ This repository publishes contract packages and their verification tools.
 - [Build and on-chain verification](docs/verification.md)
 - [Solana controller build and verification](docs/solana-verification.md)
 - [Avalanche V8 deployment and verification](docs/avalanche-verification.md)
+- [Optimism V8 deployment and verification](docs/optimism-verification.md)
 - [Native TRON releases, builds and verification](docs/tron-verification.md)
 - [Native Cardano contracts and reference scripts](docs/cardano-verification.md)
 - [Native Sui Move source, builds and permissions](docs/sui-verification.md)
 - [Report a vulnerability privately](https://github.com/rockthecoin/contracts/security/advisories/new)
 
-The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche, TRON, Cardano and Sui. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7; Avalanche uses V8. TRON uses native V3 creation factories with V1 distribution and rewards contracts. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
+The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche, Optimism, TRON, Cardano and Sui. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7; Avalanche and Optimism use V8. TRON uses native V3 creation factories with V1 distribution and rewards contracts. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
 
 ## Packages
 
