@@ -160,6 +160,37 @@
       ]
     },
     {
+      "id": "launch-v8",
+      "compiler": "0.8.38+commit.1835d247.Emscripten.clang",
+      "input": "contracts/launch-v8/artifacts/standard-input.json",
+      "artifacts": [
+        {
+          "path": "contracts/launch-v8/artifacts/ConfigurableTokenV8.json",
+          "name": "ConfigurableTokenV8"
+        },
+        {
+          "path": "contracts/launch-v8/artifacts/LaunchFactoryV8.json",
+          "name": "LaunchFactoryV8"
+        },
+        {
+          "path": "contracts/launch-v8/artifacts/PositionLockV8.json",
+          "name": "PositionLockV8"
+        },
+        {
+          "path": "contracts/launch-v8/artifacts/TokenCodeV8.json",
+          "name": "TokenCodeV8"
+        },
+        {
+          "path": "contracts/launch-v8/artifacts/TokenDeployerV8.json",
+          "name": "TokenDeployerV8"
+        },
+        {
+          "path": "contracts/launch-v8/artifacts/VestingWalletV8.json",
+          "name": "VestingWalletV8"
+        }
+      ]
+    },
+    {
       "id": "collections-v1",
       "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
       "input": "contracts/collections-v1/artifacts/standard-input.json",

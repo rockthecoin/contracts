@@ -1,0 +1,18 @@
+{
+  "version": 8,
+  "compiler": "0.8.38",
+  "sha256": {
+    "ConfigurableTokenV8.sol": "2f802431c506a5569e26bc43a12e2d2ea44b770ba30d6ebadf1f71d570fef3ec",
+    "LaunchFactoryV8.sol": "d3542b527dbcee0a2aa5ed3ae830663c259656cef67b8a89157e1112c31e5d1c",
+    "LaunchTypes.sol": "e0873c7f9506062bc6030140c623e275d5cee2f2fc85a7e36a09da707990d0b3",
+    "VestingWalletV8.sol": "b8b0c8af85b979c08bf5aa97dd75cdb35b38851297b3c030629bbede742fa80f",
+    "artifacts/ConfigurableTokenV8.json": "81e6150fed219a221d6c2c274cc0b3b8c298c8cfb9f1222c56bd43570a7e9ebf",
+    "artifacts/LaunchFactoryV8.json": "8a0a767691a6e5e53fed81a05c53f71b5cd5a39090f22c9ce3e89a1031daceb9",
+    "artifacts/PositionLockV8.json": "9d734995abd1d5e81d51c880b69617bbefad2c42f50f17cbb39ba68eb28e9b42",
+    "artifacts/TokenCodeV8.json": "68f62543b91bca0f19f0c0d9e6650603775dd83ad52a07c60ce73b215e89f165",
+    "artifacts/TokenDeployerV8.json": "6ab3c81ac869a6aae124d80a9ff6267ed923dc85e7abbe2deed0adad469110e4",
+    "artifacts/VestingWalletV8.json": "93cee05a1294b9a947d05a22c172a484844d8e7fe870935061b530c8d50fe9ef",
+    "artifacts/manifest.json": "81856fe4048bc16e5710abafe5a4fc77359310a61f9a6564ef0f16bd522539a8",
+    "artifacts/standard-input.json": "f2a0c9f3f6df626bb7e710950d8e7abdb5afd47dea8c0fb6bcc8d3d5b28b94e8"
+  }
+}

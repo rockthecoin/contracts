@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "snapshot_date": "2026-11-05",
-  "source_revision": "v1.3.0",
+  "source_revision": "v1.4.0",
   "networks": [
     {
       "slug": "solana",
@@ -767,6 +767,117 @@
         }
       ],
       "chain_identifier_hex": "35834a8a"
+    },
+    {
+      "slug": "avalanche",
+      "name": "Avalanche",
+      "family": "evm",
+      "chain_id": 43114,
+      "native_symbol": "AVAX",
+      "contracts": [
+        {
+          "label": "Basic token & single NFT factory \u00b7 V2",
+          "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+          "package": "factory-v2",
+          "contract": "RockTheCoinFactory",
+          "enabled": true,
+          "explorer_url": "https://snowtrace.io/address/0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+          "source_download_url": "https://www.rockthecoin.com/contracts/factory-v2/source.json",
+          "artifact": "build/RockTheCoinFactory.json",
+          "source_verification": {
+            "provider": "Sourcify",
+            "checked_at": "2026-11-05T19:43:31.717Z",
+            "runtime_match": "exact_match",
+            "creation_match": "exact_match",
+            "url": "https://repo.sourcify.dev/43114/0x2586c07cbc863270bc5678ebcd581f85ed12f5bc"
+          }
+        },
+        {
+          "label": "Advanced token factory \u00b7 V8",
+          "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "package": "launch-v8",
+          "contract": "LaunchFactoryV8",
+          "enabled": true,
+          "explorer_url": "https://snowtrace.io/address/0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "source_download_url": "https://www.rockthecoin.com/contracts/launch-v8/source.json",
+          "artifact": "contracts/launch-v8/artifacts/LaunchFactoryV8.json",
+          "source_verification": {
+            "provider": "Sourcify",
+            "checked_at": "2026-11-05T19:43:31.717Z",
+            "runtime_match": "exact_match",
+            "creation_match": "exact_match",
+            "url": "https://repo.sourcify.dev/43114/0x21ab8137f8d413e2816d4e7be0acdae7acdefb62"
+          }
+        },
+        {
+          "label": "NFT collection factory \u00b7 V1",
+          "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "package": "collections-v1",
+          "contract": "CollectionFactory",
+          "enabled": true,
+          "explorer_url": "https://snowtrace.io/address/0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "source_download_url": "https://www.rockthecoin.com/contracts/collections-v1/source.json",
+          "artifact": "contracts/collections-v1/artifacts/CollectionFactory.json",
+          "source_verification": {
+            "provider": "Sourcify",
+            "checked_at": "2026-11-05T19:43:31.717Z",
+            "runtime_match": "exact_match",
+            "creation_match": "exact_match",
+            "url": "https://repo.sourcify.dev/43114/0x175511fa79baec7bb54325aadc9b4686c5f55f07"
+          }
+        },
+        {
+          "label": "Distribution & liquidity \u00b7 ServiceTools V1",
+          "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+          "package": "tools-v1",
+          "contract": "ServiceTools",
+          "enabled": true,
+          "explorer_url": "https://snowtrace.io/address/0x619ba400fb76057b548b0a604c0c379cad4d3800",
+          "source_download_url": "https://www.rockthecoin.com/contracts/tools-v1/source.json",
+          "artifact": "contracts/tools-v1/artifacts/ServiceTools.json",
+          "source_verification": {
+            "provider": "Sourcify",
+            "checked_at": "2026-11-05T19:43:31.717Z",
+            "runtime_match": "exact_match",
+            "creation_match": "exact_match",
+            "url": "https://repo.sourcify.dev/43114/0x619ba400fb76057b548b0a604c0c379cad4d3800"
+          }
+        },
+        {
+          "label": "Creator rewards address helper",
+          "address": "0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+          "package": "rewards-v1",
+          "contract": "HookDeployer",
+          "enabled": true,
+          "explorer_url": "https://snowtrace.io/address/0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+          "source_download_url": "https://www.rockthecoin.com/contracts/rewards-v1/source.json",
+          "artifact": "contracts/rewards-v1/artifacts/HookDeployer.json",
+          "source_verification": {
+            "provider": "Sourcify",
+            "checked_at": "2026-11-05T19:43:31.717Z",
+            "runtime_match": "exact_match",
+            "creation_match": "exact_match",
+            "url": "https://repo.sourcify.dev/43114/0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681"
+          }
+        },
+        {
+          "label": "Uniswap V4 creator rewards hook \u00b7 V3",
+          "address": "0xd162a8d597fd2d4ae6ee0c94cb9449dac48c2044",
+          "package": "rewards-v3",
+          "contract": "CreatorRewardsHook",
+          "enabled": true,
+          "explorer_url": "https://snowtrace.io/address/0xd162a8d597fd2d4ae6ee0c94cb9449dac48c2044",
+          "source_download_url": "https://www.rockthecoin.com/contracts/rewards-v3/source.json",
+          "artifact": "contracts/rewards-v3/artifacts/CreatorRewardsHook.json",
+          "source_verification": {
+            "provider": "Sourcify",
+            "checked_at": "2026-11-05T19:43:31.717Z",
+            "runtime_match": "exact_match",
+            "creation_match": "exact_match",
+            "url": "https://repo.sourcify.dev/43114/0xd162a8d597fd2d4ae6ee0c94cb9449dac48c2044"
+          }
+        }
+      ]
     }
   ]
 }

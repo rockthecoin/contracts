@@ -1,0 +1,53 @@
+{
+  "plans": [
+    {
+      "protocol": "uniswap_v2",
+      "native_symbol": "AVAX",
+      "service_contract": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "native_value": "1000000000000000000",
+      "protocol_calls": 1,
+      "planner": "passed",
+      "broadcasts": 0
+    },
+    {
+      "protocol": "uniswap_v3",
+      "native_symbol": "AVAX",
+      "service_contract": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "native_value": "999999999999718782",
+      "protocol_calls": 1,
+      "planner": "passed",
+      "broadcasts": 0
+    },
+    {
+      "protocol": "uniswap_v4",
+      "native_symbol": "AVAX",
+      "service_contract": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+      "native_value": "999899999999433199",
+      "protocol_calls": 3,
+      "planner": "passed",
+      "broadcasts": 0
+    }
+  ],
+  "reward_hook": "0xd162a8d597fd2d4ae6ee0c94cb9449dac48c2044",
+  "state": {
+    "chain_id": 43114,
+    "v2": {
+      "pool": "0x6239aE4D661379b71A90c4c79f0a95297342e391",
+      "reserve0": "2248734616632261769",
+      "reserve1": "18708808"
+    },
+    "v3": {
+      "pool": "0x0E663593657B064e1baE76d28625Df5D0eBd4421",
+      "initialized": true,
+      "tick_spacing": 60,
+      "sqrt_price_x96": "229596738698338516924283"
+    },
+    "v4": {
+      "pool": "0xd7a8035ddd9ec1dba25e3b27b685927fe63d65281f21c1c1d21d122fc48caeb7",
+      "initialized": true,
+      "tick_spacing": 10,
+      "sqrt_price_x96": "226706228161094487667334"
+    }
+  },
+  "broadcasts": 0
+}

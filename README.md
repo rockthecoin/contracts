@@ -14,12 +14,13 @@ This repository publishes contract packages and their verification tools.
 - [Version notes and compatibility](docs/releases.md)
 - [Build and on-chain verification](docs/verification.md)
 - [Solana controller build and verification](docs/solana-verification.md)
+- [Avalanche V8 deployment and verification](docs/avalanche-verification.md)
 - [Native TRON releases, builds and verification](docs/tron-verification.md)
 - [Native Cardano contracts and reference scripts](docs/cardano-verification.md)
 - [Native Sui Move source, builds and permissions](docs/sui-verification.md)
 - [Report a vulnerability privately](https://github.com/rockthecoin/contracts/security/advisories/new)
 
-The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, TRON, Cardano and Sui. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7. TRON uses native V3 creation factories with V1 distribution and rewards contracts. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
+The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche, TRON, Cardano and Sui. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7; Avalanche uses V8. TRON uses native V3 creation factories with V1 distribution and rewards contracts. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
 
 ## Packages
 
@@ -28,7 +29,7 @@ The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polyg
 | `contracts/RockTheCoinFactory.sol`, `build/` | V2 basic fixed-supply ERC-20 tokens and single ERC-721 NFTs |
 | `contracts/launch-v3/` | Earlier managed and taxable token factory |
 | `contracts/launch-v4/`, `launch-v5/` | Historical advanced token, vesting and position-lock packages |
-| `contracts/launch-v6/`, `launch-v7/` | Configurable tokens, delegated roles, taxes, vesting and position locks |
+| `contracts/launch-v6/`, `launch-v7/`, `launch-v8/` | Configurable tokens, delegated roles, taxes, vesting and position locks; V8 protects vesting backing against excessive sender debits |
 | `contracts/collections-v1/` | Creator-owned ERC-721 collections |
 | `contracts/tools-v1/` | Atomic distribution and approved-protocol liquidity execution |
 | `contracts/rewards-v1/` through `rewards-v3/` | Uniswap V4 creator rewards; V1 also includes the CREATE2 address helper |

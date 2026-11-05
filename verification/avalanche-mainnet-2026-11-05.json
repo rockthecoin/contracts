@@ -1,0 +1,105 @@
+{
+  "checked_at": "2026-11-05T19:42:12.164Z",
+  "method": "eth_getCode; immutable references masked only at compiler-declared locations",
+  "broadcasts": 0,
+  "networks": [
+    {
+      "network": "avalanche",
+      "chain_id": 43114,
+      "block_number": "99521914",
+      "contracts": [
+        {
+          "address": "0x2586c07cbc863270bc5678ebcd581f85ed12f5bc",
+          "package": "factory-v2",
+          "contract": "RockTheCoinFactory",
+          "runtime_keccak256": "0x28412f4be7f105ef6fca094096ecd5ecc1781ace40dd29ee46fb0aec34a45257",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x21ab8137f8d413e2816d4e7be0acdae7acdefb62",
+          "package": "launch-v8",
+          "contract": "LaunchFactoryV8",
+          "runtime_keccak256": "0xf0e5700581e9441f03f8003c846df6180e9a3df17a3851d5206695ce8555a6dd",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x175511fa79baec7bb54325aadc9b4686c5f55f07",
+          "package": "collections-v1",
+          "contract": "CollectionFactory",
+          "runtime_keccak256": "0x6dcf35614432438bd114b3ae244bc8d5b1c30a9937817f2514fa4f1a1b95e1f4",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x619ba400fb76057b548b0a604c0c379cad4d3800",
+          "package": "tools-v1",
+          "contract": "ServiceTools",
+          "runtime_keccak256": "0x1fefa51da538a5fb90d6c0d5d935aff9a78b943eae68759843e7b203744bbc8f",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "treasury": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "paused": false
+          }
+        },
+        {
+          "address": "0x6ce5d5ffca3c1e1cff9e3ac9553318af0d91e681",
+          "package": "rewards-v1",
+          "contract": "HookDeployer",
+          "runtime_keccak256": "0xae4e0cb46fce0b6d7c8ae020619f4828d7a3ece2a285b64fe8d657b7f3ebcff1",
+          "runtime_matches": true,
+          "immutable_values": {},
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000"
+          }
+        },
+        {
+          "address": "0xd162a8d597fd2d4ae6ee0c94cb9449dac48c2044",
+          "package": "rewards-v3",
+          "contract": "CreatorRewardsHook",
+          "runtime_keccak256": "0x53f4a758b56785f548bcd0d4a1548d77aff6b99758d011d875aaf49685b324cf",
+          "runtime_matches": true,
+          "immutable_values": {
+            "80": "0x00000000000000000000000006380c0e0912312b5150364b9dc4542ba0dbbc85",
+            "82": "0x000000000000000000000000619ba400fb76057b548b0a604c0c379cad4d3800"
+          },
+          "state": {
+            "owner": "0x9493E58153C5c6647e67b18FeF1C37eBd1C6eA79",
+            "pendingOwner": "0x0000000000000000000000000000000000000000",
+            "quoteSigner": "0xD3d3535f717cfFd1e61688aB6BB7EfAcAddA8D14",
+            "poolManager": "0x06380C0e0912312B5150364B9DC4542BA0DbBc85",
+            "serviceTools": "0x619BA400Fb76057B548B0A604c0C379cAd4d3800",
+            "rewardsPaused": false
+          }
+        }
+      ]
+    }
+  ]
+}

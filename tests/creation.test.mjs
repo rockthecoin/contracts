@@ -6,7 +6,7 @@ import {artifact,fixture,authorize,configuration,hashArgs,event,expectSuccess,ex
 
 const basic=artifact('build/RockTheCoinFactory.json'),token=artifact('build/RockToken.json');
 const collectionFactory=artifact('contracts/collections-v1/artifacts/CollectionFactory.json'),collection=artifact('contracts/collections-v1/artifacts/NFTCollection.json');
-for(const [network,chainId] of [['Ethereum',1],['BNB Chain',56],['Base',8453],['Polygon',137],['Arbitrum One',42161]]){
+for(const [network,chainId] of [['Ethereum',1],['BNB Chain',56],['Base',8453],['Polygon',137],['Arbitrum One',42161],['Avalanche',43114]]){
   test(`${network}: token creation binds the payer, chain, asset and exact fee; payment failure rolls everything back`,async()=>{
     const f=await fixture(chainId),factory=await f.deploy(basic,[OWNER,TREASURY,signer.address]);
     const fields=['Public token','PUB',9,10000n],q=f.quote(),hash=hashArgs(basic,'createToken',fields),signature=await authorize(f,basic,factory,hash,q);
@@ -61,7 +61,7 @@ test('collection minting remains creator-only, enforces a lifetime cap and suppo
   expectSuccess(await f.call(address,collection,'closeMinting',[],{caller:BOB}));
   assert.equal(await f.read(address,collection,'mintingClosed'),true);
 });
-for(const version of [6,7]){
+for(const version of [6,7,8]){
   const factoryArtifact=artifact(`contracts/launch-v${version}/artifacts/LaunchFactoryV${version}.json`),tokenArtifact=artifact(`contracts/launch-v${version}/artifacts/ConfigurableTokenV${version}.json`);
   test(`V${version}: delegated minting obeys a permanent lifetime cap and paused ownership cannot be renounced`,async()=>{
     const f=await fixture(),factory=await f.deploy(factoryArtifact,[OWNER,TREASURY,signer.address]);
