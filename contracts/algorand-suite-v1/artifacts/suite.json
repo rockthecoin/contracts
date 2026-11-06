@@ -1,0 +1,2253 @@
+{
+  "version": 1,
+  "compiler": "puyapy 5.10.1",
+  "algorand_python": "4.0.0",
+  "genesis_hash": "wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=",
+  "genesis_id": "mainnet-v1.0",
+  "apps": {
+    "tokens": {
+      "name": "RockTheCoinAlgorandTokensV1",
+      "avm_version": 11,
+      "approval_program": "CyANAAEIAuEBiAGDAYYBiQKQTpIBgBCAgAQmEAF0AAF3AXgBAAhwYmxvY2tlZAVvd25lcg1wZW5kaW5nX293bmVyCHRyZWFzdXJ5BnNpZ25lcgFlBnBhdXNlZAQVH3x1AXABZAMGgQExGEAAIicGMgNnJwcyA2cnCDIDZycJKWcnCyJngAd2ZXJzaW9uI2cxGRREMRhBANqCHgQnR1peBPZvE2gEjp3XUwRdagc4BLqq2OEEjLDe6wQpnLCTBKfDFDgE0oiRJwTmW2dkBDetiSsE5EfPDAT17yNUBPzo7kQEcqGUXARhjpbMBFstfAoEbXHwNQStpQxbBIWhsNMEfaU3SgSITritBLoGGBkEbMac8wQ/JtkWBM8ApKkEAzsxcwRDN4cvBG/F8rkEZPDX0jYaAI4eAEkFAAaJB0UIGghYCTcJvwoWCn0K+QtYDCMN/A66D9sQXRPhFJoVYRWRFj4XfxhDGSgZ9xpaGr8a6RsUAIAEd1WXkDYaAI4BGgUAigIAi/6BCghJMgwNQQAqsYEGshCBBbIZJw+yHicPsh+L/40CAAsABLNC/9wyALIBQv/1IrIBQv/viSIpRwYxFoEDCUk4ECMSRDEWJQlJTgI4EIEDEkQxFiMJSU4DOBAjEkQ2GgFJTgJJFUsBIllJTgdJgaoBEkRLAkxLAlIiWYGsAQhLAiVZSU4JSUsCEkRLA0xLA1IiWSUICEsCgQRZSU4ISUsCEkRLA0xLA1IiWSUICEsCIQdZSU4JSUsCEkRLA0xLA1IiWYEgCyUICEsCIQVZSUsCEkRLA0xLA1IiWSQLJQgIEkQ2GgJJIlklCEsBFRJEVwIATgg2GgNJFSQSRBdOBTYaBEkVJBJEF04ENhoFSSJZJQhLARUSRFcCAE4HTIgcJE4GgAV0b2tlbkxQAU4EIicLZURAA7MxIDIDEkEDqyNESwsVgSASQQOcMQZLDBJBA5QjREsCMgcPQQOGMgeBrAIISwMPQQN6I0QxBDECDUEDbDEEMQIJgWQOQQNhI0RLAzgAMQASQQNRSwM4ByInCGVEEkEDRCNESwM4CEsGEkEDNEsDOAkyAxJBAyojRE8DOCAyAxJEgBFSVENfQUxHT19RVU9URV9WMTIRUDIIFlAxAFBLC0lOAlBPBhZQTwQWUDECFlAxBBZQTwRQgcQTIoj+CiInCWVETE8GTwKERChMUElOA71FAUACx0sBOAAxABJBAr0jREsBOCAyAxJBAq1LATghQAKmI0RLATgmSwFPCEsKUlcCABJBAo5LATglSwFLCUsHUlcCABJBAnwjREsBOCdLAU8GTwdSVwIAEkECZEsBOChLAVcGIBJBAlcjREsBOCJLAYFGW0lFDhJBAkFLATgjSwGBVlsSQQI0I0RLC0ECKUmBTltJRQxBAh9LCksMDkECFyNESYFWW4ESDkECB0mBXlshDAxBAf0jREsBOCkyChJBAe1LATgsMgoSQQHjI0RHAoFeW0lFDCQaSUULSSITSwRJTgI4JBJESTgqTwNXJiASRDgrRQ9AAAhLCYEEGkEBqjIKSw4SREcCgX5bSUUKSYHQDw5ETIFmWw9BAYpJgW5bSwgOQQGASYF2W0sIDkEBdiNEiBgWSwhAADhJgWZbQAFhSYFuW0ABWkmBdltAAVMjREmBigFbQAFFSSEKW0ABPkmBmgFbQAE2SYGiAVtAAS4jREw4PElOAksDvUUBFESxMgoishKyFLIRgQSyECKyAbNHAoFGW0sBV04ITgVMgU5bSUUKCUlFD0EAGbExADIKSw+yErIUshNLAbIRgQSyECKyAbNLCUEAFLExACOyL7IuSwGyLYEFshAisgGzSwlAACtJgV5bgYBAGkAAILEyCksBVyYgMgOyLEsQsiuyKrIpSwGyIYEDshAisgGzSYFeW0khCxpBABBLCkRLBjEAUAEqTFBLCRa/SYGAIBpBAB8xAEsHSU8CUAEnCkxQIxZMSwG/MQBPAkxQAStMUEy/TwIWMQBPAoGAgAIaQQA7MQAyAyIWTwRJTgNPBVBPBFBPAlCAAgCDUE8FSU4CUExQJwRQTFBPAlBPAkm8SEy/TIgZCScMTFCwI0MyA0L/wiJC/s8iQv6qIkL+hzIDQv5TIkL+GiJC/gAiQv3mIkL9ySJC/aYiQv2BIkL9VyJC/UAiQvzTIkL8uSJC/JwiQvyDIkL8aSJC/FIiKUkxFiMJSTgQIxJENhoBSSJZJQhLARUSRFcCAElOAjYaAkkVIxJEF8AwSU4ENhoDSRUjEkQXwBxOAzYaBEkVJBJEF04DTwKIGAxOBiOIFctJTgNJgWhZSwEVUklOBIFeW0lOAiMaQQEbSwOB0AdTJwQiTwJUIlNAAQpJQQEGI0RLAjIKE0EA+EsCMgMTQQDwI0RLBUsDUAFJRQwnBUxQvkwXIkxPAk0UREsEIQpbSUULQQAdK0sLUL5MFyJMTwJNQAAOSwJLB3AAREsBCEsKDkRLA4FqW0sBCElPBoFGW0lFCw5ETwKBEBpBAAxLA4FyW0sCCEsIDkQWTwNMXGpJgXJbSwIIFlxySU4DKEsFUEm8SEsBv0mBaFlLARVSSU4FgV5bSSQaQQA/sTIKshNLAbISSwKyFEsGshGBBLIQIrIBszIDTwVOAk8ETwSIFpIyCk8DcABETwKBRltPAoFqWwkPRIgXTSNDsUsBshJLArIUSwayEYEEshAisgGzQv/CIkL/DSJC/vcxFiMJSTgQgQQSRDYaAUkiWSUISwEVEkRXAgA2GgJJFSMSRBfAMElOAyhPAlBJTgNJIiS6F08CEkQhBCS6F0lOBCUaQQBySwMkGkAAayNEMSAyAxJBAF1JOAAxABJBAFQjREk4EzIDEkEARUk4FTIDEkEAPEk4IDIDEkEAMyNESTgRTwMSQQAkSTgUMgoSQQAbSTgSQQAVI0RMSYFqJLoXTwI4EgkWgWpMuyNDIkL/6CJC/8oiQv+pIkL/kjYaAUkiWSUISwEVEkRXAgBJNhoCSRUjEkQXwDBJTgJOAzYaA0kVJBJEF04CKExQSU4CSb5MTgVEIiS6FxJEMSAyAxJBAItJIQQkuheBChqBChJBAHwjREmBeiO6IlMnBCJPAlQiU0AAZEsBQQBfSwMxAFABJwVMUL5MFyJMTwJNQABKI0RJgWokuhdLAgkWTwNLAVxqTwKBak8Du0mBaFlLARVSgV5bMQAyA08ETgNLBIgU6bExADIKTwKyErIUshOyEYEEshAisgGzI0MiQv+zIkL/gTYaAUkiWSUISwEVEkRXAgA2GgJJFSMSRBfAMDYaA0kVIxJESwJPAiWIEtdMIlOB0AdMVChPAlBJvEhMvyNDMRYjCUk4ECMSRDYaAUkiWSUISwEVEkRXAgBJNhoCSRUjEkQXwDBJTgM2GgNJFSMSRBfAHE4CNhoESRUjEkQiU04GgQSIEn1HAoFoWUsBFVKBXltJTgKBBBpBAH9LAjIKE0EAdyNETwWIFJRMTwIkGkEARk8ESEsDTwNQAScFTFBJvkwXIkxPAk1MSwUWv0sEE0EADksDQQAXSYF7WyMIFlx7KE8DUEm8SEy/iBSuI0NJgXtbIwlC/+ZPAklPBUlOA3ABTE4DRLFLBrIvsi6yLYEFshAisgGzQv+zIkL/hjEWIwlJOBAjEkQ2GgFJIlklCEsBFRJEVwIASU4CNhoCSRUjEkQXwDA2GgNJFSMSRBfAHE4DNhoESRUkEkQXTgNPAogT204EKE8CUEkiJLoXTwISRDEATIMCKCC6EkEAJEmBQAxBAB1LATIDE0EAFSNETwNPAlABgAFhTFBMFr+IE/sjQyJC/+g2GgFJIlklCEsBFRJEVwIANhoCSRUjEkQXwDA2GgNJFSMSRBfAHE4CKE8CUElOAiIkuhcSRDEgMgMSQQAWMQBLAYMCKCC6EkEACSNEgUhPArsjQyJC//Q2GgFJIlklCEsBFRJEVwIANhoCSRUjEkQXwDAoTwJQSU4CSb5MTgREIiS6FxJEMSAyAxJBAC0xAEsBgwJIILoSQQAgMQAyAxNBABgjREmDAkgguk8CTFwoMgNcSEsBvEi/I0MiQv/lNhoBSSJZJQhLARUSRFcCADYaAkkVIxJEF8AwKE8CUElOAkm+TE4DRCIkuhcSRDEgMgMSQQBCMQBLAoMCKCC6EkEANSNESwGBeiO6IlMnBCJPAlQiU0AAHEsBgXskuhdAABIjRDIDXCgyA1xITEm8SEy/I0MiQv/rIkL/yDYaAUkiWSUISwEVEkRXAgA2GgJJFSMSRBfAMEsBTCOIEAExAEsBVyggEkRJgWhZSwEVSwJLAk8CUkmBXluB/v//////////ARoWXF5PAiJPA1hMUChPAlBJvEhMvyNDNhoBSSJZJQhLARUSRFcCAEk2GgJJFSMSRBfAMElOAjYaA0kVIxJEF8AcTgI2GgRJFSMSRCJTTgMkiA+IRwKBaFlJTgJOBEkVTE4CUkmBXluBgAgaQQBwSwIyAxNBAGgjREsCXCZMIk8EWExQTwJBAClJgWhZSwEVSwJLAk8CUkmBXluB//f/////////ARoWXF5PAiJPA1hMUChLBFBJvEhMv7EyCksCSXEJREsBcQpEsiyyK08CsiqyIbIpgQOyECKyAbMjQyJC/5UpSTEWIwlJOBAjEkQ2GgFJIlklCEsBFRJEVwIASU4CNhoCSRUjEkQXwDA2GgNJTgRJFSQSRBdJTgNOBDYaBElOB0kVJBJEF04INhoFSU4GSRUkEkQXTgk2GgZJTgVJIlmBIAslCEwVSU4IEkQ2GgdJTgZJIlkkCyUITBUSRE8DiBCyTgeBEIgOcElOAkmBaFlJTgJOA0kVTE4CUklOAkmBXltJTg8kGkSBZlsTQAAUSYFuW0sPE0AACkmBdltLDhNBAAZLDIEgGkRHAiEHWUsBIQVZSUUUUksEE0AADUcCFUsSTFJLBRNBAAZLDIFAGkRJgX5bSUURTwYPQQDYSw1LDw5BANBLDEsPDkEAyCNETwhcZk8CIk8DWExQSYFoWUsBFUsCSwJPAlJPCFxuTwIiTwNYTFBJgWhZSwEVSwJLAk8CUk8HXHZPAiJPA1hMUEmBaFlLARVLAksCTwJSSSEHWUsBIksCWE8FUEsCIQVZSwMVTwRLAk8CUk8CTFBLAU8DCU8CTwYITAkWVwYCXIhPAiJPA1hMUEmBaFlLARVLAksCTwJSSSEFWSJMWE8DUE8CIk8DWExQSYFoWUsBFUsCTgJSiA17SChPA1BJvEhMv4gPviNDIkL/NTEWIwlJOBAjEkQ2GgFJIlklCEsBFRJEVwIASU4CNhoCSRUjEkQXwDA2GgNJFSMSRBfAHE4DNhoESRUkEkQXTgM2GgVJFSMSRCJTTgRPAogPCk4CgRCIDMhJgWhZSwEVUoFeW0kkGkEAUUsEMgMTQQBJI0RPBU8FUAFMSwNAABFITwJIJwpMUE8CFr+IDyojQ0sDIxJBABNPA0iBgAEaRCcNTFBPAha/Qv/hSE8CJRJEK0xQTwIWv0L/0SJC/7Q2GgFJIlklCEsBFRJEVwIASTYaAkkVIxJEF8AwNhoDSU4DSRUkEkQXTgI2GgRJTgVJFSQSRBdOBjYaBUlOA0kVJBJEF04HNhoGSU4DSRUkEkQXTgKBEIgMCUcCgWhZSU8CSRVMTgJSSYFeW0lOCyQaQQCqSwuBgKMFDkEAoCNESYGKAVtPBxNAABVJIQpbSwwTQAALSYGaAVtLCxNBAAdLCYGAAhpESYGiAVtPBBNBAAdLCIGABBpETwVcik8CIk8DWExQSYFoWUsBFUsCSwJPAlJPBVySTwIiTwNYTFBJgWhZSwEVSwJLAk8CUk8EXJpPAiJPA1hMUEmBaFlLARVLAksCTwJSTwNcok8CIk8DWExQKE8CUEm8SEy/I0MiQv9dMRYjCUk4ECMSRDYaAUkiWSUISwEVEkRXAgBJTgI2GgJJFSMSRBfAMDYaA0kVIxJEF8AcTgM2GgRJFSQSRBdOBE8CiA03TgMoTwJQSSIkuhdPAhJEIQQkuhckGkEAIEkyAxNBABkjRDEATwRMUExQAYABc0xQTwIWv4gNXSNDIkL/5CJHAilHBzEWIwlJOBAjEkQ2GgFJIlklCEsBFRJEVwIASU4CNhoCSRUjEkQXwDBJTgJOBDYaA0kVIxJEF8AcTgQ2GgRJFSMSRBfAHE4FNhoFSRUkEkQXTgNPAogMnU4HgbgXIojvTChMUElOAkm+REsBIiS6F08DEkRJgWhZSwEVUk4DIQQkuhdJTgMkGkEC8EmBeiO6IlMnBCJPAlQiU0AC3ksBQQLZI0RLBTIKE0ECy0sGMgoTQQLDSwYyAxNBArsjREsESUsHSU4DUElFFgFJRRcnBUxQvkwXIkxPAk0UREsIUAFJRRQnBUxQvkwXIkxPAk0URDEAE0EAGUsSMQBQAYABc0xQSb5MFyJMTwJNSwMJFr8nCksUUL5MFyJMTwJNQAAQJwpLElC+TBciTE8CTUECQyNLAYHpASS6F0UOJw1LFVC+TBciTE8CTUECC0sBgfEBJLoXRQ5LAksOHU4DTEEB7EhFASJOAytLFVC+TBciTE8CTUAADytLE1C+TBciTE8CTUEBxCNAAEoyB0sBSU4CgaUCJLoXD0SBjQIkuhdJRQ5BAAZLAUsNDkRJgZ0CJLoXSUUNQQAcMgeAAWxLFlBJvkwXIkxPAk1LDghPAg5EMgcWv0sGSUsKSU4CcABESwRJTgIPREsISwhPA08ESwxJTgVPBksKTweICbtIRwIhCCW6FyEGCCW6F0wiRRFLEEsCDEEAP0cCIQgluhchBghKJboXSxNJTwIMREwlCEsBgSALCE8CTIEguksISwhLDUsMSw5LCUsMTweICWpIIwhFEUL/uUUBTwRISwNBAMIiRRFHAiEIJboXIQYIJboXRRAiRQ9LDksQDEEApUsOIwhJRQtLAUkhCCW6FyEGCCW6FxJBAGFLA0sRCUUOSxBLDklOAghFEkEARkcCIQgluhchBghKJboXSxFJTwIMREwlCEyBIAsIgSC6SwVLBEsISU4ESwNLE0lOBYgJprGyErIUshNLB7IRgQSyECKyAbNLCUUPQv9+RwKBiwIluhchBghKJboXSxFJTwIMREwlCEwkCwgkuhdLBB0hCZdFDkL/e0hPAglOAksDTwVJTgVLBIgJT7GyErIUshOyEYEEshAisgGzSYgKDCNDIkL+OU8CIQmXTgNC/hAnDUsTUL5MFyJMTwJNQf3vSwGB+QEkuhdFDkL94iJC/boiQv1CIkL9JDEWIwlJOBAjEkQ2GgFJIlklCEsBFRJEVwIASU4CNhoCSRUjEkQXwDA2GgNJFSMSRBfAHE4DNhoESRUjEkQiU04DTwKICTBOBIEEiAbuRwKBaFlLARVSgV5bSSQaQQBWSwMyChNBAE4jRIEEGkRLBE8DUAEnBUxQSb5MFyJMTwJNSwMTQQATSwJBACBLAYF7WyMIFk8CTFx7TE8CFr8oTwNQSbxITL+ICSojQ0sBgXtbIwlC/90iQv+vIkkxFiMJSTgQIxJENhoBSSJZJQhLARUSRFcCAElOAjYaAkkVIxJEF8AwSU4DNhoDSRUjEkQXwBxOA08CiAh+TgIoTwJQSU4DIiS6FxJBAHNLASEEJLoXIQsaQQBmI0QyA0sDSU8CE0RLBTEAUAEnDkxQSUUJMQBMvk1JRQgTQQA9MQBLBHAAREsFSUsIUAFMSwVJTgRQASpPAlBJvkwXIkxPAk1LAwkWvypMUEm+TBciTE8CTU8CCBa/SwdMv4gIWSNDIkL/lzYaAUkiWSUISwEVEkRXAgA2GgJJFSMSRBfAHFABKkxQvkwXIkxPAk0WJwxMULAjQzYaAUkiWSUISwEVEkRXAgBJNhoCSRUjEkQXwDBJTgKBBIgFZ0kxAExXKCASQQB6SYF7W0AAcyNESYFoWUsBFUsCSwJPAlJJgV5bgfv//////////wEaFlxeTwIiTwNYTFAoTwNQSbxISwG/sTIKTgJLAXEITE4CREmBaFlLARVSgV5bJBpBABwyCk8CSXEKRLIssiGyK7IqsimBA7IQIrIBsyNDMgNC/+EiQv+KKUk2GgFJIlklCEsBFRJEVwIASTYaAkkVIxJEF8AwSU4CI4gEuUlOAjEATFcoIBJBAQsxAEsCVwggEkEBACNEMgpLAUlOAnAATElOA0UIRDEASwFwAERPAghMcQBEEkRLAUmBaFlJTgJOBEkVTE4CUklOAoFeWyQaSUUHQQAmsTIKIrIvsi5HArItgQWyECKyAbOxMQAisi+yLrItgQWyECKyAbNLBkEAHUsFQQB4sTEAMgqyE0sHshKyFEmyEYEEshAisgGzMgpzAUSxMQBJshUishKyFExJshGBBLIQIrIBs7GyIYEDshAisgGzIQwWTwJMXF5PAiJPBFhMUCIWXGooTwNQSbxISwG/MgpzAURPAkwJsUxXCCCyB7III7IQIrIBsyNDsTEASweyErIUSbIRgQSyECKyAbNC/4kiQv79MRYjCUk4ECMSRDYaAUkiWSUISwEVEkRXAgBJTgI2GgJJFSMSRBfAMElOBDYaA0kVIxJEF8AcTgM2GgRJFSMSRBfAHE4DNhoFSRUkEkQXTgRPAogFg04GgSCIA0FJgWhZSwEVUoFeW0mBgEAaQQBRSwJBAEwjREsDMgoTQQA+SwEyChNBADZLATIDE0EALiNETwRMTwRJTgNPBElOBE8GSU4FiAS+sbISshSyE0yyEYEEshAisgGziAV7I0MiQv/PIkL/sSIpNhoBSSJZJQhLARUSRFcCADYaAkkVIxJEF8AwSU4CKE8CUElOAyIkuhcSQQCySwEhBCS6FyQaQQCmI0QxIDIDEkEAmDEASwFwAERAAI4jRDEWJQgyBBJEMRYjCElFBDgQSYEEEkSBBBJBAGxLAjgAMQASQQBiSwI4EUsBEkEAWCNESwI4EkAAS0sCOBRLAiSBILpJRQYSQQA6SwI4FUsEEkEAMCNESwI4EzIDEkEAIEsCOCAyAxJBABYjRLExACKyL7Iusi2BBbIQIrIBsyNDIkL/5yJC/80iQv+lIkL/byJC/1c2GgFJIlklCEsBFRJEVwIANhoCSRUjEkQXwDBJTwIoTFBJTgJJvkxOA0QiJLoXEkEAmTEASwKDAigguhJBAIwjRDEgMgMSQQB+SwEhBCS6FyQaQAByI0RLAYF6I7oiUycEIk8CVCJTQABZSwGBeyS6F0AATyNEMgNcKDIDXEhJgWhZSwEVSwJLAk8CUkmBXluBEhoWXF5PAiJPA1hMUExJvEhMv7EyA0sBcQhEMgNJsiyyK7IqsimyIYEDshAisgGzI0MiQv+uIkL/iyJC/3E2GgFJIlklCEsBFRJEVwIAKExQvkQnDExQsCNDNhoBSRUjEkQXwBxJNhoCSSJZJQhLARUSRFcCAEwyAxNBACBJFYEgEkEAGCNEMSAyAxJEJwYxAGcnCE8CZycJTGcjQyJC/+U2GgFJFSMSRBfAHDYaAkkiWSUISwEVEkRXAgBMNhoDSRUjEkQiU04CMQAiJwZlRBJBAC5JMgMTQQAnI0RLARWBIBJBABgxIDIDEkEAECNEJwhMZycJTGcnC0xnI0MiQv/tIkL/1jYaAUkVIxJEF8AcMQAiJwZlRBJBABAxIDIDEkEACCNEJwdMZyNDIkL/9TEAIicHZUQSQQAcMQAyAxNBABQjRDEgMgMSRCcGMQBnJwcyA2cjQyJC/+kxIDIDEkQjQ4oDASiL/VBJvkxOAkRJIiS6F4v+EkQxIDIDEkQxAEyDAigguhJAABmL/TEAUAGAAWFMUL5MFyJMTwJNi/8aQQADI0SJIkL/+ooBASIpi/8hB1mL/yEFWUlOAov/TgJSSU4CIllJgQQOQQCMi/8Vi/9LA08CUiJZSwESQQB6I0QijAEiSUsCDEEAQosCVwIASwGBIAuBIFhJjAAyAxNBACiLADIKE0EAICNEi/8Vi/9LBE8CUlcCAEsBJAtbSUSLAQiMASMIQv+7IkL/3UYDi/+BfltBAAuLASEJEkSL/4wAiYsBQQAIiwEhCRJBAAUjREL/6SJC//giQv+DiggBIilHAov5IQpbSUEAtov4i/9QAStMUL5MFyJMTwJNQACii/+L+nAARIv/i/sSQQADi/0Ji/+L/BJBAAaL/Yv+CQgiTIv5IQdZi/khBVlJjAGL+U4CUkmMACJZTgIiTEsBSwQMQQBTSwEjCEmMA0sEEkEAKYv+SwMJjAJPAosCCEyLAFcCAE8DgSALgSBYi/8SQQADiwIIiwNMQv/Ci/kVi/mLAU8CUlcCAEsCJAtbi/4dIQmXjAJC/8FFAUUBRQGLBA5Ei/mMAImKBQCL/CELGkEAaYv9i/4TQQBhi/9BAFyL/TIDE0EAJov7i/1QAScOTFC+i/1OAk2L+0xQASpMUEm+TBciTE8CTYv/CRa/i/4yAxNBACaL+4v+UAEnDkxQvov+TgJNi/tMUAEqTFBJvkwXIkxPAk2L/wgWv4mKAQExIDIDEkSL/zgAMQASQQBGi/84BzIKEkEAPCNEi/84IDIDEkEALIv/OAkyAxJBACIjRDIKRwJzAESL/zgICUlPAnMBRA9BAAZMcwFECYlGAiKJIkL/2yJC/8GKAQAyCklzAERLAXMBRIv/CA9ESXMARExzAUQJi/8JSUEAELExAIsAsgiyByOyECKyAbOJ",
+      "clear_program": "C4EBQw==",
+      "approval_sha256": "39fa8e1227f16e57e42b1be8bc7f2b8e703817c309464de805ef88faaf950f24",
+      "clear_sha256": "ed90f0d2da1f1d1abd773c45230651a292a90edbc12a7bf859a493a12a640ce7",
+      "program_bytes": 8029,
+      "extra_pages": 3,
+      "schema": {
+        "global": {
+          "ints": 2,
+          "bytes": 4
+        },
+        "local": {
+          "ints": 0,
+          "bytes": 0
+        }
+      },
+      "methods": [
+        {
+          "name": "register",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "acfg",
+              "name": "creation"
+            },
+            {
+              "type": "pay",
+              "name": "payment"
+            },
+            {
+              "type": "(string,string,string,byte[32],address,uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,address[],uint64[],uint64,uint64,uint64,uint64)",
+              "struct": "TokenConfig",
+              "name": "config"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "uint64",
+              "name": "fee"
+            },
+            {
+              "type": "uint64",
+              "name": "expiry"
+            },
+            {
+              "type": "byte[]",
+              "name": "signature"
+            }
+          ],
+          "returns": {
+            "type": "uint64"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "mint",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "recipient"
+            },
+            {
+              "type": "uint64",
+              "name": "amount"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "burn",
+          "args": [
+            {
+              "type": "axfer",
+              "name": "deposit"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "smart_burn",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "uint64",
+              "name": "amount"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "pause",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "bool",
+              "name": "paused"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "freeze",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "account"
+            },
+            {
+              "type": "bool",
+              "name": "frozen"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "permissions",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "account"
+            },
+            {
+              "type": "uint64",
+              "name": "mask"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "transfer_ownership",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "successor"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "accept_ownership",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "renounce_ownership",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "revoke_mint",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "metadata",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "reserve"
+            },
+            {
+              "type": "bool",
+              "name": "immutable"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "tax",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "uint64",
+              "name": "transfer_bps"
+            },
+            {
+              "type": "uint64",
+              "name": "buy_bps"
+            },
+            {
+              "type": "uint64",
+              "name": "sell_bps"
+            },
+            {
+              "type": "address[]",
+              "name": "recipients"
+            },
+            {
+              "type": "uint64[]",
+              "name": "shares"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "account_policy",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "account"
+            },
+            {
+              "type": "uint64",
+              "name": "kind"
+            },
+            {
+              "type": "bool",
+              "name": "value"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "limits",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "uint64",
+              "name": "maximum_transaction"
+            },
+            {
+              "type": "uint64",
+              "name": "maximum_wallet"
+            },
+            {
+              "type": "uint64",
+              "name": "cooldown"
+            },
+            {
+              "type": "uint64",
+              "name": "trading_start"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "approve",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "spender"
+            },
+            {
+              "type": "uint64",
+              "name": "amount"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "transfer",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "sender"
+            },
+            {
+              "type": "account",
+              "name": "recipient"
+            },
+            {
+              "type": "uint64",
+              "name": "amount"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "blocklist",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "account"
+            },
+            {
+              "type": "bool",
+              "name": "blocked"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "delegate_votes",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "delegate"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "votes",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "account",
+              "name": "delegate"
+            }
+          ],
+          "returns": {
+            "type": "uint64"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": true,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "revoke_freeze",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "destroy",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "clawback",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "sender"
+            },
+            {
+              "type": "account",
+              "name": "recipient"
+            },
+            {
+              "type": "uint64",
+              "name": "amount"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "opt_out",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "detach",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "token",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            }
+          ],
+          "returns": {
+            "type": "(uint64,address,address,address,(string,string,string,byte[32],address,uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,address[],uint64[],uint64,uint64,uint64,uint64),uint64,uint64,bool,uint64)",
+            "struct": "TokenState"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": true,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "create",
+          "args": [
+            {
+              "type": "account",
+              "name": "treasury"
+            },
+            {
+              "type": "byte[]",
+              "name": "signer"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [
+              "NoOp"
+            ],
+            "call": []
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "configure",
+          "args": [
+            {
+              "type": "account",
+              "name": "treasury"
+            },
+            {
+              "type": "byte[]",
+              "name": "signer"
+            },
+            {
+              "type": "bool",
+              "name": "paused"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "nominate_operator",
+          "args": [
+            {
+              "type": "account",
+              "name": "successor"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "accept_operator",
+          "args": [],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "resources",
+          "args": [],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        }
+      ],
+      "structs": {
+        "TokenConfig": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "name": "metadata_hash",
+            "type": "byte[32]"
+          },
+          {
+            "name": "reserve",
+            "type": "address"
+          },
+          {
+            "name": "maximum",
+            "type": "uint64"
+          },
+          {
+            "name": "initial",
+            "type": "uint64"
+          },
+          {
+            "name": "decimals",
+            "type": "uint64"
+          },
+          {
+            "name": "flags",
+            "type": "uint64"
+          },
+          {
+            "name": "transfer_bps",
+            "type": "uint64"
+          },
+          {
+            "name": "buy_bps",
+            "type": "uint64"
+          },
+          {
+            "name": "sell_bps",
+            "type": "uint64"
+          },
+          {
+            "name": "maximum_bps",
+            "type": "uint64"
+          },
+          {
+            "name": "tax_recipients",
+            "type": "address[]"
+          },
+          {
+            "name": "tax_shares",
+            "type": "uint64[]"
+          },
+          {
+            "name": "maximum_transaction",
+            "type": "uint64"
+          },
+          {
+            "name": "maximum_wallet",
+            "type": "uint64"
+          },
+          {
+            "name": "cooldown",
+            "type": "uint64"
+          },
+          {
+            "name": "trading_start",
+            "type": "uint64"
+          }
+        ],
+        "TokenState": [
+          {
+            "name": "asset",
+            "type": "uint64"
+          },
+          {
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "name": "pending",
+            "type": "address"
+          },
+          {
+            "name": "config",
+            "type": "TokenConfig"
+          },
+          {
+            "name": "circulating",
+            "type": "uint64"
+          },
+          {
+            "name": "minted",
+            "type": "uint64"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "name": "frozen_count",
+            "type": "uint64"
+          }
+        ]
+      },
+      "keys": {
+        "global": {
+          "owner": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "b3duZXI="
+          },
+          "pending_owner": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "cGVuZGluZ19vd25lcg=="
+          },
+          "treasury": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "dHJlYXN1cnk="
+          },
+          "signer": {
+            "keyType": "AVMString",
+            "valueType": "AVMBytes",
+            "key": "c2lnbmVy"
+          },
+          "paused": {
+            "keyType": "AVMString",
+            "valueType": "AVMUint64",
+            "key": "cGF1c2Vk"
+          },
+          "version": {
+            "keyType": "AVMString",
+            "valueType": "AVMUint64",
+            "key": "dmVyc2lvbg=="
+          }
+        },
+        "local": {},
+        "box": {}
+      },
+      "box_maps": {
+        "global": {},
+        "local": {},
+        "box": {
+          "tokens": {
+            "keyType": "AVMBytes",
+            "valueType": "TokenState",
+            "prefix": "dA=="
+          },
+          "roles": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "YQ=="
+          },
+          "pools": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "cA=="
+          },
+          "exemptions": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "ZQ=="
+          },
+          "limits_exempt": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "eA=="
+          },
+          "last_transfer": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "bA=="
+          },
+          "allowances": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "cw=="
+          },
+          "delegates": {
+            "keyType": "AVMBytes",
+            "valueType": "address",
+            "prefix": "ZA=="
+          },
+          "weights": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "dw=="
+          }
+        }
+      }
+    },
+    "collections": {
+      "name": "RockTheCoinAlgorandCollectionsV1",
+      "avm_version": 11,
+      "approval_program": "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",
+      "clear_program": "C4EBQw==",
+      "approval_sha256": "a4a07ba6be190ef158c696d35438c54805dc5763643651b74663a1642e5d042e",
+      "clear_sha256": "ed90f0d2da1f1d1abd773c45230651a292a90edbc12a7bf859a493a12a640ce7",
+      "program_bytes": 3412,
+      "extra_pages": 1,
+      "schema": {
+        "global": {
+          "ints": 2,
+          "bytes": 4
+        },
+        "local": {
+          "ints": 0,
+          "bytes": 0
+        }
+      },
+      "methods": [
+        {
+          "name": "register",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "pay",
+              "name": "payment"
+            },
+            {
+              "type": "(string,string,string,uint64,bool,bool,uint64,uint64,address,bool)",
+              "struct": "CollectionConfig",
+              "name": "config"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "uint64",
+              "name": "fee"
+            },
+            {
+              "type": "uint64",
+              "name": "expiry"
+            },
+            {
+              "type": "byte[]",
+              "name": "signature"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "mint",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "uint64",
+              "name": "count"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "minting",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "bool",
+              "name": "paused"
+            },
+            {
+              "type": "bool",
+              "name": "close"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "permissions",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "account",
+              "name": "account"
+            },
+            {
+              "type": "uint64",
+              "name": "mask"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "metadata",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "byte[]",
+              "name": "uri"
+            },
+            {
+              "type": "bool",
+              "name": "immutable"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "item_metadata",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "uint64",
+              "name": "index"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            },
+            {
+              "type": "account",
+              "name": "reserve"
+            },
+            {
+              "type": "bool",
+              "name": "immutable"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "royalty",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "account",
+              "name": "recipient"
+            },
+            {
+              "type": "uint64",
+              "name": "basis_points"
+            },
+            {
+              "type": "bool",
+              "name": "immutable"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "destroy_item",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "uint64",
+              "name": "index"
+            },
+            {
+              "type": "asset",
+              "name": "asset"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "transfer_ownership",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "account",
+              "name": "successor"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "accept_ownership",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "renounce_ownership",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "collection",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            }
+          ],
+          "returns": {
+            "type": "(address,address,address,(string,string,string,uint64,bool,bool,uint64,uint64,address,bool),uint64,bool,bool)",
+            "struct": "CollectionState"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": true,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "item",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "uint64",
+              "name": "index"
+            }
+          ],
+          "returns": {
+            "type": "(uint64,bool,bool)",
+            "struct": "ItemState"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": true,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "create",
+          "args": [
+            {
+              "type": "account",
+              "name": "treasury"
+            },
+            {
+              "type": "byte[]",
+              "name": "signer"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [
+              "NoOp"
+            ],
+            "call": []
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "configure",
+          "args": [
+            {
+              "type": "account",
+              "name": "treasury"
+            },
+            {
+              "type": "byte[]",
+              "name": "signer"
+            },
+            {
+              "type": "bool",
+              "name": "paused"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "nominate_operator",
+          "args": [
+            {
+              "type": "account",
+              "name": "successor"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "accept_operator",
+          "args": [],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "resources",
+          "args": [],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        }
+      ],
+      "structs": {
+        "CollectionConfig": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "name": "metadata_uri",
+            "type": "string"
+          },
+          {
+            "name": "maximum",
+            "type": "uint64"
+          },
+          {
+            "name": "metadata_mutable",
+            "type": "bool"
+          },
+          {
+            "name": "item_metadata_mutable",
+            "type": "bool"
+          },
+          {
+            "name": "royalty_bps",
+            "type": "uint64"
+          },
+          {
+            "name": "royalty_ceiling_bps",
+            "type": "uint64"
+          },
+          {
+            "name": "royalty_recipient",
+            "type": "address"
+          },
+          {
+            "name": "royalty_mutable",
+            "type": "bool"
+          }
+        ],
+        "CollectionState": [
+          {
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "name": "pending",
+            "type": "address"
+          },
+          {
+            "name": "config",
+            "type": "CollectionConfig"
+          },
+          {
+            "name": "minted",
+            "type": "uint64"
+          },
+          {
+            "name": "closed",
+            "type": "bool"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          }
+        ],
+        "ItemState": [
+          {
+            "name": "asset",
+            "type": "uint64"
+          },
+          {
+            "name": "mutable",
+            "type": "bool"
+          },
+          {
+            "name": "destroyed",
+            "type": "bool"
+          }
+        ]
+      },
+      "keys": {
+        "global": {
+          "owner": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "b3duZXI="
+          },
+          "pending_owner": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "cGVuZGluZ19vd25lcg=="
+          },
+          "treasury": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "dHJlYXN1cnk="
+          },
+          "signer": {
+            "keyType": "AVMString",
+            "valueType": "AVMBytes",
+            "key": "c2lnbmVy"
+          },
+          "paused": {
+            "keyType": "AVMString",
+            "valueType": "AVMUint64",
+            "key": "cGF1c2Vk"
+          },
+          "version": {
+            "keyType": "AVMString",
+            "valueType": "AVMUint64",
+            "key": "dmVyc2lvbg=="
+          }
+        },
+        "local": {},
+        "box": {}
+      },
+      "box_maps": {
+        "global": {},
+        "local": {},
+        "box": {
+          "collections": {
+            "keyType": "AVMBytes",
+            "valueType": "CollectionState",
+            "prefix": "Yw=="
+          },
+          "items": {
+            "keyType": "AVMBytes",
+            "valueType": "ItemState",
+            "prefix": "aQ=="
+          },
+          "roles": {
+            "keyType": "AVMBytes",
+            "valueType": "uint64",
+            "prefix": "YQ=="
+          }
+        }
+      }
+    },
+    "escrows": {
+      "name": "RockTheCoinAlgorandEscrowsV1",
+      "avm_version": 11,
+      "approval_program": "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",
+      "clear_program": "C4EBQw==",
+      "approval_sha256": "1341e745e7826c9a1d468c5985f14d78e3513dffe78004ea9c7f14646f2a2b05",
+      "clear_sha256": "ed90f0d2da1f1d1abd773c45230651a292a90edbc12a7bf859a493a12a640ce7",
+      "program_bytes": 2423,
+      "extra_pages": 1,
+      "schema": {
+        "global": {
+          "ints": 2,
+          "bytes": 4
+        },
+        "local": {
+          "ints": 0,
+          "bytes": 0
+        }
+      },
+      "methods": [
+        {
+          "name": "setup",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "account",
+              "name": "escrow"
+            },
+            {
+              "type": "uint64",
+              "name": "asset_id"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "register",
+          "args": [
+            {
+              "type": "pay",
+              "name": "funding"
+            },
+            {
+              "type": "txn",
+              "name": "deposit"
+            },
+            {
+              "type": "pay",
+              "name": "payment"
+            },
+            {
+              "type": "(uint64,uint64,address,uint64,uint64,uint64)",
+              "struct": "LockConfig",
+              "name": "config"
+            },
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "uint64",
+              "name": "fee"
+            },
+            {
+              "type": "uint64",
+              "name": "expiry"
+            },
+            {
+              "type": "byte[]",
+              "name": "signature"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "release",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            }
+          ],
+          "returns": {
+            "type": "uint64"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "surplus",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            },
+            {
+              "type": "bool",
+              "name": "native"
+            }
+          ],
+          "returns": {
+            "type": "uint64"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "close",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "lock",
+          "args": [
+            {
+              "type": "byte[]",
+              "name": "reference"
+            }
+          ],
+          "returns": {
+            "type": "(address,address,(uint64,uint64,address,uint64,uint64,uint64),uint64)",
+            "struct": "LockState"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": true,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "create",
+          "args": [
+            {
+              "type": "account",
+              "name": "treasury"
+            },
+            {
+              "type": "byte[]",
+              "name": "signer"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [
+              "NoOp"
+            ],
+            "call": []
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "configure",
+          "args": [
+            {
+              "type": "account",
+              "name": "treasury"
+            },
+            {
+              "type": "byte[]",
+              "name": "signer"
+            },
+            {
+              "type": "bool",
+              "name": "paused"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "nominate_operator",
+          "args": [
+            {
+              "type": "account",
+              "name": "successor"
+            }
+          ],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "accept_operator",
+          "args": [],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        },
+        {
+          "name": "resources",
+          "args": [],
+          "returns": {
+            "type": "void"
+          },
+          "actions": {
+            "create": [],
+            "call": [
+              "NoOp"
+            ]
+          },
+          "readonly": false,
+          "events": [],
+          "recommendations": {}
+        }
+      ],
+      "structs": {
+        "LockConfig": [
+          {
+            "name": "asset",
+            "type": "uint64"
+          },
+          {
+            "name": "amount",
+            "type": "uint64"
+          },
+          {
+            "name": "beneficiary",
+            "type": "address"
+          },
+          {
+            "name": "start",
+            "type": "uint64"
+          },
+          {
+            "name": "cliff",
+            "type": "uint64"
+          },
+          {
+            "name": "end",
+            "type": "uint64"
+          }
+        ],
+        "LockState": [
+          {
+            "name": "creator",
+            "type": "address"
+          },
+          {
+            "name": "escrow",
+            "type": "address"
+          },
+          {
+            "name": "config",
+            "type": "LockConfig"
+          },
+          {
+            "name": "released",
+            "type": "uint64"
+          }
+        ]
+      },
+      "keys": {
+        "global": {
+          "owner": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "b3duZXI="
+          },
+          "pending_owner": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "cGVuZGluZ19vd25lcg=="
+          },
+          "treasury": {
+            "keyType": "AVMString",
+            "valueType": "address",
+            "key": "dHJlYXN1cnk="
+          },
+          "signer": {
+            "keyType": "AVMString",
+            "valueType": "AVMBytes",
+            "key": "c2lnbmVy"
+          },
+          "paused": {
+            "keyType": "AVMString",
+            "valueType": "AVMUint64",
+            "key": "cGF1c2Vk"
+          },
+          "version": {
+            "keyType": "AVMString",
+            "valueType": "AVMUint64",
+            "key": "dmVyc2lvbg=="
+          }
+        },
+        "local": {},
+        "box": {}
+      },
+      "box_maps": {
+        "global": {},
+        "local": {},
+        "box": {
+          "locks": {
+            "keyType": "AVMBytes",
+            "valueType": "LockState",
+            "prefix": "dg=="
+          }
+        }
+      }
+    }
+  },
+  "escrow_account": {
+    "version": 1,
+    "avm_version": 8,
+    "template": "CCACAQCACBERERERERERFzUAgCAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIjUBgCAzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzUCgAhERERERERERBc1AzEQIhJEMQgjEkQxASMSRDEHMQASRDEJMgMSRIAFYXBwSUQ0ABZQAzEgEkQxFiIPRDEWIgk4ECISRDEWIgk4ADQCEkQxFiIIOBCBBhJEMRYiCDgYNAASRDEWIgg4GSMSRDEWIgg4ADQCEkQxFiIIORoAgASMpPqSEkQxFiIIORoBgAIAIDQBUBJEMRYiCDkaAzQDFhJD",
+    "address": "7VQS4R7UKURRNJQXTE6HE6LL777SVLXZQIEKWFDEF3YBEDJ4GHTNKZ7REY",
+    "segments": [
+      "CCACAQCACA==",
+      "FzUAgCA=",
+      "NQGAIA==",
+      "NQKACA==",
+      "FzUDMRAiEkQxCCMSRDEBIxJEMQcxABJEMQkyAxJEgAVhcHBJRDQAFlADMSASRDEWIg9EMRYiCTgQIhJEMRYiCTgANAISRDEWIgg4EIEGEkQxFiIIOBg0ABJEMRYiCDgZIxJEMRYiCDgANAISRDEWIgg5GgCABIyk+pISRDEWIgg5GgGAAgAgNAFQEkQxFiIIORoDNAMWEkM="
+    ],
+    "source_sha256": "ca8b117f6574a9ca98df5e58b420598534e56aa9352c3c98f2c6f26cafe242f0"
+  }
+}

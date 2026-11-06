@@ -149,3 +149,16 @@ Sui mainnet · Native fees: **SUI**.
 - Sources: [library and coin template V1](../contracts/sui-suite-v1), [NFT/collection template V2](../contracts/sui-creators-v2).
 - The library and each creator package remove their UpgradeCap in the same publication transaction. No second shared NFT package is required.
 - [Reproduction and read-only mainnet checks](sui-verification.md), [dated evidence](../verification/sui-mainnet-2026-11-05.json).
+
+## Algorand mainnet
+
+Native currency: **ALGO**. Three immutable applications use the original owner
+`4XW5PAYENTSP2MRGOTTPBL4V46OHSQMNWSAUZFRPCRA6OXQSVULY2QKQNI`.
+
+| Service | Source | App ID |
+| --- | --- | --- |
+| Tokens and single NFTs | [`algorand-token-v2`](../contracts/algorand-token-v2) | [`3763966036`](https://lora.algokit.io/mainnet/application/3763966036) |
+| NFT collections | [`algorand-suite-v1`](../contracts/algorand-suite-v1) | [`3763966705`](https://lora.algokit.io/mainnet/application/3763966705) |
+| Vesting and asset locks | [`algorand-suite-v1`](../contracts/algorand-suite-v1) | [`3763967109`](https://lora.algokit.io/mainnet/application/3763967109) |
+
+See [Algorand permissions, feature boundaries and verification](algorand-suite.md).

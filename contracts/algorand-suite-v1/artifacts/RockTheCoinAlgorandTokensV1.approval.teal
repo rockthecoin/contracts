@@ -1,0 +1,5551 @@
+#pragma version 11
+#pragma typetrack false
+
+// algopy.arc4.ARC4Contract.approval_program() -> uint64:
+main:
+    intcblock 0 1 8 2 225 136 131 134 265 10000 146 2048 65536
+    bytecblock 0x74 0x 0x77 0x78 0x00 0x70626c6f636b6564 "owner" "pending_owner" "treasury" "signer" 0x65 "paused" 0x151f7c75 0x70 0x64 0x068101
+    txn ApplicationID
+    bnz main_after_if_else@2
+    bytec 6 // "owner"
+    global ZeroAddress
+    app_global_put
+    bytec 7 // "pending_owner"
+    global ZeroAddress
+    app_global_put
+    bytec 8 // "treasury"
+    global ZeroAddress
+    app_global_put
+    bytec 9 // "signer"
+    bytec_1 // 0x
+    app_global_put
+    bytec 11 // "paused"
+    intc_0 // 0
+    app_global_put
+    pushbytes "version"
+    intc_1 // 1
+    app_global_put
+
+main_after_if_else@2:
+    txn OnCompletion
+    !
+    assert
+    txn ApplicationID
+    bz main_create_NoOp@36
+    pushbytess 0x27475a5e 0xf66f1368 0x8e9dd753 0x5d6a0738 0xbaaad8e1 0x8cb0deeb 0x299cb093 0xa7c31438 0xd2889127 0xe65b6764 0x37ad892b 0xe447cf0c 0xf5ef2354 0xfce8ee44 0x72a1945c 0x618e96cc 0x5b2d7c0a 0x6d71f035 0xada50c5b 0x85a1b0d3 0x7da5374a 0x884eb8ad 0xba061819 0x6cc69cf3 0x3f26d916 0xcf00a4a9 0x033b3173 0x4337872f 0x6fc5f2b9 0x64f0d7d2 // method "register(pay,acfg,pay,(string,string,string,byte[32],address,uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,address[],uint64[],uint64,uint64,uint64,uint64),byte[],uint64,uint64,byte[])uint64", method "mint(pay,byte[],asset,account,uint64)void", method "burn(axfer,byte[],asset)void", method "smart_burn(byte[],asset,uint64)void", method "pause(byte[],asset,bool)void", method "freeze(pay,byte[],asset,account,bool)void", method "permissions(pay,byte[],asset,account,uint64)void", method "transfer_ownership(byte[],asset,account)void", method "accept_ownership(byte[],asset)void", method "renounce_ownership(byte[],asset)void", method "revoke_mint(byte[],asset)void", method "metadata(byte[],asset,account,bool)void", method "tax(pay,byte[],asset,uint64,uint64,uint64,address[],uint64[])void", method "account_policy(pay,byte[],asset,account,uint64,bool)void", method "limits(byte[],asset,uint64,uint64,uint64,uint64)void", method "approve(pay,byte[],asset,account,uint64)void", method "transfer(pay,byte[],asset,account,account,uint64)void", method "blocklist(pay,byte[],asset,account,bool)void", method "delegate_votes(pay,byte[],asset,account)void", method "votes(byte[],account)uint64", method "revoke_freeze(byte[],asset)void", method "destroy(byte[],asset)void", method "clawback(pay,byte[],asset,account,account,uint64)void", method "opt_out(byte[],asset)void", method "detach(byte[],asset)void", method "token(byte[])(uint64,address,address,address,(string,string,string,byte[32],address,uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,address[],uint64[],uint64,uint64,uint64,uint64),uint64,uint64,bool,uint64)", method "configure(account,byte[],bool)void", method "nominate_operator(account)void", method "accept_operator()void", method "resources()void"
+    txna ApplicationArgs 0
+    match register mint burn smart_burn pause freeze permissions transfer_ownership accept_ownership renounce_ownership revoke_mint metadata tax account_policy limits approve transfer blocklist delegate_votes votes revoke_freeze destroy clawback opt_out detach token configure nominate_operator accept_operator resources
+    err
+
+main_create_NoOp@36:
+    pushbytes 0x77559790 // method "create(account,byte[])void"
+    txna ApplicationArgs 0
+    match create
+    err
+
+
+// _puya_lib.util.ensure_budget(required_budget: uint64, fee_source: uint64) -> void:
+ensure_budget:
+    proto 2 0
+    frame_dig -2
+    pushint 10
+    +
+
+ensure_budget_while_top@1:
+    dup
+    global OpcodeBudget
+    >
+    bz ensure_budget_after_while@6
+    itxn_begin
+    pushint 6 // appl
+    itxn_field TypeEnum
+    pushint 5 // DeleteApplication
+    itxn_field OnCompletion
+    bytec 15 // 0x068101
+    itxn_field ApprovalProgram
+    bytec 15 // 0x068101
+    itxn_field ClearStateProgram
+    frame_dig -1
+    switch ensure_budget_switch_case_0@3 ensure_budget_switch_case_1@4
+
+ensure_budget_switch_case_next@5:
+    itxn_submit
+    b ensure_budget_while_top@1
+
+ensure_budget_switch_case_1@4:
+    global MinTxnFee
+    itxn_field Fee
+    b ensure_budget_switch_case_next@5
+
+ensure_budget_switch_case_0@3:
+    intc_0 // 0
+    itxn_field Fee
+    b ensure_budget_switch_case_next@5
+
+ensure_budget_after_while@6:
+    retsub
+
+
+// tokens.RockTheCoinAlgorandTokensV1.register[routing]() -> void:
+register:
+    intc_0 // 0
+    bytec_1 // ""
+    dupn 6
+    txn GroupIndex
+    pushint 3
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txn GroupIndex
+    intc_3 // 2
+    -
+    dup
+    cover 2
+    gtxns TypeEnum
+    pushint 3 // acfg
+    ==
+    assert // transaction type is acfg
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    cover 3
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    cover 2
+    dup
+    len
+    dig 1
+    intc_0 // 0
+    extract_uint16 // on error: invalid tuple encoding
+    dup
+    cover 7
+    dup
+    pushint 170
+    ==
+    assert // invalid tail pointer at index 0 of ((len+utf8[]),(len+utf8[]),(len+utf8[]),uint8[32],uint8[32],uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,(len+uint8[32][]),(len+uint64[]),uint64,uint64,uint64,uint64)
+    dig 2
+    swap
+    dig 2
+    substring3
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    pushint 172
+    +
+    dig 2
+    intc_3 // 2
+    extract_uint16 // on error: invalid tuple encoding
+    dup
+    cover 9
+    dup
+    dig 2
+    ==
+    assert // invalid tail pointer at index 1 of ((len+utf8[]),(len+utf8[]),(len+utf8[]),uint8[32],uint8[32],uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,(len+uint8[32][]),(len+uint64[]),uint64,uint64,uint64,uint64)
+    dig 3
+    swap
+    dig 3
+    substring3
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    +
+    dig 2
+    pushint 4
+    extract_uint16 // on error: invalid tuple encoding
+    dup
+    cover 8
+    dup
+    dig 2
+    ==
+    assert // invalid tail pointer at index 2 of ((len+utf8[]),(len+utf8[]),(len+utf8[]),uint8[32],uint8[32],uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,(len+uint8[32][]),(len+uint64[]),uint64,uint64,uint64,uint64)
+    dig 3
+    swap
+    dig 3
+    substring3
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    +
+    dig 2
+    intc 7 // 134
+    extract_uint16 // on error: invalid tuple encoding
+    dup
+    cover 9
+    dup
+    dig 2
+    ==
+    assert // invalid tail pointer at index 13 of ((len+utf8[]),(len+utf8[]),(len+utf8[]),uint8[32],uint8[32],uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,(len+uint8[32][]),(len+uint64[]),uint64,uint64,uint64,uint64)
+    dig 3
+    swap
+    dig 3
+    substring3
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    pushint 32
+    *
+    intc_3 // 2
+    +
+    +
+    dig 2
+    intc 5 // 136
+    extract_uint16 // on error: invalid tuple encoding
+    dup
+    dig 2
+    ==
+    assert // invalid tail pointer at index 14 of ((len+utf8[]),(len+utf8[]),(len+utf8[]),uint8[32],uint8[32],uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,(len+uint8[32][]),(len+uint64[]),uint64,uint64,uint64,uint64)
+    dig 3
+    swap
+    dig 3
+    substring3
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 8
+    *
+    intc_3 // 2
+    +
+    +
+    ==
+    assert // invalid number of bytes for tokens.TokenConfig
+    txna ApplicationArgs 2
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    cover 8
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 5
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 4
+    txna ApplicationArgs 5
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    cover 7
+    swap
+    callsub funded
+    cover 6
+    pushbytes 0x746f6b656e
+    swap
+    concat
+    sha256
+    cover 4
+    intc_0 // 0
+    bytec 11 // "paused"
+    app_global_get_ex
+    assert // check self.paused exists
+    bnz register_bool_false@78
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@78
+    intc_1 // 1
+
+register_bool_merge@79:
+    assert
+    dig 11
+    len
+    pushint 32
+    ==
+    bz register_bool_false@82
+    txn Lease
+    dig 12
+    ==
+    bz register_bool_false@82
+    intc_1 // 1
+
+register_bool_merge@83:
+    assert
+    dig 2
+    global LatestTimestamp
+    >=
+    bz register_bool_false@86
+    global LatestTimestamp
+    pushint 300
+    +
+    dig 3
+    >=
+    bz register_bool_false@86
+    intc_1 // 1
+
+register_bool_merge@87:
+    assert
+    txn LastValid
+    txn FirstValid
+    >
+    bz register_bool_false@90
+    txn LastValid
+    txn FirstValid
+    -
+    pushint 100
+    <=
+    bz register_bool_false@90
+    intc_1 // 1
+
+register_bool_merge@91:
+    assert
+    dig 3
+    gtxns Sender
+    txn Sender
+    ==
+    bz register_bool_false@94
+    dig 3
+    gtxns Receiver
+    intc_0 // 0
+    bytec 8 // "treasury"
+    app_global_get_ex
+    assert // check self.treasury exists
+    ==
+    bz register_bool_false@94
+    intc_1 // 1
+
+register_bool_merge@95:
+    assert
+    dig 3
+    gtxns Amount
+    dig 6
+    ==
+    bz register_bool_false@98
+    dig 3
+    gtxns CloseRemainderTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@98
+    intc_1 // 1
+
+register_bool_merge@99:
+    assert
+    uncover 3
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    pushbytes 0x5254435f414c474f5f51554f54455f5631
+    global GenesisHash
+    concat
+    global CurrentApplicationID
+    itob
+    concat
+    txn Sender
+    concat
+    dig 11
+    dup
+    cover 2
+    concat
+    uncover 6
+    itob
+    concat
+    uncover 4
+    itob
+    concat
+    txn FirstValid
+    itob
+    concat
+    txn LastValid
+    itob
+    concat
+    uncover 4
+    concat
+    pushint 2500
+    intc_0 // 0
+    callsub ensure_budget
+    intc_0 // 0
+    bytec 9 // "signer"
+    app_global_get_ex
+    assert // check self.signer exists
+    swap
+    uncover 6
+    uncover 2
+    ed25519verify_bare
+    assert
+    bytec_0 // 0x74
+    swap
+    concat
+    dup
+    cover 3
+    box_len
+    bury 1
+    bnz register_bool_false@4
+    dig 1
+    gtxns Sender
+    txn Sender
+    ==
+    bz register_bool_false@4
+    intc_1 // 1
+
+register_bool_merge@5:
+    assert
+    dig 1
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@8
+    dig 1
+    gtxns ConfigAsset
+    bnz register_bool_false@8
+    intc_1 // 1
+
+register_bool_merge@9:
+    assert
+    dig 1
+    gtxns ConfigAssetName
+    dig 1
+    uncover 8
+    dig 10
+    substring3
+    extract 2 0
+    ==
+    bz register_bool_false@12
+    dig 1
+    gtxns ConfigAssetUnitName
+    dig 1
+    dig 9
+    dig 7
+    substring3
+    extract 2 0
+    ==
+    bz register_bool_false@12
+    intc_1 // 1
+
+register_bool_merge@13:
+    assert
+    dig 1
+    gtxns ConfigAssetURL
+    dig 1
+    uncover 6
+    uncover 7
+    substring3
+    extract 2 0
+    ==
+    bz register_bool_false@16
+    dig 1
+    gtxns ConfigAssetMetadataHash
+    dig 1
+    extract 6 32
+    ==
+    bz register_bool_false@16
+    intc_1 // 1
+
+register_bool_merge@17:
+    assert
+    dig 1
+    gtxns ConfigAssetTotal
+    dig 1
+    pushint 70
+    extract_uint64
+    dup
+    bury 14
+    ==
+    bz register_bool_false@20
+    dig 1
+    gtxns ConfigAssetDecimals
+    dig 1
+    pushint 86
+    extract_uint64
+    ==
+    bz register_bool_false@20
+    intc_1 // 1
+
+register_bool_merge@21:
+    assert
+    dig 11
+    bz register_bool_false@25
+    dup
+    pushint 78
+    extract_uint64
+    dup
+    bury 12
+    bz register_bool_false@25
+    dig 10
+    dig 12
+    <=
+    bz register_bool_false@25
+    intc_1 // 1
+
+register_bool_merge@26:
+    assert
+    dup
+    pushint 86
+    extract_uint64
+    pushint 18
+    <=
+    bz register_bool_false@29
+    dup
+    pushint 94
+    extract_uint64
+    intc 12 // 65536
+    <
+    bz register_bool_false@29
+    intc_1 // 1
+
+register_bool_merge@30:
+    assert
+    dig 1
+    gtxns ConfigAssetManager
+    global CurrentApplicationAddress
+    ==
+    bz register_bool_false@33
+    dig 1
+    gtxns ConfigAssetClawback
+    global CurrentApplicationAddress
+    ==
+    bz register_bool_false@33
+    intc_1 // 1
+
+register_bool_merge@34:
+    assert
+    dupn 2
+    pushint 94
+    extract_uint64
+    dup
+    bury 12
+    intc_2 // 8
+    &
+    dup
+    bury 11
+    dup
+    intc_0 // 0
+    !=
+    dig 4
+    dup
+    cover 2
+    gtxns ConfigAssetDefaultFrozen
+    ==
+    assert
+    dup
+    gtxns ConfigAssetReserve
+    uncover 3
+    extract 38 32
+    ==
+    assert
+    gtxns ConfigAssetFreeze
+    bury 15
+    bnz register_ternary_true@36
+    dig 9
+    pushint 4
+    &
+    bz register_ternary_false@37
+
+register_ternary_true@36:
+    global CurrentApplicationAddress
+
+register_ternary_merge@38:
+    dig 14
+    ==
+    assert
+    dupn 2
+    pushint 126
+    extract_uint64
+    dup
+    bury 10
+    dup
+    pushint 2000
+    <=
+    assert
+    swap
+    pushint 102
+    extract_uint64
+    >=
+    bz register_bool_false@42
+    dup
+    pushint 110
+    extract_uint64
+    dig 8
+    <=
+    bz register_bool_false@42
+    dup
+    pushint 118
+    extract_uint64
+    dig 8
+    <=
+    bz register_bool_false@42
+    intc_1 // 1
+
+register_bool_merge@43:
+    assert
+    callsub validate_tax
+    dig 8
+    bnz register_after_if_else@56
+    dup
+    pushint 102
+    extract_uint64
+    bnz register_bool_false@48
+    dup
+    pushint 110
+    extract_uint64
+    bnz register_bool_false@48
+    dup
+    pushint 118
+    extract_uint64
+    bnz register_bool_false@48
+    intc_1 // 1
+
+register_bool_merge@49:
+    assert
+    dup
+    pushint 138
+    extract_uint64
+    bnz register_bool_false@54
+    dup
+    intc 10 // 146
+    extract_uint64
+    bnz register_bool_false@54
+    dup
+    pushint 154
+    extract_uint64
+    bnz register_bool_false@54
+    dup
+    pushint 162
+    extract_uint64
+    bnz register_bool_false@54
+    intc_1 // 1
+
+register_bool_merge@55:
+    assert
+
+register_after_if_else@56:
+    swap
+    gtxns CreatedAssetID
+    dup
+    cover 2
+    dig 3
+    box_len
+    bury 1
+    !
+    assert
+    itxn_begin
+    global CurrentApplicationAddress
+    intc_0 // 0
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    dupn 2
+    pushint 70
+    extract_uint64
+    dig 1
+    extract 78 8
+    cover 5
+    swap
+    pushint 78
+    extract_uint64
+    dup
+    bury 10
+    -
+    dup
+    bury 15
+    bz register_after_if_else@60
+    itxn_begin
+    txn Sender
+    global CurrentApplicationAddress
+    dig 15
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    itxn_field AssetSender
+    dig 1
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+register_after_if_else@60:
+    dig 9
+    bz register_after_if_else@63
+    itxn_begin
+    txn Sender
+    intc_1 // 1
+    itxn_field FreezeAssetFrozen
+    itxn_field FreezeAssetAccount
+    dig 1
+    itxn_field FreezeAsset
+    pushint 5 // afrz
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+register_after_if_else@63:
+    dig 9
+    bnz register_after_if_else@67
+    dup
+    pushint 94
+    extract_uint64
+    pushint 8192
+    &
+    bnz register_after_if_else@67
+    itxn_begin
+    global CurrentApplicationAddress
+    dig 1
+    extract 38 32
+    global ZeroAddress
+    itxn_field ConfigAssetClawback
+    dig 16
+    itxn_field ConfigAssetFreeze
+    itxn_field ConfigAssetReserve
+    itxn_field ConfigAssetManager
+    dig 1
+    itxn_field ConfigAsset
+    pushint 3 // acfg
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+register_after_if_else@67:
+    dup
+    pushint 94
+    extract_uint64
+    dup
+    intc 11 // 2048
+    &
+    bz register_after_if_else@69
+    dig 10
+    assert
+    dig 6
+    txn Sender
+    concat
+    sha256
+    bytec_2 // 0x77
+    swap
+    concat
+    dig 9
+    itob
+    box_put
+
+register_after_if_else@69:
+    dup
+    pushint 4096
+    &
+    bz register_after_if_else@71
+    txn Sender
+    dig 7
+    dup
+    uncover 2
+    concat
+    sha256
+    bytec 10 // 0x65
+    swap
+    concat
+    intc_1 // 1
+    itob
+    swap
+    dig 1
+    box_put
+    txn Sender
+    uncover 2
+    swap
+    concat
+    sha256
+    bytec_3 // 0x78
+    swap
+    concat
+    swap
+    box_put
+
+register_after_if_else@71:
+    uncover 2
+    itob
+    txn Sender
+    uncover 2
+    pushint 32768
+    &
+    bz register_ternary_false@73
+    txn Sender
+
+register_ternary_merge@74:
+    global ZeroAddress
+    intc_0 // 0
+    itob
+    uncover 4
+    dup
+    cover 3
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 2
+    concat
+    pushbytes 0x0083
+    concat
+    uncover 5
+    dup
+    cover 2
+    concat
+    swap
+    concat
+    bytec 4 // 0x00
+    concat
+    swap
+    concat
+    uncover 2
+    concat
+    uncover 2
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    swap
+    callsub refund
+    bytec 12 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+register_ternary_false@73:
+    global ZeroAddress
+    b register_ternary_merge@74
+
+register_bool_false@54:
+    intc_0 // 0
+    b register_bool_merge@55
+
+register_bool_false@48:
+    intc_0 // 0
+    b register_bool_merge@49
+
+register_bool_false@42:
+    intc_0 // 0
+    b register_bool_merge@43
+
+register_ternary_false@37:
+    global ZeroAddress
+    b register_ternary_merge@38
+
+register_bool_false@33:
+    intc_0 // 0
+    b register_bool_merge@34
+
+register_bool_false@29:
+    intc_0 // 0
+    b register_bool_merge@30
+
+register_bool_false@25:
+    intc_0 // 0
+    b register_bool_merge@26
+
+register_bool_false@20:
+    intc_0 // 0
+    b register_bool_merge@21
+
+register_bool_false@16:
+    intc_0 // 0
+    b register_bool_merge@17
+
+register_bool_false@12:
+    intc_0 // 0
+    b register_bool_merge@13
+
+register_bool_false@8:
+    intc_0 // 0
+    b register_bool_merge@9
+
+register_bool_false@4:
+    intc_0 // 0
+    b register_bool_merge@5
+
+register_bool_false@98:
+    intc_0 // 0
+    b register_bool_merge@99
+
+register_bool_false@94:
+    intc_0 // 0
+    b register_bool_merge@95
+
+register_bool_false@90:
+    intc_0 // 0
+    b register_bool_merge@91
+
+register_bool_false@86:
+    intc_0 // 0
+    b register_bool_merge@87
+
+register_bool_false@82:
+    intc_0 // 0
+    b register_bool_merge@83
+
+register_bool_false@78:
+    intc_0 // 0
+    b register_bool_merge@79
+
+
+// tokens.RockTheCoinAlgorandTokensV1.mint[routing]() -> void:
+mint:
+    intc_0 // 0
+    bytec_1 // ""
+    dup
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 4
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 3
+    uncover 2
+    callsub funded
+    cover 6
+    intc_1 // 1
+    callsub authority
+    dup
+    cover 3
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    dup
+    cover 4
+    pushint 94
+    extract_uint64
+    dup
+    cover 2
+    intc_1 // 1
+    &
+    bz mint_bool_false@5
+    dig 3
+    pushint 976
+    getbit
+    bytec 4 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    intc_0 // 0
+    getbit
+    bnz mint_bool_false@5
+    dup
+    bz mint_bool_false@5
+    intc_1 // 1
+
+mint_bool_merge@6:
+    assert
+    dig 2
+    global CurrentApplicationAddress
+    !=
+    bz mint_bool_false@9
+    dig 2
+    global ZeroAddress
+    !=
+    bz mint_bool_false@9
+    intc_1 // 1
+
+mint_bool_merge@10:
+    assert
+    dig 5
+    dig 3
+    concat
+    sha256
+    dup
+    bury 12
+    bytec 5 // 0x70626c6f636b6564
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    !
+    assert
+    dig 4
+    intc 10 // 146
+    extract_uint64
+    dup
+    bury 11
+    bz mint_after_if_else@13
+    bytec_3 // 0x78
+    dig 11
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bnz mint_after_if_else@13
+    dig 2
+    dig 7
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    dig 1
+    +
+    dig 10
+    <=
+    assert
+
+mint_after_if_else@13:
+    dig 3
+    pushint 106
+    extract_uint64
+    dig 1
+    +
+    dup
+    uncover 6
+    pushint 70
+    extract_uint64
+    dup
+    bury 11
+    <=
+    assert
+    uncover 2
+    pushint 16
+    &
+    bz mint_after_if_else@15
+    dig 3
+    pushint 114
+    extract_uint64
+    dig 2
+    +
+    dig 8
+    <=
+    assert
+
+mint_after_if_else@15:
+    itob
+    uncover 3
+    swap
+    replace2 106
+    dup
+    pushint 114
+    extract_uint64
+    dig 2
+    +
+    itob
+    replace2 114
+    dup
+    cover 3
+    bytec_0 // 0x74
+    dig 5
+    concat
+    dup
+    box_del
+    pop
+    dig 1
+    box_put
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    dup
+    cover 5
+    pushint 94
+    extract_uint64
+    dup
+    intc_2 // 8
+    &
+    bz mint_else_body@18
+    itxn_begin
+    global CurrentApplicationAddress
+    itxn_field AssetSender
+    dig 1
+    itxn_field AssetAmount
+    dig 2
+    itxn_field AssetReceiver
+    dig 6
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+mint_after_if_else@20:
+    global ZeroAddress
+    uncover 5
+    cover 2
+    uncover 4
+    uncover 4
+    callsub move_votes
+    global CurrentApplicationAddress
+    uncover 3
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    uncover 2
+    pushint 70
+    extract_uint64
+    uncover 2
+    pushint 106
+    extract_uint64
+    -
+    >=
+    assert
+    callsub refund
+    intc_1 // 1
+    return
+
+mint_else_body@18:
+    itxn_begin
+    dig 1
+    itxn_field AssetAmount
+    dig 2
+    itxn_field AssetReceiver
+    dig 6
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    b mint_after_if_else@20
+
+mint_bool_false@9:
+    intc_0 // 0
+    b mint_bool_merge@10
+
+mint_bool_false@5:
+    intc_0 // 0
+    b mint_bool_merge@6
+
+
+// tokens.RockTheCoinAlgorandTokensV1.burn[routing]() -> void:
+burn:
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    pushint 4 // axfer
+    ==
+    assert // transaction type is axfer
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 3
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    cover 3
+    dup
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    uncover 2
+    ==
+    assert
+    intc 4 // 225
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    dup
+    cover 4
+    intc_3 // 2
+    &
+    bz burn_bool_false@4
+    dig 3
+    intc_2 // 8
+    &
+    bnz burn_bool_false@4
+    intc_1 // 1
+
+burn_bool_merge@5:
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz burn_bool_false@8
+    dup
+    gtxns Sender
+    txn Sender
+    ==
+    bz burn_bool_false@8
+    intc_1 // 1
+
+burn_bool_merge@9:
+    assert
+    dup
+    gtxns AssetSender
+    global ZeroAddress
+    ==
+    bz burn_bool_false@13
+    dup
+    gtxns AssetCloseTo
+    global ZeroAddress
+    ==
+    bz burn_bool_false@13
+    dup
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    bz burn_bool_false@13
+    intc_1 // 1
+
+burn_bool_merge@14:
+    assert
+    dup
+    gtxns XferAsset
+    uncover 3
+    ==
+    bz burn_bool_false@18
+    dup
+    gtxns AssetReceiver
+    global CurrentApplicationAddress
+    ==
+    bz burn_bool_false@18
+    dup
+    gtxns AssetAmount
+    bz burn_bool_false@18
+    intc_1 // 1
+
+burn_bool_merge@19:
+    assert
+    swap
+    dup
+    pushint 106
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    uncover 2
+    gtxns AssetAmount
+    -
+    itob
+    pushint 106
+    swap
+    box_replace // on error: index out of bounds
+    intc_1 // 1
+    return
+
+burn_bool_false@18:
+    intc_0 // 0
+    b burn_bool_merge@19
+
+burn_bool_false@13:
+    intc_0 // 0
+    b burn_bool_merge@14
+
+burn_bool_false@8:
+    intc_0 // 0
+    b burn_bool_merge@9
+
+burn_bool_false@4:
+    intc_0 // 0
+    b burn_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.smart_burn[routing]() -> void:
+smart_burn:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 2
+    cover 3
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 2
+    bytec_0 // 0x74
+    swap
+    concat
+    dup
+    cover 2
+    dup
+    box_get
+    swap
+    cover 5
+    assert // check self.tokens entry exists
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    ==
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz smart_burn_bool_false@4
+    dup
+    intc 4 // 225
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    pushint 10
+    &
+    pushint 10
+    ==
+    bz smart_burn_bool_false@4
+    intc_1 // 1
+
+smart_burn_bool_merge@5:
+    assert
+    dup
+    pushint 122
+    intc_1 // 1
+    box_extract // on error: index out of bounds
+    intc_0 // 0
+    getbit
+    bytec 4 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    intc_0 // 0
+    getbit
+    bnz smart_burn_bool_false@9
+    dig 1
+    bz smart_burn_bool_false@9
+    dig 3
+    txn Sender
+    concat
+    sha256
+    bytec 5 // 0x70626c6f636b6564
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bnz smart_burn_bool_false@9
+    intc_1 // 1
+
+smart_burn_bool_merge@10:
+    assert
+    dup
+    pushint 106
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    dig 2
+    -
+    itob
+    uncover 3
+    dig 1
+    replace2 106
+    uncover 2
+    pushint 106
+    uncover 3
+    box_replace // on error: index out of bounds
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    pushint 94
+    extract_uint64
+    txn Sender
+    global ZeroAddress
+    uncover 4
+    cover 3
+    dig 4
+    callsub move_votes
+    itxn_begin
+    txn Sender
+    global CurrentApplicationAddress
+    uncover 2
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    itxn_field AssetSender
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc_1 // 1
+    return
+
+smart_burn_bool_false@9:
+    intc_0 // 0
+    b smart_burn_bool_merge@10
+
+smart_burn_bool_false@4:
+    intc_0 // 0
+    b smart_burn_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.pause[routing]() -> void:
+pause:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    dig 2
+    uncover 2
+    intc_3 // 2
+    callsub authority
+    swap
+    intc_0 // 0
+    getbit
+    pushint 976
+    swap
+    setbit
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    intc_1 // 1
+    return
+
+
+// tokens.RockTheCoinAlgorandTokensV1.freeze[routing]() -> void:
+freeze:
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 3
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 2
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    intc_0 // 0
+    getbit
+    cover 6
+    pushint 4
+    callsub authority
+    dupn 2
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    pushint 94
+    extract_uint64
+    dup
+    cover 2
+    pushint 4
+    &
+    bz freeze_bool_false@4
+    dig 2
+    global CurrentApplicationAddress
+    !=
+    bz freeze_bool_false@4
+    intc_1 // 1
+
+freeze_bool_merge@5:
+    assert
+    uncover 5
+    callsub funded
+    swap
+    uncover 2
+    intc_2 // 8
+    &
+    bz freeze_else_body@7
+    uncover 4
+    pop
+    dig 3
+    uncover 3
+    concat
+    sha256
+    bytec 5 // 0x70626c6f636b6564
+    swap
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    swap
+    dig 5
+    itob
+    box_put
+
+freeze_after_if_else@9:
+    dig 4
+    !=
+    bz freeze_after_if_else@14
+    dig 3
+    bz freeze_ternary_false@12
+    dup
+    pushint 123
+    extract_uint64
+    intc_1 // 1
+    +
+
+freeze_ternary_merge@13:
+    itob
+    replace2 123
+
+freeze_after_if_else@14:
+    bytec_0 // 0x74
+    uncover 3
+    concat
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    callsub refund
+    intc_1 // 1
+    return
+
+freeze_ternary_false@12:
+    dup
+    pushint 123
+    extract_uint64
+    intc_1 // 1
+    -
+    b freeze_ternary_merge@13
+
+freeze_else_body@7:
+    uncover 2
+    dup
+    uncover 5
+    dup
+    cover 3
+    asset_holding_get AssetFrozen
+    swap
+    cover 3
+    assert // account opted into asset
+    itxn_begin
+    dig 6
+    itxn_field FreezeAssetFrozen
+    itxn_field FreezeAssetAccount
+    itxn_field FreezeAsset
+    pushint 5 // afrz
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    b freeze_after_if_else@9
+
+freeze_bool_false@4:
+    intc_0 // 0
+    b freeze_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.permissions[routing]() -> void:
+permissions:
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 3
+    uncover 2
+    callsub funded
+    cover 4
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    uncover 2
+    ==
+    assert
+    txn Sender
+    swap
+    pushints 40 32
+    box_extract // on error: index out of bounds
+    ==
+    bz permissions_bool_false@5
+    dup
+    pushint 64
+    <
+    bz permissions_bool_false@5
+    dig 1
+    global ZeroAddress
+    !=
+    bz permissions_bool_false@5
+    intc_1 // 1
+
+permissions_bool_merge@6:
+    assert
+    uncover 3
+    uncover 2
+    concat
+    sha256
+    pushbytes 0x61
+    swap
+    concat
+    swap
+    itob
+    box_put
+    callsub refund
+    intc_1 // 1
+    return
+
+permissions_bool_false@5:
+    intc_0 // 0
+    b permissions_bool_merge@6
+
+
+// tokens.RockTheCoinAlgorandTokensV1.transfer_ownership[routing]() -> void:
+transfer_ownership:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 2
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    cover 2
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    ==
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz transfer_ownership_bool_false@4
+    txn Sender
+    dig 1
+    pushints 40 32
+    box_extract // on error: index out of bounds
+    ==
+    bz transfer_ownership_bool_false@4
+    intc_1 // 1
+
+transfer_ownership_bool_merge@5:
+    assert
+    pushint 72
+    uncover 2
+    box_replace // on error: index out of bounds
+    intc_1 // 1
+    return
+
+transfer_ownership_bool_false@4:
+    intc_0 // 0
+    b transfer_ownership_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.accept_ownership[routing]() -> void:
+accept_ownership:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    cover 2
+    dup
+    box_get
+    swap
+    cover 4
+    assert // check self.tokens entry exists
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    ==
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz accept_ownership_bool_false@5
+    txn Sender
+    dig 1
+    pushints 72 32
+    box_extract // on error: index out of bounds
+    ==
+    bz accept_ownership_bool_false@5
+    txn Sender
+    global ZeroAddress
+    !=
+    bz accept_ownership_bool_false@5
+    intc_1 // 1
+
+accept_ownership_bool_merge@6:
+    assert
+    dup
+    pushints 72 32
+    box_extract // on error: index out of bounds
+    uncover 2
+    swap
+    replace2 40
+    global ZeroAddress
+    replace2 72
+    dig 1
+    box_del
+    pop
+    box_put
+    intc_1 // 1
+    return
+
+accept_ownership_bool_false@5:
+    intc_0 // 0
+    b accept_ownership_bool_merge@6
+
+
+// tokens.RockTheCoinAlgorandTokensV1.renounce_ownership[routing]() -> void:
+renounce_ownership:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    cover 2
+    dup
+    box_get
+    swap
+    cover 3
+    assert // check self.tokens entry exists
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    ==
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz renounce_ownership_bool_false@4
+    txn Sender
+    dig 2
+    pushints 40 32
+    box_extract // on error: index out of bounds
+    ==
+    bz renounce_ownership_bool_false@4
+    intc_1 // 1
+
+renounce_ownership_bool_merge@5:
+    assert
+    dig 1
+    pushint 122
+    intc_1 // 1
+    box_extract // on error: index out of bounds
+    intc_0 // 0
+    getbit
+    bytec 4 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    intc_0 // 0
+    getbit
+    bnz renounce_ownership_bool_false@8
+    dig 1
+    pushint 123
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    bnz renounce_ownership_bool_false@8
+    intc_1 // 1
+
+renounce_ownership_bool_merge@9:
+    assert
+    global ZeroAddress
+    replace2 40
+    global ZeroAddress
+    replace2 72
+    swap
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    intc_1 // 1
+    return
+
+renounce_ownership_bool_false@8:
+    intc_0 // 0
+    b renounce_ownership_bool_merge@9
+
+renounce_ownership_bool_false@4:
+    intc_0 // 0
+    b renounce_ownership_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.revoke_mint[routing]() -> void:
+revoke_mint:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dig 1
+    swap
+    intc_1 // 1
+    callsub authority
+    txn Sender
+    dig 1
+    extract 40 32
+    ==
+    assert
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    dup
+    pushint 94
+    extract_uint64
+    pushint 18446744073709551614
+    &
+    itob
+    replace2 94
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    intc_1 // 1
+    return
+
+
+// tokens.RockTheCoinAlgorandTokensV1.metadata[routing]() -> void:
+metadata:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 2
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 2
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    intc_0 // 0
+    getbit
+    cover 3
+    intc_2 // 8
+    callsub authority
+    dupn 2
+    pushint 104
+    extract_uint16
+    dup
+    cover 2
+    cover 4
+    dup
+    len
+    swap
+    cover 2
+    substring3
+    dup
+    pushint 94
+    extract_uint64
+    pushint 1024
+    &
+    bz metadata_bool_false@4
+    dig 2
+    global ZeroAddress
+    !=
+    bz metadata_bool_false@4
+    intc_1 // 1
+
+metadata_bool_merge@5:
+    assert
+    dig 2
+    replace2 38
+    swap
+    intc_0 // 0
+    uncover 4
+    extract3
+    swap
+    concat
+    uncover 2
+    bz metadata_after_if_else@7
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    dup
+    pushint 94
+    extract_uint64
+    pushint 18446744073709550591
+    &
+    itob
+    replace2 94
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+
+metadata_after_if_else@7:
+    bytec_0 // 0x74
+    dig 4
+    concat
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    itxn_begin
+    global CurrentApplicationAddress
+    dig 2
+    dup
+    asset_params_get AssetFreeze
+    assert // asset exists
+    dig 1
+    asset_params_get AssetClawback
+    assert // asset exists
+    itxn_field ConfigAssetClawback
+    itxn_field ConfigAssetFreeze
+    uncover 2
+    itxn_field ConfigAssetReserve
+    itxn_field ConfigAsset
+    itxn_field ConfigAssetManager
+    pushint 3 // acfg
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc_1 // 1
+    return
+
+metadata_bool_false@4:
+    intc_0 // 0
+    b metadata_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.tax[routing]() -> void:
+tax:
+    bytec_1 // ""
+    dup
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    cover 4
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    dup
+    cover 3
+    cover 4
+    txna ApplicationArgs 4
+    dup
+    cover 7
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 8
+    txna ApplicationArgs 5
+    dup
+    cover 6
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 9
+    txna ApplicationArgs 6
+    dup
+    cover 5
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    pushint 32
+    *
+    intc_3 // 2
+    +
+    swap
+    len
+    dup
+    cover 8
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.static_array<arc4.uint8, 32>>
+    txna ApplicationArgs 7
+    dup
+    cover 6
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 8
+    *
+    intc_3 // 2
+    +
+    swap
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint64>
+    uncover 3
+    callsub funded
+    cover 7
+    pushint 16
+    callsub authority
+    dup
+    cover 2
+    dup
+    pushint 104
+    extract_uint16
+    dup
+    cover 2
+    cover 3
+    dup
+    len
+    swap
+    cover 2
+    substring3
+    dup
+    cover 2
+    dup
+    pushint 94
+    extract_uint64
+    dup
+    cover 15
+    intc_2 // 8
+    &
+    assert
+    pushint 102
+    extract_uint64
+    !=
+    bnz tax_if_body@4
+    dup
+    pushint 110
+    extract_uint64
+    dig 15
+    !=
+    bnz tax_if_body@4
+    dup
+    pushint 118
+    extract_uint64
+    dig 14
+    !=
+    bz tax_after_if_else@5
+
+tax_if_body@4:
+    dig 12
+    pushint 32
+    &
+    assert
+
+tax_after_if_else@5:
+    dupn 2
+    intc 7 // 134
+    extract_uint16
+    dig 1
+    intc 5 // 136
+    extract_uint16
+    dup
+    bury 20
+    substring3
+    dig 4
+    !=
+    bnz tax_if_body@7
+    dupn 2
+    len
+    dig 18
+    swap
+    substring3
+    dig 5
+    !=
+    bz tax_after_if_else@8
+
+tax_if_body@7:
+    dig 12
+    pushint 64
+    &
+    assert
+
+tax_after_if_else@8:
+    dup
+    pushint 126
+    extract_uint64
+    dup
+    bury 17
+    uncover 6
+    >=
+    bz tax_bool_false@12
+    dig 13
+    dig 15
+    <=
+    bz tax_bool_false@12
+    dig 12
+    dig 15
+    <=
+    bz tax_bool_false@12
+    intc_1 // 1
+
+tax_bool_merge@13:
+    assert
+    uncover 8
+    replace2 102
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    uncover 8
+    replace2 110
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    uncover 7
+    replace2 118
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    dup
+    intc 7 // 134
+    extract_uint16
+    dig 1
+    intc_0 // 0
+    dig 2
+    extract3
+    uncover 5
+    concat
+    dig 2
+    intc 5 // 136
+    extract_uint16
+    dig 3
+    len
+    uncover 4
+    dig 2
+    uncover 2
+    substring3
+    uncover 2
+    swap
+    concat
+    dig 1
+    uncover 3
+    -
+    uncover 2
+    uncover 6
+    +
+    swap
+    -
+    itob
+    extract 6 2
+    replace2 136
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    dup
+    intc 5 // 136
+    extract_uint16
+    intc_0 // 0
+    swap
+    extract3
+    uncover 3
+    concat
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    cover 2
+    substring3
+    callsub validate_tax
+    pop
+    bytec_0 // 0x74
+    uncover 3
+    concat
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    callsub refund
+    intc_1 // 1
+    return
+
+tax_bool_false@12:
+    intc_0 // 0
+    b tax_bool_merge@13
+
+
+// tokens.RockTheCoinAlgorandTokensV1.account_policy[routing]() -> void:
+account_policy:
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 3
+    txna ApplicationArgs 5
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    intc_0 // 0
+    getbit
+    cover 4
+    uncover 2
+    callsub funded
+    cover 2
+    pushint 16
+    callsub authority
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    pushint 94
+    extract_uint64
+    dup
+    intc_2 // 8
+    &
+    bz account_policy_bool_false@4
+    dig 4
+    global ZeroAddress
+    !=
+    bz account_policy_bool_false@4
+    intc_1 // 1
+
+account_policy_bool_merge@5:
+    assert
+    uncover 5
+    uncover 5
+    concat
+    sha256
+    swap
+    dig 3
+    bnz account_policy_else_body@7
+    pop
+    uncover 2
+    pop
+    bytec 10 // 0x65
+    swap
+    concat
+    uncover 2
+    itob
+    box_put
+
+account_policy_after_if_else@11:
+    callsub refund
+    intc_1 // 1
+    return
+
+account_policy_else_body@7:
+    dig 3
+    intc_1 // 1
+    ==
+    bz account_policy_else_body@9
+    uncover 3
+    pop
+    pushint 128
+    &
+    assert
+    bytec 13 // 0x70
+    swap
+    concat
+    uncover 2
+    itob
+    box_put
+    b account_policy_after_if_else@11
+
+account_policy_else_body@9:
+    pop
+    uncover 2
+    intc_3 // 2
+    ==
+    assert
+    bytec_3 // 0x78
+    swap
+    concat
+    uncover 2
+    itob
+    box_put
+    b account_policy_after_if_else@11
+
+account_policy_bool_false@4:
+    intc_0 // 0
+    b account_policy_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.limits[routing]() -> void:
+limits:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    cover 3
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 2
+    txna ApplicationArgs 4
+    dup
+    cover 5
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 6
+    txna ApplicationArgs 5
+    dup
+    cover 3
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 7
+    txna ApplicationArgs 6
+    dup
+    cover 3
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 2
+    pushint 16
+    callsub authority
+    dupn 2
+    pushint 104
+    extract_uint16
+    dup
+    uncover 2
+    dup
+    len
+    swap
+    cover 2
+    substring3
+    dup
+    pushint 94
+    extract_uint64
+    dup
+    cover 11
+    intc_2 // 8
+    &
+    bz limits_bool_false@4
+    dig 11
+    pushint 86400
+    <=
+    bz limits_bool_false@4
+    intc_1 // 1
+
+limits_bool_merge@5:
+    assert
+    dup
+    pushint 138
+    extract_uint64
+    uncover 7
+    !=
+    bnz limits_if_body@8
+    dup
+    intc 10 // 146
+    extract_uint64
+    dig 12
+    !=
+    bnz limits_if_body@8
+    dup
+    pushint 154
+    extract_uint64
+    dig 11
+    !=
+    bz limits_after_if_else@9
+
+limits_if_body@8:
+    dig 9
+    pushint 256
+    &
+    assert
+
+limits_after_if_else@9:
+    dup
+    pushint 162
+    extract_uint64
+    uncover 4
+    !=
+    bz limits_after_if_else@11
+    dig 8
+    pushint 512
+    &
+    assert
+
+limits_after_if_else@11:
+    uncover 5
+    replace2 138
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    uncover 5
+    replace2 146
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    uncover 4
+    replace2 154
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    uncover 3
+    replace2 162
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    intc_1 // 1
+    return
+
+limits_bool_false@4:
+    intc_0 // 0
+    b limits_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.approve[routing]() -> void:
+approve:
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 4
+    uncover 2
+    callsub funded
+    cover 3
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    uncover 2
+    ==
+    assert
+    intc 4 // 225
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    intc_2 // 8
+    &
+    bz approve_bool_false@4
+    dup
+    global ZeroAddress
+    !=
+    bz approve_bool_false@4
+    intc_1 // 1
+
+approve_bool_merge@5:
+    assert
+    txn Sender
+    uncover 4
+    swap
+    concat
+    swap
+    concat
+    sha256
+    pushbytes 0x73
+    swap
+    concat
+    uncover 2
+    itob
+    box_put
+    callsub refund
+    intc_1 // 1
+    return
+
+approve_bool_false@4:
+    intc_0 // 0
+    b approve_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.transfer[routing]() -> void:
+transfer:
+    intc_0 // 0
+    dupn 2
+    bytec_1 // ""
+    dupn 7
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 2
+    cover 4
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 4
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 5
+    txna ApplicationArgs 5
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 3
+    uncover 2
+    callsub funded
+    cover 7
+    pushint 3000
+    intc_0 // 0
+    callsub ensure_budget
+    bytec_0 // 0x74
+    swap
+    concat
+    dup
+    cover 2
+    dup
+    box_get
+    assert // check self.tokens entry exists
+    dig 1
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    uncover 3
+    ==
+    assert
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    cover 3
+    intc 4 // 225
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    dup
+    cover 3
+    intc_2 // 8
+    &
+    bz transfer_bool_false@5
+    dup
+    pushint 122
+    intc_1 // 1
+    box_extract // on error: index out of bounds
+    intc_0 // 0
+    getbit
+    bytec 4 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    intc_0 // 0
+    getbit
+    bnz transfer_bool_false@5
+    dig 1
+    bz transfer_bool_false@5
+    intc_1 // 1
+
+transfer_bool_merge@6:
+    assert
+    dig 5
+    global CurrentApplicationAddress
+    !=
+    bz transfer_bool_false@10
+    dig 6
+    global CurrentApplicationAddress
+    !=
+    bz transfer_bool_false@10
+    dig 6
+    global ZeroAddress
+    !=
+    bz transfer_bool_false@10
+    intc_1 // 1
+
+transfer_bool_merge@11:
+    assert
+    dig 4
+    dup
+    dig 7
+    dup
+    cover 3
+    concat
+    dup
+    bury 22
+    sha256
+    dup
+    bury 23
+    bytec 5 // 0x70626c6f636b6564
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    !
+    assert
+    dig 8
+    concat
+    sha256
+    dup
+    bury 20
+    bytec 5 // 0x70626c6f636b6564
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    !
+    assert
+    txn Sender
+    !=
+    bz transfer_after_if_else@13
+    dig 18
+    txn Sender
+    concat
+    sha256
+    pushbytes 0x73
+    swap
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    dig 3
+    -
+    itob
+    box_put
+
+transfer_after_if_else@13:
+    bytec 10 // 0x65
+    dig 20
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bnz transfer_bool_true@15
+    bytec 10 // 0x65
+    dig 18
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bz transfer_bool_false@16
+
+transfer_bool_true@15:
+    intc_1 // 1
+
+transfer_bool_merge@17:
+    dig 1
+    pushint 233
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    bury 14
+    bytec 13 // 0x70
+    dig 21
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bz transfer_else_body@19
+    dig 1
+    pushint 241
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    bury 14
+
+transfer_after_if_else@22:
+    dig 2
+    dig 14
+    mulw
+    cover 3
+    swap
+    bz transfer_ternary_false@24
+    pop
+    bury 1
+    intc_0 // 0
+    cover 3
+
+transfer_ternary_merge@25:
+    bytec_3 // 0x78
+    dig 21
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bnz transfer_bool_true@27
+    bytec_3 // 0x78
+    dig 19
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bz transfer_bool_false@28
+
+transfer_bool_true@27:
+    intc_1 // 1
+
+transfer_bool_merge@29:
+    bnz transfer_after_if_else@35
+    global LatestTimestamp
+    dig 1
+    dup
+    cover 2
+    pushint 293
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    >=
+    assert
+    pushint 269
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    dup
+    bury 14
+    bz transfer_after_if_else@32
+    dig 1
+    dig 13
+    <=
+    assert
+
+transfer_after_if_else@32:
+    dup
+    pushint 285
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    dup
+    bury 13
+    bz transfer_after_if_else@35
+    global LatestTimestamp
+    pushbytes 0x6c
+    dig 22
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    dig 14
+    +
+    uncover 2
+    <=
+    assert
+    global LatestTimestamp
+    itob
+    box_put
+
+transfer_after_if_else@35:
+    dig 6
+    dup
+    dig 10
+    dup
+    cover 2
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    dig 4
+    dup
+    cover 2
+    >=
+    assert
+    dig 8
+    dig 8
+    uncover 3
+    uncover 4
+    dig 12
+    dup
+    cover 5
+    uncover 6
+    dig 10
+    uncover 7
+    callsub wallet_limit
+    pop
+    dupn 2
+    intc 8 // 265
+    intc_3 // 2
+    box_extract
+    btoi
+    intc 6 // 131
+    +
+    intc_3 // 2
+    box_extract
+    btoi
+    swap
+    intc_0 // 0
+    bury 17
+
+transfer_for_header@36:
+    dig 16
+    dig 2
+    <
+    bz transfer_after_for@39
+    dupn 2
+    intc 8 // 265
+    intc_3 // 2
+    box_extract
+    btoi
+    intc 6 // 131
+    +
+    dup2
+    intc_3 // 2
+    box_extract
+    btoi
+    dig 19
+    dup
+    uncover 2
+    <
+    assert // index out of bounds
+    swap
+    intc_3 // 2
+    +
+    dig 1
+    pushint 32
+    *
+    +
+    uncover 2
+    swap
+    pushint 32
+    box_extract // on error: index out of bounds
+    dig 8
+    dig 8
+    dig 13
+    dig 12
+    dig 14
+    dig 9
+    dig 12
+    uncover 7
+    callsub wallet_limit
+    pop
+    intc_1 // 1
+    +
+    bury 17
+    b transfer_for_header@36
+
+transfer_after_for@39:
+    bury 1
+    uncover 4
+    pop
+    dig 3
+    bz transfer_after_if_else@51
+    intc_0 // 0
+    bury 17
+    dupn 2
+    intc 8 // 265
+    intc_3 // 2
+    box_extract
+    btoi
+    intc 6 // 131
+    +
+    intc_3 // 2
+    box_extract
+    btoi
+    bury 16
+    intc_0 // 0
+    bury 15
+
+transfer_for_header@41:
+    dig 14
+    dig 16
+    <
+    bz transfer_after_if_else@51
+    dig 14
+    intc_1 // 1
+    +
+    dup
+    bury 11
+    dig 1
+    dup
+    intc 8 // 265
+    intc_3 // 2
+    box_extract
+    btoi
+    intc 6 // 131
+    +
+    intc_3 // 2
+    box_extract
+    btoi
+    ==
+    bz transfer_ternary_false@44
+    dig 3
+    dig 17
+    -
+    bury 14
+
+transfer_ternary_merge@45:
+    dig 16
+    dig 14
+    dup
+    cover 2
+    +
+    bury 18
+    bz transfer_after_if_else@48
+    dupn 2
+    intc 8 // 265
+    intc_3 // 2
+    box_extract
+    btoi
+    intc 6 // 131
+    +
+    dup2
+    intc_3 // 2
+    box_extract
+    btoi
+    dig 17
+    dup
+    uncover 2
+    <
+    assert // index out of bounds
+    swap
+    intc_3 // 2
+    +
+    swap
+    pushint 32
+    *
+    +
+    pushint 32
+    box_extract // on error: index out of bounds
+    dig 5
+    dig 4
+    dig 8
+    dup
+    cover 4
+    dig 3
+    dig 19
+    dup
+    cover 5
+    callsub move_votes
+    itxn_begin
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    itxn_field AssetSender
+    dig 7
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+transfer_after_if_else@48:
+    dig 9
+    bury 15
+    b transfer_for_header@41
+
+transfer_ternary_false@44:
+    dupn 2
+    pushint 267
+    intc_3 // 2
+    box_extract
+    btoi
+    intc 6 // 131
+    +
+    dup2
+    intc_3 // 2
+    box_extract
+    btoi
+    dig 17
+    dup
+    uncover 2
+    <
+    assert // index out of bounds
+    swap
+    intc_3 // 2
+    +
+    swap
+    intc_2 // 8
+    *
+    +
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    dig 4
+    mulw
+    intc 9 // 10000
+    divw
+    bury 14
+    b transfer_ternary_merge@45
+
+transfer_after_if_else@51:
+    pop
+    uncover 2
+    -
+    cover 2
+    dig 3
+    uncover 5
+    dup
+    cover 5
+    dig 4
+    callsub move_votes
+    itxn_begin
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    itxn_field AssetSender
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    dup
+    callsub refund
+    intc_1 // 1
+    return
+
+transfer_bool_false@28:
+    intc_0 // 0
+    b transfer_bool_merge@29
+
+transfer_ternary_false@24:
+    uncover 2
+    intc 9 // 10000
+    divw
+    cover 3
+    b transfer_ternary_merge@25
+
+transfer_else_body@19:
+    bytec 13 // 0x70
+    dig 19
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bz transfer_after_if_else@22
+    dig 1
+    pushint 249
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    bury 14
+    b transfer_after_if_else@22
+
+transfer_bool_false@16:
+    intc_0 // 0
+    b transfer_bool_merge@17
+
+transfer_bool_false@10:
+    intc_0 // 0
+    b transfer_bool_merge@11
+
+transfer_bool_false@5:
+    intc_0 // 0
+    b transfer_bool_merge@6
+
+
+// tokens.RockTheCoinAlgorandTokensV1.blocklist[routing]() -> void:
+blocklist:
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    intc_0 // 0
+    getbit
+    cover 3
+    uncover 2
+    callsub funded
+    cover 4
+    pushint 4
+    callsub authority
+    dupn 2
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    pushint 94
+    extract_uint64
+    dup
+    intc_2 // 8
+    &
+    bz blocklist_bool_false@4
+    dig 3
+    global CurrentApplicationAddress
+    !=
+    bz blocklist_bool_false@4
+    intc_1 // 1
+
+blocklist_bool_merge@5:
+    assert
+    pushint 4
+    &
+    assert
+    dig 4
+    uncover 3
+    concat
+    sha256
+    bytec 5 // 0x70626c6f636b6564
+    swap
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    dig 3
+    !=
+    bz blocklist_after_if_else@10
+    dig 2
+    bz blocklist_ternary_false@8
+    dig 1
+    pushint 123
+    extract_uint64
+    intc_1 // 1
+    +
+
+blocklist_ternary_merge@9:
+    itob
+    uncover 2
+    swap
+    replace2 123
+    swap
+
+blocklist_after_if_else@10:
+    uncover 2
+    itob
+    box_put
+    bytec_0 // 0x74
+    uncover 3
+    concat
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    callsub refund
+    intc_1 // 1
+    return
+
+blocklist_ternary_false@8:
+    dig 1
+    pushint 123
+    extract_uint64
+    intc_1 // 1
+    -
+    b blocklist_ternary_merge@9
+
+blocklist_bool_false@4:
+    intc_0 // 0
+    b blocklist_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.delegate_votes[routing]() -> void:
+delegate_votes:
+    intc_0 // 0
+    dup
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 3
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    uncover 2
+    callsub funded
+    cover 2
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    cover 3
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    ==
+    bz delegate_votes_bool_false@4
+    dig 1
+    intc 4 // 225
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    intc 11 // 2048
+    &
+    bz delegate_votes_bool_false@4
+    intc_1 // 1
+
+delegate_votes_bool_merge@5:
+    assert
+    global ZeroAddress
+    dig 3
+    dup
+    uncover 2
+    !=
+    assert
+    dig 5
+    txn Sender
+    concat
+    sha256
+    bytec 14 // 0x64
+    swap
+    concat
+    dup
+    bury 9
+    txn Sender
+    swap
+    box_get
+    select
+    dup
+    bury 8
+    !=
+    bz delegate_votes_after_if_else@7
+    txn Sender
+    dig 4
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    dig 5
+    dup
+    dig 8
+    concat
+    sha256
+    swap
+    dig 5
+    dup
+    cover 4
+    concat
+    sha256
+    bytec_2 // 0x77
+    uncover 2
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    dig 3
+    -
+    itob
+    box_put
+    bytec_2 // 0x77
+    swap
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    uncover 2
+    +
+    itob
+    box_put
+    dig 7
+    swap
+    box_put
+
+delegate_votes_after_if_else@7:
+    callsub refund
+    intc_1 // 1
+    return
+
+delegate_votes_bool_false@4:
+    intc_0 // 0
+    b delegate_votes_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.votes[routing]() -> void:
+votes:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    concat
+    sha256
+    bytec_2 // 0x77
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    itob
+    bytec 12 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+
+// tokens.RockTheCoinAlgorandTokensV1.revoke_freeze[routing]() -> void:
+revoke_freeze:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 2
+    pushint 4
+    callsub authority
+    dup
+    txn Sender
+    swap
+    extract 40 32
+    ==
+    bz revoke_freeze_bool_false@4
+    dup
+    pushint 123
+    extract_uint64
+    bnz revoke_freeze_bool_false@4
+    intc_1 // 1
+
+revoke_freeze_bool_merge@5:
+    assert
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    dup
+    pushint 94
+    extract_uint64
+    pushint 18446744073709551611
+    &
+    itob
+    replace2 94
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    bytec_0 // 0x74
+    uncover 3
+    concat
+    dup
+    box_del
+    pop
+    dig 1
+    box_put
+    itxn_begin
+    global CurrentApplicationAddress
+    cover 2
+    dig 1
+    asset_params_get AssetReserve
+    swap
+    cover 2
+    assert // asset exists
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    pushint 94
+    extract_uint64
+    intc_2 // 8
+    &
+    bz revoke_freeze_ternary_false@7
+    global CurrentApplicationAddress
+
+revoke_freeze_ternary_merge@8:
+    uncover 2
+    dup
+    asset_params_get AssetClawback
+    assert // asset exists
+    itxn_field ConfigAssetClawback
+    itxn_field ConfigAsset
+    itxn_field ConfigAssetFreeze
+    itxn_field ConfigAssetReserve
+    itxn_field ConfigAssetManager
+    pushint 3 // acfg
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc_1 // 1
+    return
+
+revoke_freeze_ternary_false@7:
+    global ZeroAddress
+    b revoke_freeze_ternary_merge@8
+
+revoke_freeze_bool_false@4:
+    intc_0 // 0
+    b revoke_freeze_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.destroy[routing]() -> void:
+destroy:
+    bytec_1 // ""
+    dup
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 2
+    intc_1 // 1
+    callsub authority
+    dup
+    cover 2
+    txn Sender
+    swap
+    extract 40 32
+    ==
+    bz destroy_bool_false@4
+    txn Sender
+    dig 2
+    extract 8 32
+    ==
+    bz destroy_bool_false@4
+    intc_1 // 1
+
+destroy_bool_merge@5:
+    assert
+    global CurrentApplicationAddress
+    dig 1
+    dup
+    cover 2
+    asset_holding_get AssetBalance
+    swap
+    dup
+    cover 3
+    bury 8
+    assert // account opted into asset
+    txn Sender
+    dig 1
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    uncover 2
+    +
+    swap
+    asset_params_get AssetTotal
+    assert // asset exists
+    ==
+    assert
+    dig 1
+    dup
+    pushint 104
+    extract_uint16
+    dup
+    cover 2
+    cover 4
+    dup
+    len
+    swap
+    cover 2
+    substring3
+    dup
+    cover 2
+    pushint 94
+    extract_uint64
+    intc_2 // 8
+    &
+    dup
+    bury 7
+    bz destroy_after_if_else@9
+    itxn_begin
+    global CurrentApplicationAddress
+    intc_0 // 0
+    itxn_field FreezeAssetFrozen
+    itxn_field FreezeAssetAccount
+    dupn 2
+    itxn_field FreezeAsset
+    pushint 5 // afrz
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    itxn_begin
+    txn Sender
+    intc_0 // 0
+    itxn_field FreezeAssetFrozen
+    itxn_field FreezeAssetAccount
+    itxn_field FreezeAsset
+    pushint 5 // afrz
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+destroy_after_if_else@9:
+    dig 6
+    bz destroy_after_if_else@16
+    dig 5
+    bz destroy_else_body@13
+    itxn_begin
+    txn Sender
+    global CurrentApplicationAddress
+    itxn_field AssetSender
+    dig 7
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    dup
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+destroy_after_if_else@16:
+    global CurrentApplicationAddress
+    acct_params_get AcctMinBalance
+    assert // account funded
+    itxn_begin
+    txn Sender
+    dup
+    itxn_field AssetCloseTo
+    intc_0 // 0
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    swap
+    dup
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    itxn_begin
+    itxn_field ConfigAsset
+    pushint 3 // acfg
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc 12 // 65536
+    itob
+    uncover 2
+    swap
+    replace2 94
+    uncover 2
+    intc_0 // 0
+    uncover 4
+    extract3
+    swap
+    concat
+    intc_0 // 0
+    itob
+    replace2 106
+    bytec_0 // 0x74
+    uncover 3
+    concat
+    dup
+    box_del
+    pop
+    dig 1
+    box_put
+    global CurrentApplicationAddress
+    acct_params_get AcctMinBalance
+    assert // account funded
+    uncover 2
+    swap
+    -
+    itxn_begin
+    swap
+    extract 8 32
+    itxn_field Receiver
+    itxn_field Amount
+    intc_1 // pay
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc_1 // 1
+    return
+
+destroy_else_body@13:
+    itxn_begin
+    txn Sender
+    dig 7
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    dup
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    b destroy_after_if_else@16
+
+destroy_bool_false@4:
+    intc_0 // 0
+    b destroy_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.clawback[routing]() -> void:
+clawback:
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    dup
+    cover 2
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 4
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    cover 3
+    txna ApplicationArgs 5
+    dup
+    len
+    intc_2 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 4
+    uncover 2
+    callsub funded
+    cover 6
+    pushint 32
+    callsub authority
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    substring3
+    pushint 94
+    extract_uint64
+    dup
+    pushint 8192
+    &
+    bz clawback_bool_false@4
+    dig 2
+    bz clawback_bool_false@4
+    intc_1 // 1
+
+clawback_bool_merge@5:
+    assert
+    dig 3
+    global CurrentApplicationAddress
+    !=
+    bz clawback_bool_false@9
+    dig 1
+    global CurrentApplicationAddress
+    !=
+    bz clawback_bool_false@9
+    dig 1
+    global ZeroAddress
+    !=
+    bz clawback_bool_false@9
+    intc_1 // 1
+
+clawback_bool_merge@10:
+    assert
+    uncover 4
+    swap
+    uncover 4
+    dup
+    cover 3
+    uncover 4
+    dup
+    cover 4
+    uncover 6
+    dup
+    cover 5
+    callsub move_votes
+    itxn_begin
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    itxn_field AssetSender
+    swap
+    itxn_field XferAsset
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    callsub refund
+    intc_1 // 1
+    return
+
+clawback_bool_false@9:
+    intc_0 // 0
+    b clawback_bool_merge@10
+
+clawback_bool_false@4:
+    intc_0 // 0
+    b clawback_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.opt_out[routing]() -> void:
+opt_out:
+    intc_0 // 0
+    bytec_1 // ""
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    cover 2
+    bytec_0 // 0x74
+    uncover 2
+    concat
+    dup
+    cover 3
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    ==
+    bz opt_out_bool_false@4
+    dig 1
+    intc 4 // 225
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    intc_2 // 8
+    &
+    bz opt_out_bool_false@4
+    intc_1 // 1
+
+opt_out_bool_merge@5:
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz opt_out_bool_false@8
+    txn Sender
+    dig 1
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    bnz opt_out_bool_false@8
+    intc_1 // 1
+
+opt_out_bool_merge@9:
+    assert
+    txn GroupIndex
+    intc_3 // 2
+    +
+    global GroupSize
+    ==
+    assert
+    txn GroupIndex
+    intc_1 // 1
+    +
+    dup
+    bury 4
+    gtxns TypeEnum
+    dup
+    pushint 4 // axfer
+    ==
+    assert // transaction type is axfer
+    pushint 4
+    ==
+    bz opt_out_bool_false@13
+    dig 2
+    gtxns Sender
+    txn Sender
+    ==
+    bz opt_out_bool_false@13
+    dig 2
+    gtxns XferAsset
+    dig 1
+    ==
+    bz opt_out_bool_false@13
+    intc_1 // 1
+
+opt_out_bool_merge@14:
+    assert
+    dig 2
+    gtxns AssetAmount
+    bnz opt_out_bool_false@18
+    dig 2
+    gtxns AssetReceiver
+    dig 2
+    intc_2 // 8
+    pushint 32
+    box_extract // on error: index out of bounds
+    dup
+    bury 6
+    ==
+    bz opt_out_bool_false@18
+    dig 2
+    gtxns AssetCloseTo
+    dig 4
+    ==
+    bz opt_out_bool_false@18
+    intc_1 // 1
+
+opt_out_bool_merge@19:
+    assert
+    dig 2
+    gtxns AssetSender
+    global ZeroAddress
+    ==
+    bz opt_out_bool_false@22
+    dig 2
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    bz opt_out_bool_false@22
+    intc_1 // 1
+
+opt_out_bool_merge@23:
+    assert
+    itxn_begin
+    txn Sender
+    intc_0 // 0
+    itxn_field FreezeAssetFrozen
+    itxn_field FreezeAssetAccount
+    itxn_field FreezeAsset
+    pushint 5 // afrz
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc_1 // 1
+    return
+
+opt_out_bool_false@22:
+    intc_0 // 0
+    b opt_out_bool_merge@23
+
+opt_out_bool_false@18:
+    intc_0 // 0
+    b opt_out_bool_merge@19
+
+opt_out_bool_false@13:
+    intc_0 // 0
+    b opt_out_bool_merge@14
+
+opt_out_bool_false@8:
+    intc_0 // 0
+    b opt_out_bool_merge@9
+
+opt_out_bool_false@4:
+    intc_0 // 0
+    b opt_out_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.detach[routing]() -> void:
+detach:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Assets
+    dup
+    uncover 2
+    bytec_0 // 0x74
+    swap
+    concat
+    dup
+    cover 2
+    dup
+    box_get
+    swap
+    cover 3
+    assert // check self.tokens entry exists
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    ==
+    bz detach_bool_false@4
+    txn Sender
+    dig 2
+    pushints 40 32
+    box_extract // on error: index out of bounds
+    ==
+    bz detach_bool_false@4
+    intc_1 // 1
+
+detach_bool_merge@5:
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz detach_bool_false@8
+    dig 1
+    intc 4 // 225
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    intc_2 // 8
+    &
+    bnz detach_bool_false@8
+    intc_1 // 1
+
+detach_bool_merge@9:
+    assert
+    dig 1
+    pushint 122
+    intc_1 // 1
+    box_extract // on error: index out of bounds
+    intc_0 // 0
+    getbit
+    bytec 4 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    intc_0 // 0
+    getbit
+    bnz detach_bool_false@12
+    dig 1
+    pushint 123
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    bnz detach_bool_false@12
+    intc_1 // 1
+
+detach_bool_merge@13:
+    assert
+    global ZeroAddress
+    replace2 40
+    global ZeroAddress
+    replace2 72
+    dup
+    pushint 104
+    extract_uint16
+    dig 1
+    len
+    dig 2
+    dig 2
+    uncover 2
+    substring3
+    dup
+    pushint 94
+    extract_uint64
+    pushint 18
+    &
+    itob
+    replace2 94
+    uncover 2
+    intc_0 // 0
+    uncover 3
+    extract3
+    swap
+    concat
+    swap
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    itxn_begin
+    global ZeroAddress
+    dig 1
+    asset_params_get AssetReserve
+    assert // asset exists
+    global ZeroAddress
+    dup
+    itxn_field ConfigAssetClawback
+    itxn_field ConfigAssetFreeze
+    itxn_field ConfigAssetReserve
+    itxn_field ConfigAssetManager
+    itxn_field ConfigAsset
+    pushint 3 // acfg
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc_1 // 1
+    return
+
+detach_bool_false@12:
+    intc_0 // 0
+    b detach_bool_merge@13
+
+detach_bool_false@8:
+    intc_0 // 0
+    b detach_bool_merge@9
+
+detach_bool_false@4:
+    intc_0 // 0
+    b detach_bool_merge@5
+
+
+// tokens.RockTheCoinAlgorandTokensV1.token[routing]() -> void:
+token:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    bytec_0 // 0x74
+    swap
+    concat
+    box_get
+    assert // check self.tokens entry exists
+    bytec 12 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+
+// common.Service.create[routing]() -> void:
+create:
+    txna ApplicationArgs 1
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    dup
+    txna ApplicationArgs 2
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    swap
+    global ZeroAddress
+    !=
+    bz create_bool_false@4
+    dup
+    len
+    pushint 32
+    ==
+    bz create_bool_false@4
+    intc_1 // 1
+
+create_bool_merge@5:
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    bytec 6 // "owner"
+    txn Sender
+    app_global_put
+    bytec 8 // "treasury"
+    uncover 2
+    app_global_put
+    bytec 9 // "signer"
+    swap
+    app_global_put
+    intc_1 // 1
+    return
+
+create_bool_false@4:
+    intc_0 // 0
+    b create_bool_merge@5
+
+
+// common.Service.configure[routing]() -> void:
+configure:
+    txna ApplicationArgs 1
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_3 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    swap
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    intc_0 // 0
+    getbit
+    cover 2
+    txn Sender
+    intc_0 // 0
+    bytec 6 // "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    ==
+    bz configure_bool_false@4
+    dup
+    global ZeroAddress
+    !=
+    bz configure_bool_false@4
+    intc_1 // 1
+
+configure_bool_merge@5:
+    assert
+    dig 1
+    len
+    pushint 32
+    ==
+    bz configure_bool_false@8
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz configure_bool_false@8
+    intc_1 // 1
+
+configure_bool_merge@9:
+    assert
+    bytec 8 // "treasury"
+    swap
+    app_global_put
+    bytec 9 // "signer"
+    swap
+    app_global_put
+    bytec 11 // "paused"
+    swap
+    app_global_put
+    intc_1 // 1
+    return
+
+configure_bool_false@8:
+    intc_0 // 0
+    b configure_bool_merge@9
+
+configure_bool_false@4:
+    intc_0 // 0
+    b configure_bool_merge@5
+
+
+// common.Service.nominate_operator[routing]() -> void:
+nominate_operator:
+    txna ApplicationArgs 1
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    txn Sender
+    intc_0 // 0
+    bytec 6 // "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    ==
+    bz nominate_operator_bool_false@4
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz nominate_operator_bool_false@4
+    intc_1 // 1
+
+nominate_operator_bool_merge@5:
+    assert
+    bytec 7 // "pending_owner"
+    swap
+    app_global_put
+    intc_1 // 1
+    return
+
+nominate_operator_bool_false@4:
+    intc_0 // 0
+    b nominate_operator_bool_merge@5
+
+
+// common.Service.accept_operator[routing]() -> void:
+accept_operator:
+    txn Sender
+    intc_0 // 0
+    bytec 7 // "pending_owner"
+    app_global_get_ex
+    assert // check self.pending_owner exists
+    ==
+    bz accept_operator_bool_false@4
+    txn Sender
+    global ZeroAddress
+    !=
+    bz accept_operator_bool_false@4
+    intc_1 // 1
+
+accept_operator_bool_merge@5:
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    bytec 6 // "owner"
+    txn Sender
+    app_global_put
+    bytec 7 // "pending_owner"
+    global ZeroAddress
+    app_global_put
+    intc_1 // 1
+    return
+
+accept_operator_bool_false@4:
+    intc_0 // 0
+    b accept_operator_bool_merge@5
+
+
+// common.Service.resources[routing]() -> void:
+resources:
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    intc_1 // 1
+    return
+
+
+// tokens.RockTheCoinAlgorandTokensV1.authority(reference: bytes, asset: uint64, mask: uint64) -> bytes:
+authority:
+    proto 3 1
+    bytec_0 // 0x74
+    frame_dig -3
+    concat
+    dup
+    box_get
+    swap
+    cover 2
+    assert // check self.tokens entry exists
+    dup
+    intc_0 // 0
+    intc_2 // 8
+    box_extract // on error: index out of bounds
+    btoi
+    frame_dig -2
+    ==
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    txn Sender
+    swap
+    pushints 40 32
+    box_extract // on error: index out of bounds
+    ==
+    bnz authority_bool_true@2
+    frame_dig -3
+    txn Sender
+    concat
+    sha256
+    pushbytes 0x61
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    frame_dig -1
+    &
+    bz authority_bool_false@3
+
+authority_bool_true@2:
+    intc_1 // 1
+
+authority_bool_merge@4:
+    assert
+    retsub
+
+authority_bool_false@3:
+    intc_0 // 0
+    b authority_bool_merge@4
+
+
+// tokens.RockTheCoinAlgorandTokensV1.validate_tax(config: bytes) -> bytes:
+validate_tax:
+    proto 1 1
+    intc_0 // 0
+    bytec_1 // ""
+    frame_dig -1
+    intc 7 // 134
+    extract_uint16
+    frame_dig -1
+    intc 5 // 136
+    extract_uint16
+    dup
+    cover 2
+    frame_dig -1
+    cover 2
+    substring3
+    dup
+    cover 2
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    dup
+    pushint 4
+    <=
+    bz validate_tax_bool_false@3
+    frame_dig -1
+    len
+    frame_dig -1
+    dig 3
+    uncover 2
+    substring3
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    dig 1
+    ==
+    bz validate_tax_bool_false@3
+    intc_1 // 1
+
+validate_tax_bool_merge@4:
+    assert
+    intc_0 // 0
+    frame_bury 1
+    intc_0 // 0
+
+validate_tax_for_header@5:
+    dup
+    dig 2
+    <
+    bz validate_tax_after_for@12
+    frame_dig 2
+    extract 2 0
+    dig 1
+    pushint 32
+    *
+    pushint 32
+    extract3 // on error: index access is out of bounds
+    dup
+    frame_bury 0
+    global ZeroAddress
+    !=
+    bz validate_tax_bool_false@9
+    frame_dig 0
+    global CurrentApplicationAddress
+    !=
+    bz validate_tax_bool_false@9
+    intc_1 // 1
+
+validate_tax_bool_merge@10:
+    assert
+    frame_dig -1
+    len
+    frame_dig -1
+    dig 4
+    uncover 2
+    substring3
+    extract 2 0
+    dig 1
+    intc_2 // 8
+    *
+    extract_uint64
+    dup
+    assert
+    frame_dig 1
+    +
+    frame_bury 1
+    intc_1 // 1
+    +
+    b validate_tax_for_header@5
+
+validate_tax_bool_false@9:
+    intc_0 // 0
+    b validate_tax_bool_merge@10
+
+validate_tax_after_for@12:
+    popn 3
+    frame_dig -1
+    pushint 126
+    extract_uint64
+    bz validate_tax_else_body@14
+    frame_dig 1
+    intc 9 // 10000
+    ==
+    assert
+
+validate_tax_after_if_else@19:
+    frame_dig -1
+    frame_bury 0
+    retsub
+
+validate_tax_else_body@14:
+    frame_dig 1
+    bz validate_tax_bool_true@16
+    frame_dig 1
+    intc 9 // 10000
+    ==
+    bz validate_tax_bool_false@17
+
+validate_tax_bool_true@16:
+    intc_1 // 1
+
+validate_tax_bool_merge@18:
+    assert
+    b validate_tax_after_if_else@19
+
+validate_tax_bool_false@17:
+    intc_0 // 0
+    b validate_tax_bool_merge@18
+
+validate_tax_bool_false@3:
+    intc_0 // 0
+    b validate_tax_bool_merge@4
+
+
+// tokens.RockTheCoinAlgorandTokensV1.wallet_limit(reference: bytes, config: bytes, asset: uint64, sender: bytes, recipient: bytes, amount: uint64, tax_amount: uint64, account: bytes) -> bytes:
+wallet_limit:
+    proto 8 1
+    intc_0 // 0
+    bytec_1 // ""
+    dupn 2
+    frame_dig -7
+    intc 10 // 146
+    extract_uint64
+    dup
+    bz wallet_limit_after_if_else@16
+    frame_dig -8
+    frame_dig -1
+    concat
+    sha256
+    bytec_3 // 0x78
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    bnz wallet_limit_after_if_else@16
+    frame_dig -1
+    frame_dig -6
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    frame_dig -1
+    frame_dig -5
+    ==
+    bz wallet_limit_after_if_else@4
+    frame_dig -3
+    -
+
+wallet_limit_after_if_else@4:
+    frame_dig -1
+    frame_dig -4
+    ==
+    bz wallet_limit_after_if_else@6
+    frame_dig -3
+    frame_dig -2
+    -
+    +
+
+wallet_limit_after_if_else@6:
+    intc_0 // 0
+    swap
+    frame_dig -7
+    intc 7 // 134
+    extract_uint16
+    frame_dig -7
+    intc 5 // 136
+    extract_uint16
+    dup
+    frame_bury 1
+    frame_dig -7
+    cover 2
+    substring3
+    dup
+    frame_bury 0
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    cover 2
+    intc_0 // 0
+    swap
+
+wallet_limit_for_header@7:
+    dig 1
+    dig 4
+    <
+    bz wallet_limit_after_for@15
+    dig 1
+    intc_1 // 1
+    +
+    dup
+    frame_bury 3
+    dig 4
+    ==
+    bz wallet_limit_ternary_false@10
+    frame_dig -2
+    dig 3
+    -
+    frame_bury 2
+
+wallet_limit_ternary_merge@11:
+    uncover 2
+    frame_dig 2
+    +
+    swap
+    frame_dig 0
+    extract 2 0
+    uncover 3
+    pushint 32
+    *
+    pushint 32
+    extract3 // on error: index access is out of bounds
+    frame_dig -1
+    ==
+    bz wallet_limit_after_if_else@13
+    frame_dig 2
+    +
+
+wallet_limit_after_if_else@13:
+    frame_dig 3
+    swap
+    b wallet_limit_for_header@7
+
+wallet_limit_ternary_false@10:
+    frame_dig -7
+    len
+    frame_dig -7
+    frame_dig 1
+    uncover 2
+    substring3
+    extract 2 0
+    dig 2
+    intc_2 // 8
+    *
+    extract_uint64
+    frame_dig -2
+    mulw
+    intc 9 // 10000
+    divw
+    frame_bury 2
+    b wallet_limit_ternary_merge@11
+
+wallet_limit_after_for@15:
+    bury 1
+    bury 1
+    bury 1
+    frame_dig 4
+    <=
+    assert
+
+wallet_limit_after_if_else@16:
+    frame_dig -7
+    frame_bury 0
+    retsub
+
+
+// tokens.RockTheCoinAlgorandTokensV1.move_votes(reference: bytes, flags: uint64, sender: bytes, recipient: bytes, amount: uint64) -> void:
+move_votes:
+    proto 5 0
+    frame_dig -4
+    intc 11 // 2048
+    &
+    bz move_votes_after_if_else@8
+    frame_dig -3
+    frame_dig -2
+    !=
+    bz move_votes_after_if_else@8
+    frame_dig -1
+    bz move_votes_after_if_else@8
+    frame_dig -3
+    global ZeroAddress
+    !=
+    bz move_votes_after_if_else@5
+    frame_dig -5
+    frame_dig -3
+    concat
+    sha256
+    bytec 14 // 0x64
+    swap
+    concat
+    box_get
+    frame_dig -3
+    cover 2
+    select
+    frame_dig -5
+    swap
+    concat
+    sha256
+    bytec_2 // 0x77
+    swap
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    frame_dig -1
+    -
+    itob
+    box_put
+
+move_votes_after_if_else@5:
+    frame_dig -2
+    global ZeroAddress
+    !=
+    bz move_votes_after_if_else@8
+    frame_dig -5
+    frame_dig -2
+    concat
+    sha256
+    bytec 14 // 0x64
+    swap
+    concat
+    box_get
+    frame_dig -2
+    cover 2
+    select
+    frame_dig -5
+    swap
+    concat
+    sha256
+    bytec_2 // 0x77
+    swap
+    concat
+    dup
+    box_get
+    swap
+    btoi
+    intc_0 // 0
+    swap
+    uncover 2
+    select
+    frame_dig -1
+    +
+    itob
+    box_put
+
+move_votes_after_if_else@8:
+    retsub
+
+
+// common.Service.funded(payment: uint64) -> uint64:
+funded:
+    proto 1 1
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    frame_dig -1
+    gtxns Sender
+    txn Sender
+    ==
+    bz funded_bool_false@3
+    frame_dig -1
+    gtxns Receiver
+    global CurrentApplicationAddress
+    ==
+    bz funded_bool_false@3
+    intc_1 // 1
+
+funded_bool_merge@4:
+    assert
+    frame_dig -1
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    bz funded_bool_false@7
+    frame_dig -1
+    gtxns CloseRemainderTo
+    global ZeroAddress
+    ==
+    bz funded_bool_false@7
+    intc_1 // 1
+
+funded_bool_merge@8:
+    assert
+    global CurrentApplicationAddress
+    dupn 2
+    acct_params_get AcctBalance
+    assert // account funded
+    frame_dig -1
+    gtxns Amount
+    -
+    dup
+    uncover 2
+    acct_params_get AcctMinBalance
+    assert // account funded
+    >=
+    bz funded_ternary_false@10
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    -
+    retsub
+
+funded_ternary_false@10:
+    popn 2
+    intc_0 // 0
+    retsub
+
+funded_bool_false@7:
+    intc_0 // 0
+    b funded_bool_merge@8
+
+funded_bool_false@3:
+    intc_0 // 0
+    b funded_bool_merge@4
+
+
+// common.Service.refund(floor: uint64) -> void:
+refund:
+    proto 1 0
+    global CurrentApplicationAddress
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    dig 1
+    acct_params_get AcctMinBalance
+    assert // account funded
+    frame_dig -1
+    +
+    >=
+    assert
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    -
+    frame_dig -1
+    -
+    dup
+    bz refund_after_if_else@3
+    itxn_begin
+    txn Sender
+    frame_dig 0
+    itxn_field Amount
+    itxn_field Receiver
+    intc_1 // pay
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+refund_after_if_else@3:
+    retsub

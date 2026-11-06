@@ -1,0 +1,8 @@
+// Public Algod assembly only. No wallet, private key or funded transaction.
+import fs from 'node:fs';import crypto from 'node:crypto';
+const folder='contracts/algorand-suite-v1',verify=process.argv.includes('--verify');if(fs.existsSync(folder+'/published.lock')&&!verify)throw Error('Published Algorand release is frozen.');
+const source=fs.readFileSync(folder+'/escrow-account.teal'),r=await fetch('https://mainnet-api.algonode.cloud/v2/teal/compile',{method:'POST',headers:{'Content-Type':'text/plain'},body:source});if(!r.ok)throw Error('Algod assembly failed: '+await r.text());const data=await r.json(),binary=Buffer.from(data.result,'base64'),marks=[Buffer.alloc(8,0x11),Buffer.alloc(32,0x22),Buffer.alloc(32,0x33),Buffer.alloc(8,0x44)],segments=[];let start=0;
+for(const marker of marks){const at=binary.indexOf(marker,start);if(at<start||binary.indexOf(marker,at+1)!==-1)throw Error('Ambiguous template parameter.');segments.push(binary.subarray(start,at));start=at+marker.length;}segments.push(binary.subarray(start));
+const artifact={version:1,avm_version:8,template:data.result,address:data.hash,segments:segments.map(s=>s.toString('base64')),source_sha256:crypto.createHash('sha256').update(source).digest('hex')},path=folder+'/artifacts/escrow-account.json';
+if(verify){if(JSON.stringify(JSON.parse(fs.readFileSync(path)))!==JSON.stringify(artifact))throw Error('LogicSig does not reproduce.');}else{fs.writeFileSync(path,JSON.stringify(artifact,null,2)+'\n');fs.writeFileSync(folder+'/escrow_template.py',segments.map((s,n)=>`PART${n} = b'${[...s].map(v=>'\\x'+v.toString(16).padStart(2,'0')).join('')}'`).join('\n')+'\n');}
+console.log(JSON.stringify({bytes:binary.length,address:artifact.address,verified:verify}));

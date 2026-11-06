@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "frozen_at": "2026-11-06T13:12:18.225051+00:00",
+  "compiler": "puyapy 5.10.1",
+  "algorand_python": "4.0.0",
+  "program_bytes": 8061,
+  "files": {
+    "README.md": "c5c1589e86f9c01043bfe707d4738bac4223ee704c04d9894924d6c12bbb7d37",
+    "artifacts/RockTheCoinAlgorandTokensV2.approval.bin": "1e2f38ef3b06bfabd70edee738d45976d10abd687dc299ae92782335f82d3a88",
+    "artifacts/RockTheCoinAlgorandTokensV2.approval.puya.map": "0dc92aa2c869b792c7f0bd9e0580e05db5635d33913bfc5ef5aa015d8914d3b2",
+    "artifacts/RockTheCoinAlgorandTokensV2.approval.teal": "6e0b11bbe36f1832b0b7d612aa7e775e0f36d609b69996002af59f04e64aed39",
+    "artifacts/RockTheCoinAlgorandTokensV2.arc56.json": "32e97e2f0fd573a796cc0ba45018be773daaa82f7b625c2ee2909cf4c456509e",
+    "artifacts/RockTheCoinAlgorandTokensV2.clear.bin": "ed90f0d2da1f1d1abd773c45230651a292a90edbc12a7bf859a493a12a640ce7",
+    "artifacts/RockTheCoinAlgorandTokensV2.clear.puya.map": "00d84089d2e4b6b12e64cd99597036f77ce19ab15a4b36fdac86d475bb260922",
+    "artifacts/RockTheCoinAlgorandTokensV2.clear.teal": "222e44e93be7975248497db460ad9ef101ec379acbc14ad409b79b3a9334f2f1",
+    "artifacts/source.json": "9c419a50075340f7120c31e576cbfebd180d58aceca037dfdc76441e20f70f95",
+    "artifacts/token.json": "bc531c4b209f2725d4fa3ff1fd72ef2a625946377ff77353cfac530d5807e9d2",
+    "common.py": "80bcbc109a868f4157c84fa7efb41f5f86b6275b6df471811bcd405830a1dbdc",
+    "pyproject.toml": "ec7cb4ee22b1458890f95b6016f0cfa6f8ad41f993cd82a07d49a473e55f0580",
+    "tokens.py": "75ad68c19393f7499e59f875f8c7d6effac0db1ae9d9d5bd7c7ac29d0239c9f9"
+  }
+}

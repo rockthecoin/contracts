@@ -1,0 +1,111 @@
+#pragma version 8
+// Reusable per-lock account template. No withdrawal path exists in this signature.
+// The application can move funds only under its immutable beneficiary/schedule rules.
+pushbytes 0x1111111111111111
+btoi
+store 0
+pushbytes 0x2222222222222222222222222222222222222222222222222222222222222222
+store 1
+pushbytes 0x3333333333333333333333333333333333333333333333333333333333333333
+store 2
+pushbytes 0x4444444444444444
+btoi
+store 3
+txn TypeEnum
+int pay
+==
+assert
+txn Amount
+int 0
+==
+assert
+txn Fee
+int 0
+==
+assert
+txn Receiver
+txn Sender
+==
+assert
+txn CloseRemainderTo
+global ZeroAddress
+==
+assert
+byte "appID"
+load 0
+itob
+concat
+sha512_256
+txn RekeyTo
+==
+assert
+txn GroupIndex
+int 1
+>=
+assert
+txn GroupIndex
+int 1
+-
+gtxns TypeEnum
+int pay
+==
+assert
+txn GroupIndex
+int 1
+-
+gtxns Sender
+load 2
+==
+assert
+txn GroupIndex
+int 1
++
+gtxns TypeEnum
+int appl
+==
+assert
+txn GroupIndex
+int 1
++
+gtxns ApplicationID
+load 0
+==
+assert
+txn GroupIndex
+int 1
++
+gtxns OnCompletion
+int NoOp
+==
+assert
+txn GroupIndex
+int 1
++
+gtxns Sender
+load 2
+==
+assert
+txn GroupIndex
+int 1
++
+gtxnsa ApplicationArgs 0
+method "setup(byte[],account,uint64)void"
+==
+assert
+txn GroupIndex
+int 1
++
+gtxnsa ApplicationArgs 1
+pushbytes 0x0020
+load 1
+concat
+==
+assert
+txn GroupIndex
+int 1
++
+gtxnsa ApplicationArgs 3
+load 3
+itob
+==
+return

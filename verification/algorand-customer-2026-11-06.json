@@ -1,0 +1,126 @@
+{
+    "checked_at": "2026-11-06T14:47:24+00:00",
+    "network": "mainnet-v1.0",
+    "registered_apps": {
+        "tokens": "3763966036",
+        "escrows": "3763967109",
+        "collections": "3763966705"
+    },
+    "fixture_account": "AAA3DJFZFKJA52KCT54VPIBQKEHQD3JXHOO4DYUCDEIVD5XJQDLP4TC6OU",
+    "all_passed": true,
+    "checks": {
+        "fixed": {
+            "passed": true,
+            "operation": "token_create",
+            "fee_eur_cents": "1000",
+            "fee_microalgo": "116252035",
+            "transactions": 4,
+            "simulation": {
+                "round": "66698933",
+                "verified": true
+            }
+        },
+        "meme": {
+            "passed": true,
+            "operation": "token_create",
+            "fee_eur_cents": "1000",
+            "fee_microalgo": "116252035",
+            "transactions": 4,
+            "simulation": {
+                "round": "66698934",
+                "verified": true
+            }
+        },
+        "managed": {
+            "passed": true,
+            "operation": "token_create",
+            "fee_eur_cents": "2000",
+            "fee_microalgo": "232504069",
+            "transactions": 4,
+            "simulation": {
+                "round": "66698936",
+                "verified": true
+            }
+        },
+        "taxable": {
+            "passed": true,
+            "operation": "token_create",
+            "fee_eur_cents": "3000",
+            "fee_microalgo": "348756104",
+            "transactions": 4,
+            "simulation": {
+                "round": "66698938",
+                "verified": true
+            }
+        },
+        "custom": {
+            "passed": true,
+            "operation": "token_create",
+            "fee_eur_cents": "4000",
+            "fee_microalgo": "465008138",
+            "transactions": 4,
+            "simulation": {
+                "round": "66698939",
+                "verified": true
+            }
+        },
+        "single-nft": {
+            "passed": true,
+            "operation": "nft_create",
+            "fee_eur_cents": "500",
+            "fee_microalgo": "58126018",
+            "transactions": 4,
+            "simulation": {
+                "round": "66698941",
+                "verified": true
+            }
+        },
+        "collection": {
+            "passed": true,
+            "operation": "collection_create",
+            "fee_eur_cents": "2000",
+            "fee_microalgo": "232504069",
+            "transactions": 3,
+            "simulation": {
+                "round": "66698942",
+                "verified": true
+            }
+        },
+        "multisender": {
+            "passed": true,
+            "operation": "multisender",
+            "fee_eur_cents": "200",
+            "fee_microalgo": "23250407",
+            "transactions": 3,
+            "simulation": {
+                "round": "66698943",
+                "verified": true
+            }
+        },
+        "vesting": {
+            "passed": true,
+            "operation": "vesting_create",
+            "fee_eur_cents": "500",
+            "fee_microalgo": "58126018",
+            "transactions": 7,
+            "simulation": {
+                "round": "66698944",
+                "verified": true
+            }
+        },
+        "asset-lock": {
+            "passed": true,
+            "operation": "position_lock",
+            "fee_eur_cents": "500",
+            "fee_microalgo": "58126018",
+            "transactions": 7,
+            "simulation": {
+                "round": "66698946",
+                "verified": true
+            }
+        }
+    },
+    "funded_signatures": 0,
+    "broadcasts": 0,
+    "saved_customer_reviews": 0
+}

@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-06T14:49:42+00:00",
+  "network": "mainnet-v1.0",
+  "validator": {
+    "verified": true,
+    "application_id": "1002541853",
+    "sdk_commit": "dd1fed50cdc18a699a994b25a1d4bdb11b902553",
+    "approval_sha256": "dd63834ddcd51013ec0a22142497ad4c6d74e421e6c79149422c243346691f56",
+    "clear_sha256": "18ae2b5f0cd69ba19d8565c5560b1358f51289a0710ec225f253413ca603d8e3"
+  },
+  "checks": [
+    {
+      "scenario": "tinyman-bootstrap",
+      "passed": true,
+      "round": 66698961
+    },
+    {
+      "scenario": "tinyman-add",
+      "passed": true,
+      "round": 66698962
+    },
+    {
+      "scenario": "tinyman-add-then-remove",
+      "passed": true,
+      "round": 66698962
+    }
+  ],
+  "unsigned": true,
+  "broadcasts": 0
+}

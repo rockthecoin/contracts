@@ -1,0 +1,1526 @@
+#pragma version 11
+#pragma typetrack false
+
+// algopy.arc4.ARC4Contract.approval_program() -> uint64:
+main:
+    intcblock 0 1 2 8 136
+    bytecblock 0x76 "owner" "pending_owner" "treasury" "signer" "paused" 0x151f7c75 0x068101
+    txn ApplicationID
+    bnz main_after_if_else@2
+    bytec_1 // "owner"
+    global ZeroAddress
+    app_global_put
+    bytec_2 // "pending_owner"
+    global ZeroAddress
+    app_global_put
+    bytec_3 // "treasury"
+    global ZeroAddress
+    app_global_put
+    bytec 4 // "signer"
+    pushbytes 0x
+    app_global_put
+    bytec 5 // "paused"
+    intc_0 // 0
+    app_global_put
+    pushbytes "version"
+    intc_1 // 1
+    app_global_put
+
+main_after_if_else@2:
+    txn OnCompletion
+    !
+    assert
+    txn ApplicationID
+    bz main_create_NoOp@16
+    pushbytess 0x8ca4fa92 0x163c444e 0x2c3dbbf7 0x71f7cfe7 0xe86ae9e9 0x4323aeef 0x033b3173 0x4337872f 0x6fc5f2b9 0x64f0d7d2 // method "setup(byte[],account,uint64)void", method "register(pay,txn,pay,(uint64,uint64,address,uint64,uint64,uint64),byte[],uint64,uint64,byte[])void", method "release(byte[])uint64", method "surplus(byte[],bool)uint64", method "close(byte[])void", method "lock(byte[])(address,address,(uint64,uint64,address,uint64,uint64,uint64),uint64)", method "configure(account,byte[],bool)void", method "nominate_operator(account)void", method "accept_operator()void", method "resources()void"
+    txna ApplicationArgs 0
+    match setup register release surplus close lock configure nominate_operator accept_operator resources
+    err
+
+main_create_NoOp@16:
+    pushbytes 0x77559790 // method "create(account,byte[])void"
+    txna ApplicationArgs 0
+    match create
+    err
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.setup[routing]() -> void:
+setup:
+    pushbytes ""
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    swap
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_3 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 2
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz setup_bool_false@4
+    bytec_0 // 0x76
+    dig 1
+    concat
+    box_len
+    bury 1
+    bnz setup_bool_false@4
+    intc_1 // 1
+
+setup_bool_merge@5:
+    assert
+    txn Sender
+    dig 3
+    callsub escrow
+    dig 1
+    dup
+    uncover 2
+    ==
+    assert
+    acct_params_get AcctAuthAddr
+    assert // account funded
+    global CurrentApplicationAddress
+    ==
+    assert
+    txn GroupIndex
+    intc_2 // 2
+    >=
+    assert
+    txn GroupIndex
+    intc_2 // 2
+    -
+    dup
+    bury 4
+    gtxns TypeEnum
+    dup
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    intc_1 // 1
+    ==
+    bz setup_bool_false@9
+    dig 2
+    gtxns Sender
+    txn Sender
+    ==
+    bz setup_bool_false@9
+    dig 2
+    gtxns Receiver
+    dig 1
+    ==
+    bz setup_bool_false@9
+    intc_1 // 1
+
+setup_bool_merge@10:
+    assert
+    dig 2
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    bz setup_bool_false@13
+    dig 2
+    gtxns CloseRemainderTo
+    global ZeroAddress
+    ==
+    bz setup_bool_false@13
+    intc_1 // 1
+
+setup_bool_merge@14:
+    assert
+    dig 1
+    bz setup_after_if_else@21
+    dig 1
+    asset_params_get AssetFreeze
+    assert // asset exists
+    global ZeroAddress
+    ==
+    bz setup_bool_false@18
+    dig 1
+    asset_params_get AssetClawback
+    assert // asset exists
+    global ZeroAddress
+    ==
+    bz setup_bool_false@18
+    intc_1 // 1
+
+setup_bool_merge@19:
+    assert
+    itxn_begin
+    intc_0 // 0
+    itxn_field AssetAmount
+    dupn 2
+    itxn_field AssetReceiver
+    dig 2
+    itxn_field XferAsset
+    itxn_field Sender
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+setup_after_if_else@21:
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    >=
+    assert
+    intc_1 // 1
+    return
+
+setup_bool_false@18:
+    intc_0 // 0
+    b setup_bool_merge@19
+
+setup_bool_false@13:
+    intc_0 // 0
+    b setup_bool_merge@14
+
+setup_bool_false@9:
+    intc_0 // 0
+    b setup_bool_merge@10
+
+setup_bool_false@4:
+    intc_0 // 0
+    b setup_bool_merge@5
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.register[routing]() -> void:
+register:
+    intc_0 // 0
+    pushbytes ""
+    dup
+    txn GroupIndex
+    pushint 3
+    -
+    dupn 2
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txn GroupIndex
+    intc_2 // 2
+    -
+    cover 2
+    txn GroupIndex
+    intc_1 // 1
+    -
+    dup
+    cover 2
+    gtxns TypeEnum
+    intc_1 // pay
+    ==
+    assert // transaction type is pay
+    txna ApplicationArgs 1
+    dup
+    cover 2
+    len
+    pushint 72
+    ==
+    assert // invalid number of bytes for escrows.LockConfig
+    txna ApplicationArgs 2
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    cover 4
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_3 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 5
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_3 // 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    cover 3
+    txna ApplicationArgs 5
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    swap
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    gtxns Sender
+    txn Sender
+    ==
+    bz register_bool_false@53
+    dig 4
+    gtxns Receiver
+    global CurrentApplicationAddress
+    ==
+    bz register_bool_false@53
+    intc_1 // 1
+
+register_bool_merge@54:
+    assert
+    dig 4
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@57
+    dig 4
+    gtxns CloseRemainderTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@57
+    intc_1 // 1
+
+register_bool_merge@58:
+    assert
+    global CurrentApplicationAddress
+    dupn 2
+    acct_params_get AcctBalance
+    assert // account funded
+    uncover 7
+    gtxns Amount
+    -
+    dup
+    uncover 2
+    acct_params_get AcctMinBalance
+    assert // account funded
+    >=
+    bz register_ternary_false@60
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    -
+    swap
+
+register_ternary_merge@61:
+    pushbytes 0x6c6f636b
+    dig 3
+    concat
+    sha256
+    cover 7
+    intc_0 // 0
+    bytec 5 // "paused"
+    app_global_get_ex
+    assert // check self.paused exists
+    bnz register_bool_false@66
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@66
+    intc_1 // 1
+
+register_bool_merge@67:
+    assert
+    dig 5
+    len
+    pushint 32
+    ==
+    bz register_bool_false@70
+    txn Lease
+    dig 6
+    ==
+    bz register_bool_false@70
+    intc_1 // 1
+
+register_bool_merge@71:
+    assert
+    dig 4
+    global LatestTimestamp
+    >=
+    bz register_bool_false@74
+    global LatestTimestamp
+    pushint 300
+    +
+    dig 5
+    >=
+    bz register_bool_false@74
+    intc_1 // 1
+
+register_bool_merge@75:
+    assert
+    txn LastValid
+    txn FirstValid
+    >
+    bz register_bool_false@78
+    txn LastValid
+    txn FirstValid
+    -
+    pushint 100
+    <=
+    bz register_bool_false@78
+    intc_1 // 1
+
+register_bool_merge@79:
+    assert
+    dig 3
+    gtxns Sender
+    txn Sender
+    ==
+    bz register_bool_false@82
+    dig 3
+    gtxns Receiver
+    intc_0 // 0
+    bytec_3 // "treasury"
+    app_global_get_ex
+    assert // check self.treasury exists
+    ==
+    bz register_bool_false@82
+    intc_1 // 1
+
+register_bool_merge@83:
+    assert
+    dig 3
+    gtxns Amount
+    dig 7
+    ==
+    bz register_bool_false@86
+    dig 3
+    gtxns CloseRemainderTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@86
+    intc_1 // 1
+
+register_bool_merge@87:
+    assert
+    uncover 3
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    pushbytes 0x5254435f414c474f5f51554f54455f5631
+    global GenesisHash
+    concat
+    global CurrentApplicationID
+    itob
+    concat
+    txn Sender
+    concat
+    dig 5
+    concat
+    uncover 6
+    itob
+    concat
+    dig 4
+    itob
+    concat
+    txn FirstValid
+    itob
+    concat
+    txn LastValid
+    itob
+    concat
+    uncover 6
+    concat
+
+register_while_top@88:
+    pushint 2510
+    global OpcodeBudget
+    >
+    bz register_after_while@91
+    itxn_begin
+    pushint 6 // appl
+    itxn_field TypeEnum
+    pushint 5 // DeleteApplication
+    itxn_field OnCompletion
+    bytec 7 // 0x068101
+    itxn_field ApprovalProgram
+    bytec 7 // 0x068101
+    itxn_field ClearStateProgram
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    b register_while_top@88
+
+register_after_while@91:
+    intc_0 // 0
+    bytec 4 // "signer"
+    app_global_get_ex
+    assert // check self.signer exists
+    swap
+    cover 2
+    ed25519verify_bare
+    assert
+    bytec_0 // 0x76
+    dig 4
+    concat
+    dup
+    box_len
+    bury 1
+    bnz register_bool_false@4
+    dig 2
+    intc_3 // 8
+    extract_uint64
+    bz register_bool_false@4
+    intc_1 // 1
+
+register_bool_merge@5:
+    assert
+    dig 2
+    extract 16 32
+    dup
+    bury 10
+    global ZeroAddress
+    !=
+    bz register_bool_false@8
+    dig 8
+    global CurrentApplicationAddress
+    !=
+    bz register_bool_false@8
+    intc_1 // 1
+
+register_bool_merge@9:
+    assert
+    dig 2
+    dup
+    pushint 48
+    extract_uint64
+    swap
+    pushint 56
+    extract_uint64
+    dup
+    bury 9
+    <=
+    bz register_bool_false@12
+    dig 2
+    pushint 64
+    extract_uint64
+    dig 7
+    >=
+    bz register_bool_false@12
+    intc_1 // 1
+
+register_bool_merge@13:
+    assert
+    dig 2
+    dup
+    pushint 64
+    extract_uint64
+    uncover 5
+    >
+    assert
+    txn Sender
+    swap
+    intc_0 // 0
+    extract_uint64
+    dup
+    cover 4
+    uncover 6
+    cover 2
+    callsub escrow
+    dup
+    cover 3
+    acct_params_get AcctAuthAddr
+    assert // account funded
+    global CurrentApplicationAddress
+    ==
+    bz register_bool_false@16
+    dig 8
+    dig 3
+    !=
+    bz register_bool_false@16
+    intc_1 // 1
+
+register_bool_merge@17:
+    assert
+    dig 5
+    gtxns Sender
+    txn Sender
+    ==
+    bz register_bool_false@20
+    dig 5
+    gtxns RekeyTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@20
+    intc_1 // 1
+
+register_bool_merge@21:
+    assert
+    dig 3
+    bz register_else_body@39
+    dig 5
+    gtxns TypeEnum
+    pushint 4
+    ==
+    bz register_bool_false@25
+    dig 5
+    gtxns XferAsset
+    dig 4
+    ==
+    bz register_bool_false@25
+    intc_1 // 1
+
+register_bool_merge@26:
+    assert
+    dig 5
+    gtxns AssetReceiver
+    dig 3
+    ==
+    bz register_bool_false@29
+    dig 5
+    gtxns AssetAmount
+    dig 5
+    intc_3 // 8
+    extract_uint64
+    ==
+    bz register_bool_false@29
+    intc_1 // 1
+
+register_bool_merge@30:
+    assert
+    dig 5
+    gtxns AssetSender
+    global ZeroAddress
+    ==
+    bz register_bool_false@33
+    dig 5
+    gtxns AssetCloseTo
+    global ZeroAddress
+    ==
+    bz register_bool_false@33
+    intc_1 // 1
+
+register_bool_merge@34:
+    assert
+    dig 3
+    asset_params_get AssetFreeze
+    assert // asset exists
+    global ZeroAddress
+    ==
+    bz register_bool_false@37
+    dig 3
+    asset_params_get AssetClawback
+    assert // asset exists
+    global ZeroAddress
+    ==
+    bz register_bool_false@37
+    intc_1 // 1
+
+register_bool_merge@38:
+    assert
+    dig 2
+    uncover 4
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    dig 4
+    intc_3 // 8
+    extract_uint64
+    >=
+    assert
+
+register_after_if_else@45:
+    txn Sender
+    intc_0 // 0
+    itob
+    swap
+    uncover 4
+    concat
+    uncover 4
+    concat
+    swap
+    concat
+    box_put
+    global CurrentApplicationAddress
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    dig 1
+    acct_params_get AcctMinBalance
+    assert // account funded
+    dig 3
+    +
+    >=
+    assert
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    -
+    swap
+    -
+    dup
+    bury 4
+    bz register_after_if_else@48
+    itxn_begin
+    txn Sender
+    dig 3
+    itxn_field Amount
+    itxn_field Receiver
+    intc_1 // pay
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+register_after_if_else@48:
+    intc_1 // 1
+    return
+
+register_bool_false@37:
+    intc_0 // 0
+    b register_bool_merge@38
+
+register_bool_false@33:
+    intc_0 // 0
+    b register_bool_merge@34
+
+register_bool_false@29:
+    intc_0 // 0
+    b register_bool_merge@30
+
+register_bool_false@25:
+    intc_0 // 0
+    b register_bool_merge@26
+
+register_else_body@39:
+    uncover 3
+    pop
+    dig 4
+    gtxns TypeEnum
+    intc_1 // 1
+    ==
+    bz register_bool_false@43
+    dig 4
+    gtxns Receiver
+    dig 3
+    ==
+    bz register_bool_false@43
+    dig 4
+    gtxns Amount
+    dig 4
+    intc_3 // 8
+    extract_uint64
+    ==
+    bz register_bool_false@43
+    intc_1 // 1
+
+register_bool_merge@44:
+    assert
+    dig 4
+    gtxns CloseRemainderTo
+    global ZeroAddress
+    ==
+    assert
+    dig 2
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    dig 5
+    intc_3 // 8
+    extract_uint64
+    +
+    >=
+    assert
+    b register_after_if_else@45
+
+register_bool_false@43:
+    intc_0 // 0
+    b register_bool_merge@44
+
+register_bool_false@20:
+    intc_0 // 0
+    b register_bool_merge@21
+
+register_bool_false@16:
+    intc_0 // 0
+    b register_bool_merge@17
+
+register_bool_false@12:
+    intc_0 // 0
+    b register_bool_merge@13
+
+register_bool_false@8:
+    intc_0 // 0
+    b register_bool_merge@9
+
+register_bool_false@4:
+    intc_0 // 0
+    b register_bool_merge@5
+
+register_bool_false@86:
+    intc_0 // 0
+    b register_bool_merge@87
+
+register_bool_false@82:
+    intc_0 // 0
+    b register_bool_merge@83
+
+register_bool_false@78:
+    intc_0 // 0
+    b register_bool_merge@79
+
+register_bool_false@74:
+    intc_0 // 0
+    b register_bool_merge@75
+
+register_bool_false@70:
+    intc_0 // 0
+    b register_bool_merge@71
+
+register_bool_false@66:
+    intc_0 // 0
+    b register_bool_merge@67
+
+register_ternary_false@60:
+    popn 2
+    intc_0 // 0
+    swap
+    b register_ternary_merge@61
+
+register_bool_false@57:
+    intc_0 // 0
+    b register_bool_merge@58
+
+register_bool_false@53:
+    intc_0 // 0
+    b register_bool_merge@54
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.release[routing]() -> void:
+release:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    bytec_0 // 0x76
+    swap
+    concat
+    dup
+    box_get
+    swap
+    dup
+    uncover 2
+    assert // check self.locks entry exists
+    global LatestTimestamp
+    dup
+    uncover 2
+    extract 64 72
+    dup
+    cover 2
+    dup
+    pushint 56
+    extract_uint64
+    dig 2
+    <=
+    assert
+    dup
+    intc_3 // 8
+    extract_uint64
+    cover 4
+    pushint 64
+    extract_uint64
+    dup
+    cover 2
+    <
+    bnz release_if_body@2
+    pop
+    bury 1
+    dig 1
+
+release_after_if_else@7:
+    uncover 3
+    dup
+    intc 4 // 136
+    extract_uint64
+    uncover 2
+    dup
+    uncover 2
+    -
+    dup
+    cover 3
+    dup
+    assert
+    dig 1
+    itob
+    uncover 3
+    dig 1
+    replace2 136
+    uncover 7
+    intc 4 // 136
+    uncover 3
+    box_replace // on error: index out of bounds
+    extract 32 32
+    dup
+    cover 3
+    uncover 5
+    dup
+    intc_0 // 0
+    extract_uint64
+    dup
+    cover 2
+    cover 6
+    extract 16 32
+    uncover 2
+    dig 2
+    uncover 2
+    uncover 4
+    callsub send
+    uncover 5
+    uncover 2
+    -
+    swap
+    bz release_else_body@9
+    swap
+    uncover 2
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    <=
+    assert
+
+release_after_if_else@10:
+    itob
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+release_else_body@9:
+    uncover 2
+    pop
+    swap
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    uncover 2
+    +
+    >=
+    assert
+    b release_after_if_else@10
+
+release_if_body@2:
+    dig 1
+    pushint 48
+    extract_uint64
+    dup
+    dig 4
+    <
+    bz release_bool_false@5
+    dup2
+    >
+    bz release_bool_false@5
+    intc_1 // 1
+
+release_bool_merge@6:
+    assert
+    uncover 3
+    dig 1
+    -
+    dig 4
+    mulw
+    uncover 3
+    uncover 3
+    -
+    divw
+    b release_after_if_else@7
+
+release_bool_false@5:
+    intc_0 // 0
+    b release_bool_merge@6
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.surplus[routing]() -> void:
+surplus:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    intc_0 // 0
+    getbit
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    bytec_0 // 0x76
+    uncover 2
+    concat
+    box_get
+    swap
+    dup
+    cover 2
+    cover 3
+    assert // check self.locks entry exists
+    txn Sender
+    dig 1
+    extract 64 72
+    dup
+    cover 4
+    dup
+    extract 16 32
+    dup
+    cover 7
+    uncover 2
+    ==
+    assert
+    intc_3 // 8
+    extract_uint64
+    swap
+    intc 4 // 136
+    extract_uint64
+    -
+    cover 2
+    bz surplus_ternary_false@3
+    intc_0 // 0
+
+surplus_ternary_merge@4:
+    dup
+    bz surplus_else_body@6
+    bury 1
+    dig 2
+    extract 32 32
+    dig 1
+    asset_holding_get AssetBalance
+    assert // account opted into asset
+    uncover 2
+    -
+
+surplus_after_if_else@7:
+    dup
+    assert
+    uncover 2
+    extract 32 32
+    uncover 2
+    dig 3
+    dig 3
+    callsub send
+    itob
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+surplus_else_body@6:
+    swap
+    intc_0 // 0
+    extract_uint64
+    !
+    intc_0 // 0
+    uncover 3
+    uncover 2
+    select
+    dig 2
+    extract 32 32
+    dup
+    acct_params_get AcctBalance
+    assert // account funded
+    swap
+    acct_params_get AcctMinBalance
+    assert // account funded
+    -
+    swap
+    -
+    b surplus_after_if_else@7
+
+surplus_ternary_false@3:
+    dup
+    intc_0 // 0
+    extract_uint64
+    b surplus_ternary_merge@4
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.close[routing]() -> void:
+close:
+    pushbytes ""
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    bytec_0 // 0x76
+    swap
+    concat
+    dup
+    box_get
+    swap
+    dup
+    uncover 2
+    assert // check self.locks entry exists
+    dup
+    intc 4 // 136
+    extract_uint64
+    swap
+    extract 64 72
+    dup
+    cover 3
+    intc_3 // 8
+    extract_uint64
+    ==
+    bz close_bool_false@4
+    global LatestTimestamp
+    dig 2
+    pushint 64
+    extract_uint64
+    >=
+    bz close_bool_false@4
+    intc_1 // 1
+
+close_bool_merge@5:
+    assert
+    dig 1
+    intc_0 // 0
+    extract_uint64
+    dup
+    bury 5
+    bz close_after_if_else@8
+    itxn_begin
+    dup
+    extract 32 32
+    dig 2
+    extract 16 32
+    dup
+    itxn_field AssetCloseTo
+    intc_0 // 0
+    itxn_field AssetAmount
+    itxn_field AssetReceiver
+    dig 4
+    itxn_field XferAsset
+    itxn_field Sender
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+close_after_if_else@8:
+    itxn_begin
+    dup
+    extract 32 32
+    uncover 2
+    extract 16 32
+    dup
+    itxn_field CloseRemainderTo
+    intc_0 // 0
+    itxn_field Amount
+    itxn_field Receiver
+    itxn_field Sender
+    intc_1 // pay
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    global CurrentApplicationAddress
+    acct_params_get AcctMinBalance
+    assert // account funded
+    uncover 2
+    box_del
+    pop
+    global CurrentApplicationAddress
+    acct_params_get AcctMinBalance
+    assert // account funded
+    -
+    itxn_begin
+    swap
+    extract 0 32
+    itxn_field Receiver
+    itxn_field Amount
+    intc_1 // pay
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    intc_1 // 1
+    return
+
+close_bool_false@4:
+    intc_0 // 0
+    b close_bool_merge@5
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.lock[routing]() -> void:
+lock:
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    bytec_0 // 0x76
+    swap
+    concat
+    box_get
+    assert // check self.locks entry exists
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+
+// common.Service.create[routing]() -> void:
+create:
+    txna ApplicationArgs 1
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    dup
+    txna ApplicationArgs 2
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    swap
+    global ZeroAddress
+    !=
+    bz create_bool_false@4
+    dup
+    len
+    pushint 32
+    ==
+    bz create_bool_false@4
+    intc_1 // 1
+
+create_bool_merge@5:
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    bytec_1 // "owner"
+    txn Sender
+    app_global_put
+    bytec_3 // "treasury"
+    uncover 2
+    app_global_put
+    bytec 4 // "signer"
+    swap
+    app_global_put
+    intc_1 // 1
+    return
+
+create_bool_false@4:
+    intc_0 // 0
+    b create_bool_merge@5
+
+
+// common.Service.configure[routing]() -> void:
+configure:
+    txna ApplicationArgs 1
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_2 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    swap
+    txna ApplicationArgs 3
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.bool
+    intc_0 // 0
+    getbit
+    cover 2
+    txn Sender
+    intc_0 // 0
+    bytec_1 // "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    ==
+    bz configure_bool_false@4
+    dup
+    global ZeroAddress
+    !=
+    bz configure_bool_false@4
+    intc_1 // 1
+
+configure_bool_merge@5:
+    assert
+    dig 1
+    len
+    pushint 32
+    ==
+    bz configure_bool_false@8
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz configure_bool_false@8
+    intc_1 // 1
+
+configure_bool_merge@9:
+    assert
+    bytec_3 // "treasury"
+    swap
+    app_global_put
+    bytec 4 // "signer"
+    swap
+    app_global_put
+    bytec 5 // "paused"
+    swap
+    app_global_put
+    intc_1 // 1
+    return
+
+configure_bool_false@8:
+    intc_0 // 0
+    b configure_bool_merge@9
+
+configure_bool_false@4:
+    intc_0 // 0
+    b configure_bool_merge@5
+
+
+// common.Service.nominate_operator[routing]() -> void:
+nominate_operator:
+    txna ApplicationArgs 1
+    dup
+    len
+    intc_1 // 1
+    ==
+    assert // invalid number of bytes for arc4.uint8
+    btoi
+    txnas Accounts
+    txn Sender
+    intc_0 // 0
+    bytec_1 // "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    ==
+    bz nominate_operator_bool_false@4
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    bz nominate_operator_bool_false@4
+    intc_1 // 1
+
+nominate_operator_bool_merge@5:
+    assert
+    bytec_2 // "pending_owner"
+    swap
+    app_global_put
+    intc_1 // 1
+    return
+
+nominate_operator_bool_false@4:
+    intc_0 // 0
+    b nominate_operator_bool_merge@5
+
+
+// common.Service.accept_operator[routing]() -> void:
+accept_operator:
+    txn Sender
+    intc_0 // 0
+    bytec_2 // "pending_owner"
+    app_global_get_ex
+    assert // check self.pending_owner exists
+    ==
+    bz accept_operator_bool_false@4
+    txn Sender
+    global ZeroAddress
+    !=
+    bz accept_operator_bool_false@4
+    intc_1 // 1
+
+accept_operator_bool_merge@5:
+    assert
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    bytec_1 // "owner"
+    txn Sender
+    app_global_put
+    bytec_2 // "pending_owner"
+    global ZeroAddress
+    app_global_put
+    intc_1 // 1
+    return
+
+accept_operator_bool_false@4:
+    intc_0 // 0
+    b accept_operator_bool_merge@5
+
+
+// common.Service.resources[routing]() -> void:
+resources:
+    txn RekeyTo
+    global ZeroAddress
+    ==
+    assert
+    intc_1 // 1
+    return
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.escrow(reference: bytes, owner: bytes, asset: uint64) -> bytes:
+escrow:
+    proto 3 1
+    frame_dig -3
+    len
+    pushint 32
+    ==
+    assert
+    global CurrentApplicationID
+    itob
+    pushbytes 0x08200201008008
+    swap
+    concat
+    pushbytes 0x1735008020
+    concat
+    frame_dig -3
+    concat
+    pushbytes 0x35018020
+    concat
+    frame_dig -2
+    concat
+    pushbytes 0x35028008
+    concat
+    frame_dig -1
+    itob
+    concat
+    pushbytes 0x173503311022124431082312443101231244310731001244310932031244800561707049443400165003312012443116220f443116220938102212443116220938003402124431162208381081061244311622083818340012443116220838192312443116220838003402124431162208391a0080048ca4fa92124431162208391a0180020020340150124431162208391a033403161243
+    concat
+    pushbytes 0x50726f6772616d
+    swap
+    concat
+    sha512_256
+    retsub
+
+
+// escrows.RockTheCoinAlgorandEscrowsV1.send(escrow: bytes, asset: uint64, recipient: bytes, amount: uint64) -> void:
+send:
+    proto 4 0
+    frame_dig -3
+    bz send_else_body@3
+    itxn_begin
+    frame_dig -1
+    itxn_field AssetAmount
+    frame_dig -2
+    itxn_field AssetReceiver
+    frame_dig -3
+    itxn_field XferAsset
+    frame_dig -4
+    itxn_field Sender
+    pushint 4 // axfer
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    retsub
+
+send_else_body@3:
+    itxn_begin
+    frame_dig -1
+    itxn_field Amount
+    frame_dig -2
+    itxn_field Receiver
+    frame_dig -4
+    itxn_field Sender
+    intc_1 // pay
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    retsub

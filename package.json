@@ -1,6 +1,6 @@
 {
   "name": "@rockthecoin/contracts",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "verify:builds": "node scripts/verify-builds.mjs",
-    "verify:integrity": "node scripts/verify-integrity.mjs",
+    "verify:integrity": "node scripts/verify-integrity.mjs && python3 scripts/verify-algorand.py",
     "verify:chain": "node scripts/verify-chain.mjs",
     "verify:source": "node scripts/verify-sourcify.mjs",
     "verify:tron-builds": "node scripts/verify-tron-builds.mjs",
@@ -21,7 +21,10 @@
     "verify:sui": "node scripts/verify-sui.mjs",
     "verify:sui-builds": "node scripts/rebuild-sui-suite.mjs && node scripts/rebuild-sui-creators-v2.mjs",
     "test:sui": "node scripts/test-sui-suite.mjs && node scripts/test-sui-creators-v2.mjs",
-    "verify:sui-chain": "node scripts/verify-sui-chain.mjs"
+    "verify:sui-chain": "node scripts/verify-sui-chain.mjs",
+    "verify:algorand": "python3 scripts/verify-algorand.py",
+    "verify:algorand-builds": "python3 scripts/rebuild-algorand.py",
+    "verify:algorand-chain": "python3 scripts/verify-algorand-chain.py"
   },
   "overrides": {
     "tmp": "0.2.7"

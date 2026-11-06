@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-11-05",
-  "source_revision": "v1.5.0",
+  "snapshot_date": "2026-11-06",
+  "source_revision": "v1.6.0",
   "networks": [
     {
       "slug": "solana",
@@ -989,6 +989,84 @@
           }
         }
       ]
+    },
+    {
+      "slug": "algorand",
+      "name": "Algorand",
+      "family": "algorand",
+      "chain_id": null,
+      "native_symbol": "ALGO",
+      "genesis_id": "mainnet-v1.0",
+      "genesis_hash": "wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=",
+      "contracts": [
+        {
+          "label": "Tokens and single NFTs",
+          "kind": "tokens",
+          "address": "3763966036",
+          "application_id": "3763966036",
+          "version": 2,
+          "package": "algorand-token-v2",
+          "contract": "RockTheCoinAlgorandTokensV2",
+          "enabled": true,
+          "owner": "4XW5PAYENTSP2MRGOTTPBL4V46OHSQMNWSAUZFRPCRA6OXQSVULY2QKQNI",
+          "treasury": "4XW5PAYENTSP2MRGOTTPBL4V46OHSQMNWSAUZFRPCRA6OXQSVULY2QKQNI",
+          "quote_signer": "VXT7ZOGHIGL4IZPADPOHPQ3H3EHCVIVFUNZC3EMQ3TCYQRJ635WMVNSPM4",
+          "immutable": true,
+          "approval_sha256": "1e2f38ef3b06bfabd70edee738d45976d10abd687dc299ae92782335f82d3a88",
+          "transaction_hash": "MF5Y35LKUN7NBW6TZEAYXV5QZRYNYODI7D7W5SKP3MG53SK5QMJA",
+          "deployment_round": "66698726",
+          "explorer_url": "https://lora.algokit.io/mainnet/application/3763966036",
+          "source_download_url": "https://www.rockthecoin.com/contracts/algorand-token-v2/source.json",
+          "artifact": "contracts/algorand-token-v2/artifacts/token.json"
+        },
+        {
+          "label": "NFT collections",
+          "kind": "collections",
+          "address": "3763966705",
+          "application_id": "3763966705",
+          "version": 1,
+          "package": "algorand-suite-v1",
+          "contract": "RockTheCoinAlgorandCollectionsV1",
+          "enabled": true,
+          "owner": "4XW5PAYENTSP2MRGOTTPBL4V46OHSQMNWSAUZFRPCRA6OXQSVULY2QKQNI",
+          "treasury": "4XW5PAYENTSP2MRGOTTPBL4V46OHSQMNWSAUZFRPCRA6OXQSVULY2QKQNI",
+          "quote_signer": "VXT7ZOGHIGL4IZPADPOHPQ3H3EHCVIVFUNZC3EMQ3TCYQRJ635WMVNSPM4",
+          "immutable": true,
+          "approval_sha256": "a4a07ba6be190ef158c696d35438c54805dc5763643651b74663a1642e5d042e",
+          "transaction_hash": "6XIHJVNMMOBZF636QDKFM6ZUHSJBPINUETEQBY5SJ7HESVYC5EEA",
+          "deployment_round": "66698742",
+          "explorer_url": "https://lora.algokit.io/mainnet/application/3763966705",
+          "source_download_url": "https://www.rockthecoin.com/contracts/algorand-suite-v1/source.json",
+          "artifact": "contracts/algorand-suite-v1/artifacts/suite.json"
+        },
+        {
+          "label": "Vesting and asset locks",
+          "kind": "escrows",
+          "address": "3763967109",
+          "application_id": "3763967109",
+          "version": 1,
+          "package": "algorand-suite-v1",
+          "contract": "RockTheCoinAlgorandEscrowsV1",
+          "enabled": true,
+          "owner": "4XW5PAYENTSP2MRGOTTPBL4V46OHSQMNWSAUZFRPCRA6OXQSVULY2QKQNI",
+          "treasury": "4XW5PAYENTSP2MRGOTTPBL4V46OHSQMNWSAUZFRPCRA6OXQSVULY2QKQNI",
+          "quote_signer": "VXT7ZOGHIGL4IZPADPOHPQ3H3EHCVIVFUNZC3EMQ3TCYQRJ635WMVNSPM4",
+          "immutable": true,
+          "approval_sha256": "1341e745e7826c9a1d468c5985f14d78e3513dffe78004ea9c7f14646f2a2b05",
+          "transaction_hash": "6APODURQ43UARJEEPYK4LBWUMM2EUKSZGHTNOYA2IJGWJF4KEQYA",
+          "deployment_round": "66698750",
+          "explorer_url": "https://lora.algokit.io/mainnet/application/3763967109",
+          "source_download_url": "https://www.rockthecoin.com/contracts/algorand-suite-v1/source.json",
+          "artifact": "contracts/algorand-suite-v1/artifacts/suite.json"
+        }
+      ],
+      "liquidity": {
+        "verified": true,
+        "application_id": "1002541853",
+        "sdk_commit": "dd1fed50cdc18a699a994b25a1d4bdb11b902553",
+        "approval_sha256": "dd63834ddcd51013ec0a22142497ad4c6d74e421e6c79149422c243346691f56",
+        "clear_sha256": "18ae2b5f0cd69ba19d8565c5560b1358f51289a0710ec225f253413ca603d8e3"
+      }
     }
   ]
 }

@@ -430,5 +430,25 @@
       "artifact": "contracts/sui-creators-v2/artifacts/template.json",
       "source": "contracts/sui-creators-v2/artifacts/source.json"
     }
+  ],
+  "algorand": [
+    {
+      "id": "algorand-suite-v1",
+      "directory": "contracts/algorand-suite-v1",
+      "compiler": "puyapy 5.10.1",
+      "algorand_python": "4.0.0",
+      "python": "3.12",
+      "artifact": "contracts/algorand-suite-v1/artifacts/suite.json",
+      "source": "contracts/algorand-suite-v1/artifacts/source.json"
+    },
+    {
+      "id": "algorand-token-v2",
+      "directory": "contracts/algorand-token-v2",
+      "compiler": "puyapy 5.10.1",
+      "algorand_python": "4.0.0",
+      "python": "3.12",
+      "artifact": "contracts/algorand-token-v2/artifacts/token.json",
+      "source": "contracts/algorand-token-v2/artifacts/source.json"
+    }
   ]
 }

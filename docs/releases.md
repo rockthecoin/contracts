@@ -62,3 +62,14 @@ Optimism uses the unchanged Builder V8 and creator-rewards hook V3. Standalone
 checks cover OP chain/domain binding, atomic ETH service payments, vesting
 backing and callbacks, and the Osaka transaction gas ceiling. Existing frozen
 contract sources, compiler inputs and artifact bytes are unchanged.
+
+## v1.6.0 — Native Algorand
+
+Adds the frozen Algorand suite V1 and current token V2 package, original Python/TEAL sources,
+ARC56 specifications, four AVM programs and separate-account escrow LogicSig template.
+The three mainnet applications are verified against exact bytecode, schema, pages,
+owner configuration and canonical creation records. Token V2 fixes lifetime-counter
+saturation when lifetime capping is disabled; earlier V1 bytes remain unchanged.
+Includes pinned PuyaPy reproduction, offline integrity checks, ten unsigned checks
+against deployed apps and three unsigned Tinyman V2 pool checks. No funded wallet
+transaction was signed or broadcast during verification. Earlier packages remain unchanged.

@@ -1,0 +1,5 @@
+[project]
+name = "rockthecoin-algorand-token-v2"
+version = "2.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["algorand-python==4.0.0", "puyapy==5.10.1", "algorand-python-testing==1.1.0", "py-algorand-sdk==2.12.0"]

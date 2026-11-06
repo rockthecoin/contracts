@@ -19,9 +19,10 @@ This repository publishes contract packages and their verification tools.
 - [Native TRON releases, builds and verification](docs/tron-verification.md)
 - [Native Cardano contracts and reference scripts](docs/cardano-verification.md)
 - [Native Sui Move source, builds and permissions](docs/sui-verification.md)
+- [Native Algorand programs, builds and mainnet verification](docs/algorand-suite.md)
 - [Report a vulnerability privately](https://github.com/rockthecoin/contracts/security/advisories/new)
 
-The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche, Optimism, TRON, Cardano and Sui. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7; Avalanche and Optimism use V8. TRON uses native V3 creation factories with V1 distribution and rewards contracts. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
+The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche, Optimism, TRON, Cardano, Sui and Algorand. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7; Avalanche and Optimism use V8. TRON uses native V3 creation factories with V1 distribution and rewards contracts. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
 
 ## Packages
 
@@ -36,6 +37,7 @@ The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polyg
 | `contracts/rewards-v1/` through `rewards-v3/` | Uniswap V4 creator rewards; V1 also includes the CREATE2 address helper |
 | `contracts/solana-controller-v1/` | Immutable Solana mint caps, transfer-fee ceilings and vesting |
 | `contracts/cardano-v1/`, `cardano-suite-v1/`, `cardano-suite-v2/` | Native Cardano issuance, collections, metadata, vesting and asset locks |
+| `contracts/algorand-suite-v1/`, `algorand-token-v2/` | Immutable native ASA/Smart ASA controls, NFT collections, vesting and asset locks |
 | `contracts/sui-suite-v1/`, `sui-creators-v2/` | Immutable Move library and unique configurable coin/NFT creator templates |
 | `contracts/tron-suite-v1/`, `tron-suite-v2/`, `tron-suite-v3/` | Native TRON tokens, NFTs, collections, locks, distribution, SunSwap liquidity and rewards |
 
@@ -59,6 +61,8 @@ For Solana, create a Python virtual environment, install `requirements-test.txt`
 Cardano checks verify the original Aiken sources, script hashes and compiled validators. Its build instructions are in [Cardano verification](docs/cardano-verification.md).
 
 Sui checks reproduce all library and creator modules and run 35 native Move tests. See [Sui verification](docs/sui-verification.md).
+
+Algorand checks preserve the frozen Python/TEAL sources and reproduce all four AVM programs with PuyaPy 5.10.1. Read-only verification checks the three deployed apps and their canonical creation transactions. See [Algorand verification](docs/algorand-suite.md).
 
 CI runs EVM reproduction and execution, Solana execution, pinned Solana/TRON rebuilds, Aiken checks/rebuilds and Sui Move tests/rebuilds. It has read-only repository permissions and does not deploy contracts, access a funded wallet or contact blockchain RPCs. Optional on-chain check scripts only read chain state.
 
