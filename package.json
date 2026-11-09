@@ -1,6 +1,6 @@
 {
   "name": "@rockthecoin/contracts",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -24,7 +24,11 @@
     "verify:sui-chain": "node scripts/verify-sui-chain.mjs",
     "verify:algorand": "python3 scripts/verify-algorand.py",
     "verify:algorand-builds": "python3 scripts/rebuild-algorand.py",
-    "verify:algorand-chain": "python3 scripts/verify-algorand-chain.py"
+    "verify:algorand-chain": "python3 scripts/verify-algorand-chain.py",
+    "verify:ton": "node scripts/verify-ton.mjs",
+    "verify:ton-builds": "node scripts/compile-ton-suite.mjs --verify && node scripts/compile-ton-suite-v2.mjs --verify",
+    "verify:ton-chain": "node scripts/verify-ton-chain.mjs",
+    "test:ton": "node --test tests/ton-contracts.test.mjs"
   },
   "overrides": {
     "tmp": "0.2.7"
@@ -36,6 +40,10 @@
     "@ethereumjs/vm": "10.1.3",
     "@mysten/move-bytecode-template": "0.4.1",
     "@mysten/sui": "2.36.0",
+    "@noble/curves": "1.9.7",
+    "@ton/core": "0.63.1",
+    "@ton/sandbox": "0.45.0",
+    "@ton/tolk-js": "1.5.0",
     "solc": "0.8.30",
     "solc-v838": "npm:solc@0.8.38",
     "viem": "2.57.6"

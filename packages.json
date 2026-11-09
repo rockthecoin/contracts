@@ -450,5 +450,23 @@
       "artifact": "contracts/algorand-token-v2/artifacts/token.json",
       "source": "contracts/algorand-token-v2/artifacts/source.json"
     }
+  ],
+  "ton": [
+    {
+      "id": "ton-suite-v1",
+      "directory": "contracts/ton-suite-v1",
+      "compiler": "@ton/tolk-js 1.5.0",
+      "artifact": "contracts/ton-suite-v1/artifacts/suite.json",
+      "source": "contracts/ton-suite-v1/artifacts/source.json",
+      "status": "historical"
+    },
+    {
+      "id": "ton-suite-v2",
+      "directory": "contracts/ton-suite-v2",
+      "compiler": "@ton/tolk-js 1.5.0",
+      "artifact": "contracts/ton-suite-v2/artifacts/suite.json",
+      "source": "contracts/ton-suite-v2/artifacts/source.json",
+      "status": "current"
+    }
   ]
 }

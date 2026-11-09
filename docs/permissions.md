@@ -91,3 +91,16 @@ Service prices are converted from EUR to SUI. The selected action and native
 service transfer share one reviewed programmable transaction; failure rolls back
 both, with network gas separate. Cetus liquidity interacts with the external
 Cetus protocol, not a RockTheCoin-owned exchange. See the [Sui permission limits](sui-verification.md#permissions-and-limits).
+
+## Native TON / Gram
+
+The suite factory owner can change the fee recipient and quote public key,
+pause new launches and nominate a successor. The nominee must accept. These
+powers do not upgrade code or withdraw customer assets. Quotes bind exact
+native amounts; future fee settings cannot change existing asset terms.
+
+Creators retain only their selected mint, metadata, role and freeze controls.
+Closing minting or metadata editing is permanent. Collection caps count lifetime
+issuance. Vesting and locks retain a fixed beneficiary and protect unvested
+principal and surplus. TON messages settle asynchronously; a failed step can
+need recovery and can still spend network fees. See [TON contracts](ton-suite.md).

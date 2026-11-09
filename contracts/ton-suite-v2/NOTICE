@@ -1,0 +1,9 @@
+RockTheCoin TON contracts
+
+TEP-74, TEP-89 and TEP-62 message layouts and Tolk standard-operation patterns
+are adapted from ton-blockchain/acton-contracts (MIT, Copyright 2026 TON Core),
+commit d721c3179696b453a9490fcfd2f30770f8c234b4. The MIT license is retained in LICENSE.
+
+RockTheCoin adds fixed-supply launch state, mandatory mint receipts, fee escrow,
+quote expiry, immutable metadata, deterministic addresses and retry/refund paths.
+There is no admin mint, metadata update, code upgrade or recipient update entrypoint.

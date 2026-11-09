@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-09T15:43:26.921Z",
+  "network": "TON mainnet",
+  "native_coin": "Gram (GRAM), formerly Toncoin (TON)",
+  "masterchain": 104374580,
+  "address": "0:df908e5b24803ebc41b7b07ef374c8098385199c3203e67fae48fb67deaa9837",
+  "package": "ton-suite-v2",
+  "code_hash": "a6b5dd2045e4838b0ae0dd4383fd6bd881510559a3cbd9f337ebb3fbb623027c",
+  "owner": "0:0cdecedcd04890349536848c98f0dc62af0d9793ed695e220a34ad43062ddc61",
+  "treasury": "0:0cdecedcd04890349536848c98f0dc62af0d9793ed695e220a34ad43062ddc61",
+  "quote_signer_public_key": "95d6fb106368bcafe6415c9e324860027c15ef5c4dff9cee84fffde7d60364a3",
+  "paused": false,
+  "owner_transaction_hash": "c350f2eb236cf743555eb3f82fe69d536b296f59e40591716e748c1fc38c7d18",
+  "deployment_transaction_hash": "ab51bbf10e7184b2ef2d1f956e9b14e8a8b25f6a7f928df9ae1c0f005c2f8367",
+  "deployment_lt": "115553022000034",
+  "exact_runtime": true,
+  "exact_initialization": true,
+  "exact_parent_child_message": true,
+  "wallet_signatures": 0,
+  "broadcasts": 0
+}

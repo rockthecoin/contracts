@@ -73,3 +73,15 @@ saturation when lifetime capping is disabled; earlier V1 bytes remain unchanged.
 Includes pinned PuyaPy reproduction, offline integrity checks, ten unsigned checks
 against deployed apps and three unsigned Tinyman V2 pool checks. No funded wallet
 transaction was signed or broadcast during verification. Earlier packages remain unchanged.
+
+## v1.7.0 — Native TON / Gram
+
+Adds historical TON suite V1 and current V2, original Tolk 1.5.0 source, six
+contract artifacts per release, source bundles, locks and retained licenses.
+V2 binds NFT mint indexes, preserves metadata and burn state during recovery,
+protects escrow surplus and gates management before launch. One shared V2
+factory is verified on mainnet against exact code, initialization, owner,
+receiving wallet, quote signer and the original parent/child message hash.
+Includes reproducible builds and standalone TVM tests. Earlier contract bytes
+are unchanged. Verification scripts sign no funded transactions and broadcast
+nothing.

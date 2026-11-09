@@ -1,6 +1,6 @@
 # Mainnet deployment snapshot
 
-Snapshot: **2026-11-05**, source release [`v1.5.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.5.0). Avalanche’s and Optimism’s six deployments, Builder V8 and finalized protocol approvals were checked. Sui library V1 was checked against all seven stored module bytes and its immutable publication. Cardano V2 reference outputs were checked against their exact script bytes and hashes. Earlier EVM, Solana and TRON verification dates remain in their evidence files; those contract packages are unchanged. These are dated checks, and current service configuration or reference availability can change.
+Snapshot update: **2026-11-09**, source release [`v1.7.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.7.0). TON suite V2 was checked against exact runtime and initialization bytes, owner configuration and the original parent/child message hash. Earlier networks retain their individual verification dates in the evidence files. These are dated checks; current service configuration and reference availability can change.
 
 See [machine-readable addresses](../deployments.json), [EVM comparison evidence](verification/evm-mainnet-check.json), [Solana comparison evidence](verification/solana-mainnet-check.json), [Sourcify source verification](verification/sourcify-source-status.json) and [verification instructions](verification.md).
 
@@ -162,3 +162,15 @@ Native currency: **ALGO**. Three immutable applications use the original owner
 | Vesting and asset locks | [`algorand-suite-v1`](../contracts/algorand-suite-v1) | [`3763967109`](https://lora.algokit.io/mainnet/application/3763967109) |
 
 See [Algorand permissions, feature boundaries and verification](algorand-suite.md).
+
+## TON / Gram
+
+TON mainnet global ID: `-239` · Native coin: **Gram (GRAM), formerly TON**.
+
+| Contract | Versioned source | Mainnet address |
+| --- | --- | --- |
+| Jettons, NFTs, collections and escrows · Suite V2 | [`ton-suite-v2`](../contracts/ton-suite-v2) | [`0:df908e5b24803ebc41b7b07ef374c8098385199c3203e67fae48fb67deaa9837`](https://tonviewer.com/0:df908e5b24803ebc41b7b07ef374c8098385199c3203e67fae48fb67deaa9837) |
+
+Only the shared factory requires an operator deployment. Customer assets and
+escrows deploy as needed. See [TON verification](ton-suite.md) and
+[mainnet evidence](verification/ton-mainnet-check.json).

@@ -54,3 +54,7 @@ Move builds, native tests and read-only mainnet package/publication verification
 See [OP Mainnet verification](optimism-verification.md) for six exact
 creation/runtime source matches, finalized protocol approvals and unsigned
 customer checks. ETH pays both OP network costs and quoted service fees.
+
+## TON / Gram
+
+[TON verification](ton-suite.md) covers frozen Tolk source/code cells, exact reproduction, standalone TVM tests and read-only mainnet verification. Fees use GRAM, formerly TON. The deployment check links the original owner message to the factory initialization receipt.

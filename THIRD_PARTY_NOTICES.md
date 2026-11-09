@@ -19,3 +19,9 @@ Sui packages use the MystenLabs Sui framework at revision
 Move manifests/lockfile. The framework is not vendored here. The checksum-pinned
 Sui CLI, `@mysten/sui` and `@mysten/move-bytecode-template` retain their Apache-2.0
 licenses and upstream notices. RockTheCoin's own Move source is MIT licensed.
+
+TON Tolk packages retain their original MIT licenses and notices. TEP-74, TEP-89
+and TEP-62 layouts and operation patterns derive from TON Core's
+`ton-blockchain/acton-contracts` at commit
+`d721c3179696b453a9490fcfd2f30770f8c234b4`. Tolk, TON core, wallet and VM build/test
+dependencies retain their respective upstream licenses in the npm lockfile.

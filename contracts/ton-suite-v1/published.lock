@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "package": "ton-suite-v1",
+  "frozen_at": "2026-11-09T13:51:23.494590+00:00",
+  "compiler": "@ton/tolk-js 1.5.0",
+  "mainnet_global_id": -239,
+  "contracts": {
+    "SuiteFactory": "80e8daca7e5c071c088be2b51b1875829caf8108b8f80512059d02244e228629",
+    "JettonWallet": "dd1a4f4171be24cc7e11f1fbc70d2cd0668ac910851c14ca91464c8c67da5b9c",
+    "JettonMaster": "51c5bea99e4ffbba8f773d50de46bd5f672b1de8935ff86af43b6c5f3eb67c89",
+    "NftItem": "066cacea85878d78283d6a19f958a6f0b9a4b8c018302606e59a92147794facc",
+    "NftCollection": "0f27c2a13a3d2f15d461ad352febb1494ff38689f37288f047e692c4d31a8fbe",
+    "Vesting": "97595b3553323554802374e17979c05ebbc315dbaa41cd2cf179b6c92f56c905"
+  },
+  "files": {
+    "JettonMaster.tolk": "353ae621471cc73a64dfe0017433a5fec91da7913253cf7e92c00bc58185b536",
+    "JettonWallet.tolk": "2765ba32f49bb308362e82f496dd3caedc70cb07676e139f7cfb7aeb404a1e49",
+    "LICENSE": "f668e6538d3e3bddf985af87f9b74fd6da1784115395157ea2f70d6c7aab439d",
+    "NOTICE": "6af2157be5d71c4bd8ea5762b1a3e3a1e3e0954ef25c1f6fa841837324fa3387",
+    "NftCollection.tolk": "05aa1702c482fce32d1b83d41c95ec255dc09ecc5f863bf400a04873f85cf8cc",
+    "NftItem.tolk": "fcd6d16f952b0de900d1f52ba9a7e3e15cdf68e6cea2ca94eec61a86ccd57285",
+    "README.md": "86414d5c4b797e2813e1f6dfd3f42c3f54cfde41f084b8f48243cba952c27610",
+    "SuiteFactory.tolk": "a701f8ef2c096525bb5ed68307946b4743e0aa07efa2c817f034f9e11e87e658",
+    "Vesting.tolk": "aca59c74be3b73df3f0389fc7cbad3980a70b435d1f371761ed9d32f345dbcea",
+    "artifacts/source.json": "8f94a44cbf87b116a204e480c784b34ab5d2eeb610fdf625784af53772d8f8c4",
+    "artifacts/suite.json": "54d1127425cc9ec576a77c2ad8053ce238c3d76877fa27d989f353d2571b00d3",
+    "messages.tolk": "89aecdcfeafc0e06c7d8774227884c4f762e3e41d9de6b0492fc6b433e41798b",
+    "payments.tolk": "6f8645a7e16caace5b9be6887d9d5ef04e06fda6b883278befaaa70ed5144896",
+    "storage.tolk": "a04b92a0337a5ba4c90e444c449f061a0a3ad6781f39a69c53c9f78a03fddf83"
+  }
+}
