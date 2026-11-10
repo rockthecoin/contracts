@@ -468,5 +468,15 @@
       "source": "contracts/ton-suite-v2/artifacts/source.json",
       "status": "current"
     }
+  ],
+  "bitcoin": [
+    {
+      "id": "bitcoin-protocol-v1",
+      "directory": "contracts/bitcoin-protocol-v1",
+      "runtime": "Node.js 24",
+      "model": "per-creation Taproot commit/reveal",
+      "source": "contracts/bitcoin-protocol-v1/artifacts/source.json",
+      "lock": "contracts/bitcoin-protocol-v1/published.lock"
+    }
   ]
 }

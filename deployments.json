@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-11-09",
-  "source_revision": "v1.7.0",
+  "snapshot_date": "2026-11-10",
+  "source_revision": "v1.8.0",
   "networks": [
     {
       "slug": "solana",
@@ -1092,6 +1092,26 @@
           "source_download_url": "https://www.rockthecoin.com/contracts/ton-suite-v2/source.json",
           "artifact": "contracts/ton-suite-v2/artifacts/suite.json",
           "verified_on": "2026-11-09"
+        }
+      ]
+    },
+    {
+      "slug": "bitcoin",
+      "name": "Bitcoin",
+      "family": "bitcoin",
+      "chain_id": null,
+      "native_symbol": "BTC",
+      "contracts": [],
+      "native_protocols": [
+        {
+          "label": "Runes and Ordinals transaction scripts V1",
+          "package": "bitcoin-protocol-v1",
+          "deployment_model": "per-creation Taproot scripts; no shared factory",
+          "mainnet_genesis": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+          "service_authorization_public_key": "4bad11f93daff840a824be7e839f907cf9ac608ecd4c10172db99375aacdebdd",
+          "source_download_url": "https://www.rockthecoin.com/contracts/bitcoin-protocol-v1/source.json",
+          "source_sha256": "c54e9caf4f0bac4b02946045b5a848fe0925126e5926d7563de5eefed268fda2",
+          "enabled": true
         }
       ]
     }

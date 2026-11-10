@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "release": "bitcoin-protocol-v1",
+  "network": "mainnet",
+  "node": "24",
+  "files": {
+    "src/protocol.js": "c54e9caf4f0bac4b02946045b5a848fe0925126e5926d7563de5eefed268fda2",
+    "test/protocol.test.mjs": "de571d5477d66f96307a1cc154d6102d59946aa001a368a7ad2bde75a7910ac0",
+    "package.json": "915f52d903c2f70b67fa6d4e86047c4e7e2e84529d0b0f6921cf00be27697ae8",
+    "package-lock.json": "032923e9f618a24f7f7fdc9fcc3ee9072a1886a01228048d71c6cdeb5d07bf8c",
+    "README.md": "8deef24be0f7a806e498370be2b0de146f718052b5147618d64e57b60e9adbcc",
+    "LICENSE": "e73330f31d6c4307df9eb0a48d5823d9eae5485aed235bc564decab6af961b8a",
+    "artifacts/source.json": "e8efae1ac60e9fe534690912cba7163da57a85436ac12e9bef465fae332dd05a"
+  }
+}

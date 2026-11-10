@@ -1,6 +1,6 @@
 # Mainnet deployment snapshot
 
-Snapshot update: **2026-11-09**, source release [`v1.7.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.7.0). TON suite V2 was checked against exact runtime and initialization bytes, owner configuration and the original parent/child message hash. Earlier networks retain their individual verification dates in the evidence files. These are dated checks; current service configuration and reference availability can change.
+Snapshot update: **2026-11-10**, source release [`v1.8.0`](https://github.com/rockthecoin/contracts/releases/tag/v1.8.0). Bitcoin protocol V1 is published as per-creation Taproot transaction templates, with no shared factory address. TON suite V2 was checked against exact runtime and initialization bytes, owner configuration and the original parent/child message hash. Earlier networks retain their individual verification dates in the evidence files. These are dated checks; current service configuration and reference availability can change.
 
 See [machine-readable addresses](../deployments.json), [EVM comparison evidence](verification/evm-mainnet-check.json), [Solana comparison evidence](verification/solana-mainnet-check.json), [Sourcify source verification](verification/sourcify-source-status.json) and [verification instructions](verification.md).
 
@@ -174,3 +174,17 @@ TON mainnet global ID: `-239` · Native coin: **Gram (GRAM), formerly TON**.
 Only the shared factory requires an operator deployment. Customer assets and
 escrows deploy as needed. See [TON verification](ton-suite.md) and
 [mainnet evidence](verification/ton-mainnet-check.json).
+
+## Bitcoin
+
+Bitcoin mainnet · Network and service fees: **BTC**.
+
+There is no shared RockTheCoin factory to deploy. Each Rune etching or Ordinal
+inscription uses its own Taproot commit/reveal scripts. See the frozen
+[`bitcoin-protocol-v1`](../contracts/bitcoin-protocol-v1) source and
+[protocol verification](bitcoin-protocol.md).
+
+The service authorization public key for this publication is
+`4bad11f93daff840a824be7e839f907cf9ac608ecd4c10172db99375aacdebdd`.
+It cannot spend a commit alone: creation needs the customer signature, and the
+separate refund leaf needs only the customer signature.

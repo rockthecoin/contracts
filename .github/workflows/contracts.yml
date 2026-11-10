@@ -121,3 +121,20 @@ jobs:
       - run: npm run verify:ton
       - run: npm run verify:ton-builds
       - run: npm run test:ton
+
+  bitcoin:
+    name: Bitcoin scripts and synthetic transaction signatures
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: contracts/bitcoin-protocol-v1/package-lock.json
+      - run: node scripts/verify-bitcoin.mjs
+      - run: npm ci --ignore-scripts --no-fund --prefix contracts/bitcoin-protocol-v1
+      - run: npm run test:bitcoin

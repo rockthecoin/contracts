@@ -85,3 +85,12 @@ receiving wallet, quote signer and the original parent/child message hash.
 Includes reproducible builds and standalone TVM tests. Earlier contract bytes
 are unchanged. Verification scripts sign no funded transactions and broadcast
 nothing.
+
+## v1.8.0 — Native Bitcoin scripts
+
+Adds the separately frozen Bitcoin protocol V1: Rune etching and mint terms,
+Ordinal content and parent/child provenance, native distributions and transfers,
+exact PSBT/raw verification, and independent customer commit refunds. The source,
+dependency lock and synthetic cryptographic tests are reproducible. Bitcoin has
+no shared operator factory address. Existing contract packages and deployment
+addresses are unchanged.

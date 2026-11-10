@@ -1,6 +1,6 @@
 {
   "name": "@rockthecoin/contracts",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "verify:builds": "node scripts/verify-builds.mjs",
-    "verify:integrity": "node scripts/verify-integrity.mjs && python3 scripts/verify-algorand.py",
+    "verify:integrity": "node scripts/verify-integrity.mjs && python3 scripts/verify-algorand.py && node scripts/verify-bitcoin.mjs",
     "verify:chain": "node scripts/verify-chain.mjs",
     "verify:source": "node scripts/verify-sourcify.mjs",
     "verify:tron-builds": "node scripts/verify-tron-builds.mjs",
@@ -28,7 +28,9 @@
     "verify:ton": "node scripts/verify-ton.mjs",
     "verify:ton-builds": "node scripts/compile-ton-suite.mjs --verify && node scripts/compile-ton-suite-v2.mjs --verify",
     "verify:ton-chain": "node scripts/verify-ton-chain.mjs",
-    "test:ton": "node --test tests/ton-contracts.test.mjs"
+    "test:ton": "node --test tests/ton-contracts.test.mjs",
+    "verify:bitcoin": "node scripts/verify-bitcoin.mjs",
+    "test:bitcoin": "npm --prefix contracts/bitcoin-protocol-v1 test"
   },
   "overrides": {
     "tmp": "0.2.7"

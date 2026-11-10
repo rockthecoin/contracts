@@ -21,9 +21,10 @@ This repository publishes contract packages and their verification tools.
 - [Native Sui Move source, builds and permissions](docs/sui-verification.md)
 - [Native Algorand programs, builds and mainnet verification](docs/algorand-suite.md)
 - [Native TON / Gram contracts, builds and mainnet verification](docs/ton-suite.md)
+- [Bitcoin Runes, Ordinals and customer refund scripts](docs/bitcoin-protocol.md)
 - [Report a vulnerability privately](https://github.com/rockthecoin/contracts/security/advisories/new)
 
-The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche, Optimism, TRON, Cardano, Sui, Algorand and TON. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7; Avalanche and Optimism use V8. TRON uses native V3 creation factories with V1 distribution and rewards contracts. TON uses the shared native suite V2 factory. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
+The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polygon, Avalanche, Optimism, TRON, Cardano, Sui, Algorand, TON and Bitcoin. Bitcoin uses per-creation Taproot scripts rather than a shared factory. Ethereum and BNB use advanced factory V6; Base, Arbitrum and Polygon use V7; Avalanche and Optimism use V8. TRON uses native V3 creation factories with V1 distribution and rewards contracts. TON uses the shared native suite V2 factory. Rewards hook versions also differ by network. Always select the address **and version** from the deployment map, rather than assuming the newest package is used everywhere.
 
 ## Packages
 
@@ -42,6 +43,7 @@ The deployment map covers Solana, Ethereum, BNB Chain, Base, Arbitrum One, Polyg
 | `contracts/sui-suite-v1/`, `sui-creators-v2/` | Immutable Move library and unique configurable coin/NFT creator templates |
 | `contracts/tron-suite-v1/`, `tron-suite-v2/`, `tron-suite-v3/` | Native TRON tokens, NFTs, collections, locks, distribution, SunSwap liquidity and rewards |
 | `contracts/ton-suite-v1/`, `ton-suite-v2/` | Native TON jettons, NFTs, collections, vesting and locks; V1 is historical, V2 is current |
+| `contracts/bitcoin-protocol-v1/` | Native Rune and Ordinal transaction templates, asset change, exact PSBT verification and unilateral commit refunds |
 
 Each EVM and native TRON package retains its saved compiler input, ABI and bytecode. Dependency source contents are embedded in `standard-input.json`; they do not depend on the current contents of an upstream repository. `packages.json` pins compiler versions and artifact locations. `SHA256SUMS` fingerprints the published packages.
 
@@ -75,3 +77,5 @@ The dated [verification evidence](docs/verification/) records the contracts actu
 Published packages are preserved. Fixes require a new version; publishing or tagging code does not upgrade any deployed contract. Contributions must follow [CONTRIBUTING.md](CONTRIBUTING.md). RockTheCoin's Solidity/Solana/Sui code is MIT licensed; Cardano packages declare Apache-2.0. Preserve [third-party notices](THIRD_PARTY_NOTICES.md).
 
 TON checks reproduce all six Tolk 1.5.0 contracts, execute synthetic TVM tests and verify the deployed V2 factory and its exact initialization. See [TON verification](docs/ton-suite.md).
+
+Bitcoin checks use pinned dependencies and synthetic previous transactions. They do not connect to a node or relay transactions. See [Bitcoin protocol checks](docs/bitcoin-protocol.md).
